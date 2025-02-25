@@ -5,7 +5,7 @@ type TTitleParams = {
 };
 
 //    before:[mask-image:linear-gradient(to_right,theme(colors.black),theme(colors.white))]
-//before:bg-[linear-gradient(to_right,theme(colors.transparent)_25%,theme(colors.pink.100)_75%)]
+//before:bg-[linear-gradient(to_right,theme(colors.transparent)_25%,theme(colors.emerald.100)_75%)]
 
 export const TitleComponent: FC<TTitleParams> = (params) => {
   // const [scope, animate] = useAnimate();
@@ -27,14 +27,14 @@ export const TitleComponent: FC<TTitleParams> = (params) => {
        bg-[url('/images/svg/back_dark.svg')]
        dark:bg-[url('/images/svg/back.svg')]
        before:content-[''] before:absolute before:w-full before:h-full before:block
-       before:bg-[linear-gradient(to_right,theme(colors.transparent)_0%_25%,theme(colors.pink.100)_75%_100%)]
+       before:bg-[linear-gradient(to_right,theme(colors.transparent)_0%_25%,theme(colors.emerald.100)_75%_100%)]
        before:dark:bg-[linear-gradient(to_right,theme(colors.transparent)_0%_25%,theme(colors.slate.600)_75%_100%)]
        "
     >
-      <span className="font-materialSymbolsOulined text-[clamp(28px,4vw,64px)]/[clamp(28px,10vw,64px)] text-pink-500 dark:text-slate-300">
+      <span className="font-materialSymbolsOulined text-[clamp(28px,4vw,64px)]/[clamp(28px,10vw,64px)] text-emerald-500 dark:text-slate-300">
         info
       </span>
-      <h3 className="text-[clamp(1.2rem,3vw,2rem)]/[clamp(1.2rem,3vw,2rem)] font-inter font-bold text-pink-600 dark:text-slate-100 uppercase">
+      <h3 className="text-[clamp(1.2rem,3vw,2rem)]/[clamp(1.2rem,3vw,2rem)] font-inter font-bold text-emerald-600 dark:text-slate-100 uppercase">
         {params.title}
       </h3>
     </div>

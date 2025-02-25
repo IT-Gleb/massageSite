@@ -65,9 +65,9 @@ const container = {
     opacity: 1,
 
     transition: {
-      duration: 0.75,
+      duration: 0.6,
       //delayChildren: 0.5,
-      staggerChildren: 0.5,
+      staggerChildren: 0.3,
       repeatDuration: 10,
       type: "spring",
     },
@@ -103,23 +103,26 @@ export const AnimatedHeader: FC<TParamFC> = (param) => {
     [1, 700],
     [isPhone ? 28 : 56, isPhone ? 28 : 35]
   );
+  const topY = useTransform(param.scrollY, inputRange, [-100, 0]);
+  const menuHeight = useTransform(param.scrollY, param.heights, ["1vh", "7vh"]);
 
   return (
     <>
       <motion.div
         style={{
-          opacity: opacityMenu,
+          //opacity: opacityMenu,
           //scaleX: opacityMenu,
-          height: thisHeight,
+          height: menuHeight,
+          top: topY,
         }}
-        className="fixed z-10 top-0 w-full bg-pink-500 dark:bg-slate-900 content-center bg-[url('/images/svg/back.svg')] dark:bg-[url('/images/svg/back_dark.svg')]"
+        className="fixed z-10 top-0 w-full bg-emerald-700 dark:bg-slate-900 content-center bg-[url('/images/svg/back.svg')] dark:bg-[url('/images/svg/back_dark.svg')]"
       >
         <div className="w-[99%] xl:max-w-[70%] mx-auto">
           <div className="flex items-center justify-between gap-x-2 sm:gap-x-3 xl:gap-x-4">
-            <div className="w-[45px] sm:w-[60px] text-white object-cover object-left-top rounded-full bg-pink-700 dark:bg-slate-800 border-2 border-pink-300 dark:border-slate-400 p-1">
+            <div className="w-[45px] sm:w-[60px] text-white object-cover object-left-top rounded-full bg-emerald-700 dark:bg-slate-800 border-2 border-emerald-300 dark:border-slate-400 p-1">
               <SvgLogo3 />
             </div>
-            <div className="font-bold font-roboto text-[clamp(0.5rem,4vw,1.6rem)] text-rose-100 dark:text-slate-200">
+            <div className="font-bold font-roboto text-[clamp(0.5rem,4vw,1.6rem)] text-white dark:text-slate-200">
               <a href={`tel:+${InfoObj.phoneReg}`}>{InfoObj.phone_mask}</a>
             </div>
             <UpButton title="Вверх" description="К началу страницы" />
@@ -137,12 +140,12 @@ export const AnimatedHeader: FC<TParamFC> = (param) => {
         }}
       >
         <motion.div
-          className="bg-pink-600 dark:bg-slate-800 text-pink-200 dark:text-slate-200 whitespace-nowrap 
+          className="bg-emerald-600 dark:bg-slate-800 text-emerald-200 dark:text-slate-200 whitespace-nowrap 
           overflow-hidden sm:vertical-text text-[clamp(1.5rem,3vw,2.1rem)]/[clamp(1.5rem,3vw,2.2rem)] uppercase flex items-center justify-evenly sm:justify-start"
           style={{ height: isPhone ? 50 : thisHeight }}
         >
           <a href={`tel:+${InfoObj.phoneReg}`}>
-            <div className="w-[65px] text-green-300 dark:text-yellow-200 object-cover object-center rotate-45 mt-1">
+            <div className="w-[65px] text-white dark:text-yellow-200 object-cover object-center rotate-45 mt-1">
               <SvgLogo1 />
             </div>
           </a>
@@ -152,36 +155,37 @@ export const AnimatedHeader: FC<TParamFC> = (param) => {
           variants={container}
           initial="hidden"
           animate="show"
+          whileInView={"show"}
           className="font-roboto text-[clamp(1.4rem,2vw,2rem)]/[clamp(1.4rem,2vw,2rem)] relative overflow-hidden"
           style={{ height: thisHeight }}
         >
           <motion.div
             className="overflow-hidden flex flex-col 
-            bg-[linear-gradient(to_right,rgba(244,114,182,0.7),theme(colors.pink.400),theme(colors.transparent))]
+            bg-[linear-gradient(to_right,rgba(4,120,87,0.7),theme(colors.emerald.400),theme(colors.transparent))]
             dark:bg-[linear-gradient(to_right,rgba(51,65,85,0.8),theme(colors.slate.700),theme(colors.slate.700),theme(colors.transparent))]
             "
             style={{ height: isPhone ? "85%" : thisHeight }}
           >
             <div
-              className=" text-pink-200 dark:text-slate-200 text-[clamp(0.5rem,3vw,0.8rem)]/[1.2rem] 
+              className=" text-emerald-200 dark:text-slate-200 text-[clamp(0.5rem,3vw,0.8rem)]/[1.2rem] 
             font-inter p-1 whitespace-nowrap flex items-center justify-center sm:justify-start gap-x-2 gap-y-1
-            bg-[linear-gradient(to_right,theme(colors.pink.500),theme(colors.pink.500))]
+            bg-[linear-gradient(to_right,theme(colors.emerald.500),theme(colors.emerald.500))]
             dark:bg-[linear-gradient(to_right,theme(colors.slate.600),theme(colors.slate.600))]
-            sm:bg-[linear-gradient(to_right,theme(colors.pink.600),theme(colors.pink.500),theme(colors.pink.400),theme(colors.transparent),theme(colors.transparent))] 
+            sm:bg-[linear-gradient(to_right,theme(colors.emerald.600),theme(colors.emerald.500),theme(colors.emerald.400),theme(colors.transparent),theme(colors.transparent))] 
             sm:dark:bg-[linear-gradient(to_right,theme(colors.slate.800),theme(colors.slate.800),theme(colors.slate.700),theme(colors.transparent),theme(colors.transparent))] 
             "
             >
               <a
                 href={`tel:+${InfoObj.phoneReg}`}
-                className="font-bold font-roboto text-yellow-100 dark:text-green-100 cursor-pointer"
+                className="font-bold font-roboto text-white dark:text-green-100 cursor-pointer"
               >
                 {InfoObj.phone_mask}
               </a>
-              <span className="italic text-yellow-300 dark:text-green-300 sm:text-pink-50 sm:dark:text-slate-50">
+              <span className="italic text-yellow-300 dark:text-green-300 sm:text-emerald-50 sm:dark:text-slate-50">
                 {InfoObj.FullAdress}
               </span>
             </div>
-            <h2 className="p-2 font-inter uppercase text-pink-700 dark:text-slate-200 font-semibold text-[clamp(1.1rem,3vw,2.1rem)]/[1.6rem]">
+            <h2 className="p-2 font-inter uppercase text-emerald-900 dark:text-slate-200 font-semibold text-[clamp(1.1rem,3vw,2.1rem)]/[1.6rem]">
               Результат:
             </h2>
             <ul className="w-fit mx-auto mb-auto font-inter">
@@ -200,7 +204,7 @@ export const AnimatedHeader: FC<TParamFC> = (param) => {
                       >
                         <SvgLogo2 />
                       </motion.div>
-                      <span className=" whitespace-nowrap text-pink-800 dark:text-slate-200 ">
+                      <span className=" whitespace-nowrap text-emerald-800 dark:text-slate-200 ">
                         {item.text}
                       </span>
                     </div>

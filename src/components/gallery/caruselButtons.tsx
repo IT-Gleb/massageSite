@@ -27,9 +27,9 @@ export const CaruselButtons: FC<TButtonsParam> = (param) => {
             key={index}
             type="button"
             onClick={() => param.clickButton(item)}
-            className={`w-[10px] h-[10px] rounded-full border border-pink-500 dark:border-slate-300  ${
+            className={`w-[10px] h-[10px] rounded-full border border-emerald-500 dark:border-slate-300  ${
               index === param.activeIndex
-                ? "bg-pink-500 dark:bg-slate-200"
+                ? "bg-emerald-500 dark:bg-slate-200"
                 : "bg-transparent"
             }`}
           ></button>

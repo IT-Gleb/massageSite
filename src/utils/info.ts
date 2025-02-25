@@ -35,7 +35,7 @@ export const InfoObj = {
     return this.data.phone_mask;
   },
   get FullAdress() {
-    let result: string = `г.${this.city}, р-н ${this.district}, ул. ${this.street}, ${this.appartment}`;
+    let result: string = `г.${this.city}, р-н ${this.district}, ул. ${this.street} ${this.appartment}`;
     return result;
   },
 };
