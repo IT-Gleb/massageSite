@@ -1,21 +1,65 @@
+@import url("./assets/css/inter.css");
+@import url("./assets/css/roboto.css");
+@import url("./assets/css/mso.css");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: theme(colors.pink.50);
+  --foreground: theme(colors.slate.600);
+  --darkbackground: theme(colors.slate.700);
+  --darkforeground: theme(colors.slate.200);
+  /* --darkbg: #99154b; */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: theme(colors.slate.700);
+    --foreground: theme(colors.slate.200);
+
+    --gradient1: theme(colors.pink.700);
+    --gradient2: theme(colors.pink.600);
   }
 }
 
-body {
+/* body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+} */
+.dark {
+  background: var(--darkbackground);
+  color: var(--darkforeground);
+}
+
+@layer base {
+  .mydark {
+    @apply text-slate-200 bg-slate-700;
+  }
+
+  .mylight {
+    @apply text-slate-600 bg-pink-50;
+  }
+
+  .vertical-text {
+    writing-mode: vertical-rl;
+    text-orientation: sideways;
+  }
+
+  .mask1 {
+    background-color: var(--gradient1);
+    mask-image: linear-gradient(
+      to right,
+      var(--gradient1),
+      var(--gradient2),
+      transparent
+    );
+    /* mask-repeat: repeat; */
+  }
+
+  body {
+    @apply overflow-x-hidden dark:text-slate-200 dark:mydark mylight font-inter font-normal text-[clamp(0.8rem,8vw,2rem)]/[clamp(0.9rem,8vw,2.1rem)] min-h-[100vh];
+  }
 }

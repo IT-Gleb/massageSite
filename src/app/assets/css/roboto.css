@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "'Roboto";
+  font-display: swap;
+  font-style: normal;
+  src: url("../fonts/roboto/Roboto-VariableFont_wdth\,wght.ttf")
+      format("truetype"),
+    url("../fonts/roboto/Roboto-Italic-VariableFont_wdth\,wght.ttf")
+      format("truetype");
+}
+
+@font-face {
+  font-family: "'Roboto";
+  font-display: swap;
+  font-style: normal;
+  src: url("../fonts/roboto/static/Roboto-Black.ttf") format("truetype"),
+    url("../fonts/roboto/static/Roboto-Bold.ttf") format("truetype"),
+    url("../fonts/roboto/static/Roboto-ExtraLight.ttf") format("truetype"),
+    url("../fonts/roboto/static/Roboto-Light.ttf") format("truetype"),
+    url("../fonts/roboto/static/Roboto-Medium.ttf") format("truetype"),
+    url("../fonts/roboto/static/Roboto-Regular.ttf") format("truetype"),
+    url("../fonts/roboto/static/Roboto-SemiBold.ttf") format("truetype"),
+    url("../fonts/roboto/static/Roboto-Thin.ttf") format("truetype"),
+    url("../fonts/roboto/static/Roboto_Condensed-Black.ttf") format("truetype"),
+    url("../fonts/roboto/static/Roboto_Condensed-Bold.ttf") format("truetype"),
+    url("../fonts/roboto/static/Roboto_Condensed-ExtraBold.ttf")
+      format("truetype"),
+    url("../fonts/roboto/static/Roboto_Condensed-Medium.ttf") format("truetype"),
+    url("../fonts/roboto/static/Roboto_Condensed-ExtraLight.ttf")
+      format("truetype"),
+    url("../fonts/roboto/static/Roboto_Condensed-Regular.ttf")
+      format("truetype"),
+    url("../fonts/roboto/static/Roboto-ExtraBold.ttf") format("truetype");
+}

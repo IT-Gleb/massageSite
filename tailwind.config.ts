@@ -6,8 +6,14 @@ export default {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
+      fontFamily: {
+        inter: ["'Inter'"],
+        roboto: ["Roboto"],
+        materialSymbolsOulined: ["Material Symbols Outlined"],
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
