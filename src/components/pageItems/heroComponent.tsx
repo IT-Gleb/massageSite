@@ -71,7 +71,6 @@ export const HeroComponent = () => {
                 <div className="pt-10">
                   <TitleComponent title="услуги" />
                 </div>
-
                 <SectionOne />
               </Suspense>
 

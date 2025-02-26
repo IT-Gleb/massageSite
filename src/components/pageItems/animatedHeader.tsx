@@ -9,6 +9,7 @@ import dynamic from "next/dynamic";
 import { UpButton } from "../ui/buttons/upButton";
 import { SvgLogo3 } from "../svg_components/svgLogo3";
 import { InfoObj } from "@/utils/info";
+import { phrazesObj } from "@/utils/phrazes";
 
 const ThemeButtonNoSSR = dynamic(
   () =>
@@ -18,35 +19,7 @@ const ThemeButtonNoSSR = dynamic(
   { ssr: false }
 );
 
-let MainPhrase: TPhrase = [
-  {
-    text: "забота о здоровье",
-    y: 185,
-  },
-  {
-    text: "Коррекция осанки",
-    y: 120,
-  },
-  {
-    text: "Снижение уровня стресса",
-    y: 360,
-  },
-  { text: "профилактика заболеваний", y: 435 },
-  { text: "Улучшение сна", y: 240 },
-  { text: "Повышение уровня энергии", y: 295 },
-];
-
-function changeYValues() {
-  let yValues: string[] = [];
-  for (let i of MainPhrase) {
-    yValues.push(i.text);
-  }
-  yValues = shuffleArray<string>(yValues);
-  yValues.forEach((item, index) => (MainPhrase[index].text = item));
-}
-
 //MainPhrase = shuffleArray<TTextPosition>(MainPhrase);
-changeYValues();
 
 const transition = {
   duration: 0.8,
@@ -65,9 +38,9 @@ const container = {
     opacity: 1,
 
     transition: {
-      duration: 0.6,
+      duration: 0.5,
       //delayChildren: 0.5,
-      staggerChildren: 0.3,
+      staggerChildren: 0.25,
       repeatDuration: 10,
       type: "spring",
     },
@@ -76,7 +49,7 @@ const container = {
 
 const itemA = {
   hidden: { opacity: 0 },
-  show: { opacity: 1, y: [-10, 25, 0] },
+  show: { opacity: 1, y: [-10, 20, 0] },
 };
 
 type TParamFC = {
@@ -97,7 +70,7 @@ export const AnimatedHeader: FC<TParamFC> = (param) => {
   );
 
   const opacityContainer = useTransform(param.scrollY, inputRange, [1, 0]);
-  const opacityMenu = useTransform(param.scrollY, inputRange, [0, 1]);
+  //const opacityMenu = useTransform(param.scrollY, inputRange, [0, 1]);
   const imageSize = useTransform(
     param.scrollY,
     [1, 700],
@@ -189,7 +162,7 @@ export const AnimatedHeader: FC<TParamFC> = (param) => {
               Результат:
             </h2>
             <ul className="w-fit mx-auto mb-auto font-inter">
-              {MainPhrase.map((item, index) => {
+              {phrazesObj.data.map((item, index) => {
                 return (
                   <motion.li
                     variants={itemA}

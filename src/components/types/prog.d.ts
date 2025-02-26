@@ -1,6 +1,5 @@
 declare type TTextPosition = {
   text: string;
-  y: number;
 };
 
 declare type TPhrase = TTextPosition[];
