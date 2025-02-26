@@ -36,6 +36,7 @@ export const SectionThree: FC = () => {
         try {
           const currentMeteo: Partial<TMeteoData> | null = await getMeteo();
           if (currentMeteo) {
+            console.log(currentMeteo);
             setWeather(currentMeteo);
           }
 
@@ -81,7 +82,7 @@ export const SectionThree: FC = () => {
               {whatPartDay(new Date(WeatherData.time as Date).valueOf())}
             </span>
             <span className="font-materialSymbolsOulined text-[2rem]">
-              {WeatherData.isDay ? "light_mode" : "mode_night"}
+              {WeatherData.isDay ? "backlight_low" : "mode_night"}
             </span>
           </div>
           <div className="flex items-center gap-x-4">
@@ -90,7 +91,7 @@ export const SectionThree: FC = () => {
             </span>
             <span className="font-materialSymbolsOulined text-[2rem]/[2rem]">
               {Math.round(WeatherData.precipitation as number) === 0
-                ? "circle"
+                ? "partly_cloudy_day"
                 : "filter_drama"}
             </span>
           </div>
