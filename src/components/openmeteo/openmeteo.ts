@@ -1,8 +1,8 @@
 import { fetchWeatherApi } from "openmeteo";
 
 const params = {
-  latitude: 43.6059,
-  longitude: 39.7272,
+  latitude: 43.5992,
+  longitude: 39.7257,
   current: [
     "temperature_2m",
     "apparent_temperature",

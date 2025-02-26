@@ -4,7 +4,7 @@ import { MobileQuery, PlanshetQuery, useMediaQuery } from "@/hooks/checkDevice";
 import React, { FC, useEffect, useRef, useState } from "react";
 
 const iframeSrc: string =
-  "https://yandex.ru/map-widget/v1/?indoorLevel=1&ll=39.727268%2C43.605980&mode=whatshere&whatshere%5Bpoint%5D=39.725670%2C43.606763&whatshere%5Bzoom%5D=17&z=18";
+  "https://yandex.ru/map-widget/v1/?ll=39.726966%2C43.607111&masstransit%5BstopId%5D=stop__9973503&mode=masstransit&tab=overview&z=18.6";
 
 type TMapParam = {
   width: number | string;

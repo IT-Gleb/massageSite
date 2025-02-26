@@ -26,6 +26,7 @@ export const SectionThree: FC = () => {
     status: false,
     message: "",
   });
+  const [partDay, setPartDay] = useState<string>("");
 
   useEffect(() => {
     let isSubscribed: boolean = true;
@@ -36,8 +37,11 @@ export const SectionThree: FC = () => {
         try {
           const currentMeteo: Partial<TMeteoData> | null = await getMeteo();
           if (currentMeteo) {
-            console.log(currentMeteo);
+            //console.log(currentMeteo);
             setWeather(currentMeteo);
+            setPartDay(
+              whatPartDay(new Date(currentMeteo.time as Date).valueOf())
+            );
           }
 
           //          console.log(currentMeteo);
@@ -72,59 +76,86 @@ export const SectionThree: FC = () => {
 
   return (
     <section className="p-4 my-10">
-      <article className="w-[98%] md:w-fit mx-auto bg-emerald-300 text-[0.8rem]/[1.6rem] dark:bg-slate-800 p-2 font-sans">
-        <div className="flex flex-col gap-y-2 items-start sm:flex-row sm:items-center sm:flex-wrap gap-x-2 justify-evenly text-emerald-700 dark:text-slate-400">
-          <div className="font-bold font-roboto text-[clamp(0.8rem,2vw,1.2rem)]">
-            Сочи
+      <article className="w-[98%] md:w-fit mx-auto bg-emerald-200 text-[0.8rem]/[1.6rem] dark:bg-slate-800 p-2 font-sans">
+        <div className="grid grid-cols-2 md:flex md:flex-row md:items-start gap-x-2 justify-evenly text-emerald-700 dark:text-slate-400">
+          <div className="block md:flex md:items-center md:gap-x-3">
+            <div className="font-bold font-roboto text-[clamp(0.8rem,2vw,1.2rem)]">
+              Сочи
+            </div>
+            <div className="flex items-start justify-between gap-x-2 py-1">
+              <span className="text-emerald-700 dark:text-slate-500">
+                {partDay}
+              </span>
+              <span className="font-materialSymbolsOulined text-[2rem] rotate-45">
+                {partDay === "ночь"
+                  ? "mode_night"
+                  : partDay === "день"
+                  ? "flare"
+                  : partDay === "вечер"
+                  ? "routine"
+                  : partDay === "утро"
+                  ? "sunny_snowing"
+                  : "clear_day"}
+              </span>
+            </div>
+            <div className="flex items-center justify-between gap-x-2">
+              <span className="text-emerald-700 dark:text-slate-500">
+                Осадки:
+              </span>
+              <span className="font-materialSymbolsOulined text-[2rem]/[2rem]">
+                {(WeatherData.precipitation as number) === 0
+                  ? "sunny"
+                  : (WeatherData.rain as number) !== 0
+                  ? "rainy"
+                  : (WeatherData.showers as number) !== 0
+                  ? "rainy_light"
+                  : (WeatherData.snowfall as number) !== 0
+                  ? "weather_snowy"
+                  : "filter_drama"}
+              </span>
+            </div>
+            <div className="flex items-center justify-between gap-x-2">
+              <span className="text-emerald-700 dark:text-slate-500">
+                Температура:
+              </span>
+              <span className="font-roboto font-bold text-[clamp(1rem,2vw,2rem)]/[2.1rem]">
+                {Math.round(WeatherData.temperature2m as number)}
+                <sup>
+                  <small>0</small>
+                </sup>
+              </span>
+            </div>
+            <div className="flex items-center justify-between gap-x-2">
+              <span className="text-emerald-700 dark:text-slate-500 whitespace-nowrap">
+                Воспринимается как:
+              </span>
+              <span className="font-roboto font-bold text-[clamp(1rem,2vw,2rem)]/[2.1rem]">
+                {Math.round(WeatherData.apparentTemperature as number)}
+                <sup>
+                  <small>0</small>
+                </sup>
+              </span>
+            </div>
+            <div className="flex items-center justify-between gap-x-2">
+              <span className="text-[0.8rem]/[1.6rem] text-emerald-700 dark:text-slate-500 whitespace-nowrap">
+                Ветер:
+              </span>
+              <span className="font-roboto font-bold text-[clamp(1rem,2vw,2rem)]/[2.1rem]">
+                {Math.round(WeatherData.windSpeed10m as number)}
+                <small className="font-normal"> м/сек</small>
+              </span>
+            </div>
           </div>
-          <div className="flex items-start sm:items-center md:justify-between gap-x-2">
-            <span className="text-emerald-700 dark:text-slate-500">
-              {whatPartDay(new Date(WeatherData.time as Date).valueOf())}
-            </span>
-            <span className="font-materialSymbolsOulined text-[2rem]">
-              {WeatherData.isDay ? "backlight_low" : "mode_night"}
-            </span>
-          </div>
-          <div className="flex items-center gap-x-4">
-            <span className="text-emerald-700 dark:text-slate-500">
-              Осадки:
-            </span>
-            <span className="font-materialSymbolsOulined text-[2rem]/[2rem]">
-              {Math.round(WeatherData.precipitation as number) === 0
-                ? "partly_cloudy_day"
-                : "filter_drama"}
-            </span>
-          </div>
-          <div className="flex items-center justify-between gap-x-2">
-            <span className="text-emerald-700 dark:text-slate-500">
-              Температура:
-            </span>
-            <span className="font-roboto font-bold text-[clamp(1rem,2vw,2rem)]/[2.1rem]">
-              {Math.round(WeatherData.temperature2m as number)}
-              <sup>
-                <small>0</small>
-              </sup>
-            </span>
-          </div>
-          <div className="flex items-center justify-between gap-x-2">
-            <span className="text-emerald-700 dark:text-slate-500 whitespace-nowrap">
-              Воспринимается как:
-            </span>
-            <span className="font-roboto font-bold text-[clamp(1rem,2vw,2rem)]/[2.1rem]">
-              {Math.round(WeatherData.apparentTemperature as number)}
-              <sup>
-                <small>0</small>
-              </sup>
-            </span>
-          </div>
-          <div className="flex items-center justify-between gap-x-2">
-            <span className="text-[0.8rem]/[1.6rem] text-emerald-700 dark:text-slate-500 whitespace-nowrap">
-              Ветер:
-            </span>
-            <span className="font-roboto font-bold text-[clamp(1rem,2vw,2rem)]/[2.1rem]">
-              {Math.round(WeatherData.windSpeed10m as number)}
-              <small className="font-normal"> м/сек</small>
-            </span>
+          <div className="md:hidden font-materialSymbolsOulined text-[7rem]/[7.5rem] text-right">
+            {(WeatherData.precipitation as number) === 0
+              ? "sunny"
+              : (WeatherData.rain as number) !== 0
+              ? "rainy"
+              : (WeatherData.showers as number) !== 0
+              ? "rainy_light"
+              : (WeatherData.snowfall as number) !== 0
+              ? "weather_snowy"
+              : "filter_drama"}
           </div>
         </div>
       </article>
