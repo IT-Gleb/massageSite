@@ -16,8 +16,17 @@ function changeYValues(param: TPhrase) {
 }
 
 export const phrazesObj = {
-  index: 0,
+  _indx: 0,
   data: changeYValues(phrazesData),
+  get index() {
+    return this._indx;
+  },
+  set index(param: number) {
+    let minimum = Math.max(param, 0);
+    if (Math.round(minimum) < this.data.length) {
+      this._indx = param;
+    }
+  },
   get item() {
     return this.data[this.index].text;
   },

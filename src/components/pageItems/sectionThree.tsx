@@ -86,7 +86,11 @@ export const SectionThree: FC = () => {
               <span className="text-emerald-700 dark:text-slate-500">
                 {partDay}
               </span>
-              <span className="font-materialSymbolsOulined text-[2rem] rotate-45">
+              <span
+                className={`font-materialSymbolsOulined text-[2rem] ${
+                  partDay === "день" ? "rotate-45" : ""
+                }`}
+              >
                 {partDay === "ночь"
                   ? "mode_night"
                   : partDay === "день"
