@@ -146,7 +146,9 @@ export const SectionThree: FC = () => {
               </span>
               <span className="font-roboto font-bold text-[clamp(1rem,2vw,2rem)]/[2.1rem]">
                 {Math.round(WeatherData.windSpeed10m as number)}
-                <small className="font-normal"> м/сек</small>
+                <sub>
+                  <small className="font-normal"> м/сек</small>
+                </sub>
               </span>
             </div>
           </div>

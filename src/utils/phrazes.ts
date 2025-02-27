@@ -1,7 +1,7 @@
 import phrazesData from "../../public/json/prazes.json";
 import { shuffleArray } from "./functions";
 
-function changeYValues(param: TPhrase) {
+function changeYValues(param: TPhrase): TPhrase {
   let yValues: string[] = [];
   let result: TPhrase = [];
 
