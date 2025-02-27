@@ -1,14 +1,14 @@
-@import url("./assets/css/inter.css");
-@import url("./assets/css/roboto.css");
-@import url("./assets/css/mso.css");
+@import url("./inter.css");
+@import url("./roboto.css");
+@import url("./mso.css");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: theme(colors.pink.50);
-  --foreground: theme(colors.slate.600);
+  --background: theme(colors.orange.50);
+  --foreground: theme(colors.orange.700);
   --darkbackground: theme(colors.slate.700);
   --darkforeground: theme(colors.slate.200);
   /* --darkbg: #99154b; */
@@ -18,9 +18,6 @@
   :root {
     --background: theme(colors.slate.700);
     --foreground: theme(colors.slate.200);
-
-    --gradient1: theme(colors.pink.700);
-    --gradient2: theme(colors.pink.600);
   }
 }
 
@@ -40,23 +37,13 @@
   }
 
   .mylight {
-    @apply text-amber-800 bg-amber-50;
+    @apply text-orange-800 bg-orange-50;
   }
 
   .vertical-text {
-    writing-mode: vertical-rl;
+    /* writing-mode: vertical-rl; */
+    writing-mode: vertical-lr;
     text-orientation: sideways;
-  }
-
-  .mask1 {
-    background-color: var(--gradient1);
-    mask-image: linear-gradient(
-      to right,
-      var(--gradient1),
-      var(--gradient2),
-      transparent
-    );
-    /* mask-repeat: repeat; */
   }
 
   body {

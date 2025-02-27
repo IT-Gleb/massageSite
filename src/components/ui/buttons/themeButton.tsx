@@ -26,22 +26,22 @@ export const ThemeButton: FC = () => {
 
   return (
     <div
-      className="w-[60px] h-[30px] bg-emerald-800 dark:bg-slate-700 p-1 content-center overflow-hidden rounded-2xl"
+      className="w-[60px] h-[30px] bg-orange-800 dark:bg-slate-700 p-1 content-center overflow-hidden rounded-2xl"
       title="Переключить тему"
     >
       <motion.div
         ref={scope}
-        className="w-[22px] h-[22px] bg-emerald-500 dark:bg-slate-500 rounded-full cursor-pointer select-none text-center relative"
+        className="w-[22px] h-[22px] bg-orange-500 dark:bg-slate-500 rounded-full cursor-pointer select-none text-center relative"
         role="button"
         onClick={handleClick}
       >
         {!isDark && (
-          <div className="font-materialSymbolsOulined text-[0.8rem] text-emerald-100 absolute left-[50%] translate-x-[-50%] top-[50%] translate-y-[-50%]">
+          <div className="font-materialSymbolsOulined text-[0.8rem] text-orange-100 absolute left-[50%] translate-x-[-50%] top-[50%] translate-y-[-50%]">
             sunny
           </div>
         )}
         {isDark && (
-          <div className="font-materialSymbolsOulined text-[0.8rem] text-emerald-100 dark:text-slate-200 absolute left-[50%] translate-x-[-50%] top-[50%] translate-y-[-50%]">
+          <div className="font-materialSymbolsOulined text-[0.8rem] text-orange-100 dark:text-slate-200 absolute left-[50%] translate-x-[-50%] top-[50%] translate-y-[-50%]">
             brightness_3
           </div>
         )}

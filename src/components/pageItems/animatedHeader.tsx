@@ -1,6 +1,5 @@
 import React, { FC } from "react";
 import { motion, useTransform } from "motion/react";
-import { shuffleArray } from "@/utils/functions";
 import { SvgLogo2 } from "../svg_components/svgLogo2";
 import { ComponentHeight } from "./heroComponent";
 import { SvgLogo1 } from "../svg_components/svgLogo1";
@@ -18,8 +17,6 @@ const ThemeButtonNoSSR = dynamic(
     ),
   { ssr: false }
 );
-
-//MainPhrase = shuffleArray<TTextPosition>(MainPhrase);
 
 const transition = {
   duration: 0.8,
