@@ -7,8 +7,8 @@
 @tailwind utilities;
 
 :root {
-  --background: theme(colors.orange.50);
-  --foreground: theme(colors.orange.700);
+  --background: theme(colors.emerald.50);
+  --foreground: theme(colors.emerald.700);
   --darkbackground: theme(colors.slate.700);
   --darkforeground: theme(colors.slate.200);
   /* --darkbg: #99154b; */
@@ -37,7 +37,7 @@
   }
 
   .mylight {
-    @apply text-orange-800 bg-orange-50;
+    @apply text-emerald-800 bg-emerald-50;
   }
 
   .vertical-text {
@@ -47,6 +47,15 @@
   }
 
   body {
-    @apply overflow-x-hidden dark:text-slate-200 dark:mydark mylight font-inter font-normal text-[clamp(0.8rem,8vw,2rem)]/[clamp(0.9rem,8vw,2.1rem)] min-h-[100vh];
+    @apply overflow-x-hidden dark:text-slate-200 dark:mydark mylight font-inter font-normal text-[clamp(0.8rem,8vw,2rem)]/[clamp(0.9rem,8vw,2.1rem)] min-h-[100vh] bg-[url('/images/massage1/massage8.jpg')] bg-no-repeat bg-fixed bg-cover bg-left-top;
+  }
+  h2 {
+    @apply text-[clamp(1.5rem,2vw,2.5rem)]/[2.6rem] font-roboto font-semibold uppercase;
+  }
+  h3 {
+    @apply font-roboto font-semibold uppercase text-[clamp(1.1rem,2vw,1.8rem)]/[1.9rem];
+  }
+  img {
+    @apply block w-full h-full;
   }
 }

@@ -19,7 +19,7 @@ type TWeatherError = {
   message: string;
 };
 
-export const SectionThree: FC = () => {
+export const WeatherSection: FC = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [WeatherData, setWeather] = useState<Partial<TMeteoData>>({});
   const [WeatherError, setWeatherErr] = useState<TWeatherError>({

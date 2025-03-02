@@ -63,7 +63,8 @@ export const CaruselResponses: FC = () => {
   return (
     <>
       <div
-        className="relative max-[552px]:w-[280px] max-[600px]:w-[430px] md:w-[656px] xl:w-[995px] min-[1960px]:w-[1660px] h-[255px] mx-auto overflow-y-hidden overflow-x-scroll mt-10"
+        className="relative max-[552px]:w-[280px] max-[600px]:w-[430px] sm:w-[560px] md:w-[656px] 2xl:w-[986px] min-[1960px]:w-[1320px]
+         h-[255px] mx-auto overflow-y-hidden overflow-x-scroll mt-10"
         style={{
           scrollSnapType: "x mandatory",
           scrollSnapAlign: "start",

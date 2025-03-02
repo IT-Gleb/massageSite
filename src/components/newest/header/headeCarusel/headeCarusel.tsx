@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useRef, useState } from "react";
+import React, { FC, useEffect, useRef, useState, Children } from "react";
 import { animate } from "motion/react";
 import { Item1 } from "./item1";
 import { Item2 } from "./item2";
@@ -33,13 +33,17 @@ export const HeadeCarusel: FC = () => {
 
     await animate(
       childrenRef[activeIndex].current as HTMLDivElement,
-      { opacity: hasOpacity === "1" ? [1, 0] : [0, 1] },
-      { duration: 0.35, ease: "easeInOut" }
+      {
+        opacity: hasOpacity === "1" ? [1, 0] : [0, 1],
+      },
+      { duration: 0.5, ease: "easeInOut" }
     );
     await animate(
       childrenRef[nextIndex].current as HTMLDivElement,
-      { opacity: hasOpacity === "1" ? [0, 1] : [1, 0] },
-      { duration: 0.35, ease: "easeInOut" }
+      {
+        opacity: hasOpacity === "1" ? [0, 1] : [1, 0],
+      },
+      { duration: 0.75, ease: "easeInOut" }
     );
   };
 
@@ -83,3 +87,7 @@ export const HeadeCarusel: FC = () => {
     </div>
   );
 };
+
+/* 
+
+*/

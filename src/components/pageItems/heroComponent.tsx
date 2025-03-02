@@ -10,7 +10,7 @@ import { getNowYear } from "@/utils/functions";
 import { SectionTwo } from "./sectionTwo";
 import { InfoObj } from "@/utils/info";
 import { TitleComponent } from "./titleComponent";
-import { SectionThree } from "./sectionThree";
+import { WeatherSection } from "./WeatherSection";
 import { PhoneButton } from "../ui/buttons/phoneButton";
 import { MobileQuery, PlanshetQuery, useMediaQuery } from "@/hooks/checkDevice";
 
@@ -85,7 +85,7 @@ export const HeroComponent = () => {
                 <div className="pt-10">
                   <TitleComponent title="Погода" />
                 </div>
-                <SectionThree />
+                <WeatherSection />
               </Suspense>
 
               {/* Yandex карты */}
