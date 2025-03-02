@@ -20,7 +20,7 @@ export const CaruselItem: FC<TTextItems & TParamActiveIndex> = (param) => {
   return (
     <article
       ref={articleRef}
-      className={`max-[365px]:w-[268px] w-[275px] md:w-[320px] h-[240px] bg-emerald-50 dark:bg-slate-100 ${
+      className={`max-[365px]:w-[268px] w-[275px] md:w-[320px] h-[240px] bg-emerald-100 dark:bg-slate-100 ${
         param.index === param.activeIndex
           ? "border-4 border-emerald-700 dark:border-neutral-300"
           : ""

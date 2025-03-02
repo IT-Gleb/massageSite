@@ -5,7 +5,7 @@ export const HeaderChildOne: FC = () => {
   return (
     <div
       className="bg-emerald-600 dark:bg-slate-600 content-center uppercase text-[clamp(1rem,8vw,2rem)]/[clamp(1.2rem,8vw,2.4rem)] font-roboto
-     p-1 flex items-center justify-center gap-x-1"
+     p-1 flex items-center justify-start gap-x-4"
     >
       <div className="w-[45px] -scale-x-100 text-emerald-100 dark:text-slate-200">
         <SvgLogo2 />

@@ -17,7 +17,7 @@ export const HeaderChildTwo: FC = () => {
      after:content-[''] after:absolute after:left-0 after:-bottom-4 after:right-0 after:z-10 after:w-full after:h-[4px] after:bg-emerald-200 after:dark:bg-slate-800"
     >
       <h4
-        className="w-[90%] mx-auto text-emerald-300 dark:text-slate-800 text-[clamp(0.9rem,2vw,1.8rem)]/[clamp(clamp(1rem,2vw,1.8rem))] font-bold font-roboto uppercase p-1
+        className="w-[90%] mx-auto text-yellow-300 dark:text-yellow-200 text-[clamp(0.9rem,2vw,1.8rem)]/[clamp(clamp(1rem,2vw,1.8rem))] font-bold font-roboto uppercase p-1
       bg-[linear-gradient(to_right,theme(colors.transparent),theme(colors.emerald.700)_3%,theme(colors.emerald.600)_45%,theme(colors.transparent))]
       dark:bg-[linear-gradient(to_right,theme(colors.transparent),theme(colors.slate.500)_3%,theme(colors.slate.400)_45%,theme(colors.transparent))]
       "

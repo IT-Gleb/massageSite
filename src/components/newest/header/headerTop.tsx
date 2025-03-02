@@ -1,15 +1,9 @@
 "use client";
 
-import { SvgLogo1 } from "@/components/svg_components/svgLogo1";
-import { ThemeButton } from "@/components/ui/buttons/themeButton";
-import { InfoObj } from "@/utils/info";
 import React, { FC, useLayoutEffect } from "react";
 import { HeaderChildOne } from "./headerChildOne";
 import { HeaderChildTwo } from "./headerChildTwo";
-import { HeaderChildThree } from "./headerChildThree";
 import { HeaderMenu } from "./headerMenu";
-import { WeatherSection } from "@/components/pageItems/WeatherSection";
-import { useMediaQuery } from "@/hooks/checkDevice";
 import { useThemeStore } from "@/store/themeStore";
 import { useShallow } from "zustand/shallow";
 
