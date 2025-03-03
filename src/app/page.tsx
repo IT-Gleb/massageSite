@@ -2,7 +2,9 @@
 
 import { SectionOne } from "@/components/newest/body/sectionOne";
 import { SectionResponses } from "@/components/newest/body/sectionResponses";
+import { SectionThree } from "@/components/newest/body/sectionThree";
 import { SectionTwo } from "@/components/newest/body/sectionTwo";
+import { SectionWeather } from "@/components/newest/body/sectionWeather";
 import { HeaderTop } from "@/components/newest/header/headerTop";
 
 import { Suspense } from "react";
@@ -25,6 +27,14 @@ export default function Home() {
         <div className="w-full h-[20vh] md:h-[30vh]"></div>
         <Suspense>
           <SectionResponses />
+        </Suspense>
+        <div className="w-full h-[20vh] md:h-[30vh]"></div>
+        <Suspense>
+          <SectionThree />
+        </Suspense>
+        <div className="w-full h-[20vh] md:h-[30vh]"></div>
+        <Suspense>
+          <SectionWeather />
         </Suspense>
         <div className="w-full h-[20vh] md:h-[30vh]"></div>
       </main>

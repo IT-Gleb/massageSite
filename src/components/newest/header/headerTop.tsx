@@ -9,6 +9,7 @@ import { useShallow } from "zustand/shallow";
 
 export const HeaderTop: FC = () => {
   // const is854 = useMediaQuery("only screen and (max-height:960px)");
+
   const isDark = useThemeStore(useShallow((state) => state.dark));
 
   useLayoutEffect(() => {
@@ -20,11 +21,9 @@ export const HeaderTop: FC = () => {
   return (
     <header>
       <HeaderMenu />
-      <section>
-        <section className="flex flex-col bg-emerald-500 dark:bg-slate-500">
-          <HeaderChildOne />
-          <HeaderChildTwo />
-        </section>
+      <section className="flex flex-col bg-emerald-500 dark:bg-slate-500">
+        <HeaderChildOne />
+        <HeaderChildTwo />
       </section>
     </header>
   );

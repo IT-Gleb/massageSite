@@ -10,3 +10,8 @@ declare type TTextItems = {
   text: string;
   index: number;
 };
+
+declare type TSizes = {
+  width: number;
+  height: number;
+};
