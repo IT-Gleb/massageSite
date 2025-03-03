@@ -15,7 +15,7 @@ const eelings: string[] = [
   "Улучшение сна",
   "Женские заболевания, бесплодие",
   "ревматоидный артрит коленных суставов",
-  "ревматоидный артрит бедеренной кости",
+  "ревматоидный артрит бедренной кости",
   "Простатит",
   "Сахарный диабет",
   "Болезни почек",
@@ -38,8 +38,10 @@ export const SectionTwo: FC = () => {
         dark:bg-[linear-gradient(to_right,theme(colors.transparent)_0%,theme(colors.slate.800)_10%,theme(colors.transparent))]
         "
         >
-          <span className="font-materialSymbolsOulined">info</span>с помощью
-          биоэнергомассажера
+          <span aria-hidden="true" className="font-materialSymbolsOulined">
+            info
+          </span>
+          с помощью биоэнергомассажёра
         </div>
 
         <aside className="flex items-start justify-center gap-x-2 gap-y-2 flex-wrap mt-5">
@@ -110,7 +112,7 @@ export const SectionTwo: FC = () => {
             .map((item, index) => (
               <li key={index}>
                 <div className="bg-emerald-700 dark:bg-slate-800 h-full p-2 outline-1 outline outline-offset-4 outline-emerald-700 dark:outline-slate-300">
-                  <span>thumb_up</span>
+                  <span aria-hidden="true">thumb_up</span>
                   <span className="inline-block">{item}</span>
                 </div>
               </li>

@@ -10,9 +10,10 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        inter: ["'Inter'"],
+        inter: ["Inter"],
         roboto: ["Roboto"],
         materialSymbolsOulined: ["Material Symbols Outlined"],
+        oswald: ["Oswald"],
       },
       colors: {
         background: "var(--background)",

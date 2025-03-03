@@ -17,13 +17,15 @@ export const HeaderChildTwo: FC = () => {
      after:content-[''] after:absolute after:left-0 after:-bottom-4 after:right-0 after:z-10 after:w-full after:h-[4px] after:bg-emerald-800 after:dark:bg-slate-100"
     >
       <h4
-        className="w-[90%] mx-auto mt-5 text-emeralg-900 dark:text-slate-900 text-[clamp(0.9rem,2vw,1.8rem)]/[clamp(clamp(1rem,2vw,1.8rem))] font-bold font-roboto uppercase p-1
+        className="w-[90%] mx-auto mt-5 text-emeralg-900 dark:text-slate-900 text-[clamp(0.9rem,2vw,1.8rem)]/[clamp(clamp(1rem,2vw,1.8rem))] font-bold font-oswald  uppercase p-1
       bg-[linear-gradient(to_right,theme(colors.transparent),theme(colors.emerald.300)_3%,theme(colors.emerald.200)_45%,theme(colors.transparent))]
       dark:bg-[linear-gradient(to_right,theme(colors.transparent),theme(colors.slate.300)_3%,theme(colors.slate.200)_45%,theme(colors.transparent))]
       "
       >
-        <span className="font-materialSymbolsOulined">pan_tool_alt</span> Один
-        сеанс применения биоэнергомассажа равнозначен:
+        <span aria-hidden="true" className="font-materialSymbolsOulined">
+          pan_tool_alt
+        </span>{" "}
+        Один сеанс применения биоэнергомассажа равнозначен:
       </h4>
       <ul
         className=" my-5 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-x-2 gap-y-2 w-[90%] mx-auto text-[clamp(0.85rem,2vw,1.2rem)]/[clamp(1rem,2.5vw,1.6rem)] text-emerald-50 dark:text-slate-50 
@@ -33,7 +35,9 @@ export const HeaderChildTwo: FC = () => {
         {stringItems.map((item, index) => (
           <li key={index} className="flex items-start gap-x-1">
             <div className="w-full h-full bg-emerald-900 text-slate-200 dark:bg-slate-900 dark:text-slate-200 p-4 flex items-start gap-x-1 overflow-hidden rounded-xl">
-              <span className="font-materialSymbolsOulined ">thumb_up</span>
+              <span aria-hidden="true" className="font-materialSymbolsOulined ">
+                thumb_up
+              </span>
               <span className="first-letter:uppercase line-clamp-2">
                 {item}
               </span>

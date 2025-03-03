@@ -5,11 +5,11 @@ import { SectionForma } from "../section/sectionForma";
 
 const protivStrings: string[] = [
   "неверие пациента в действие методики",
-  "наличие опухолей, заболеваний крови, вирусных заболевний, психических заболеваний, тяжелых заболеваний сердца, головного мозга, легких",
+  "наличие опухолей, заболеваний крови, вирусных заболеваний, психических заболеваний, тяжелых заболеваний сердца, головного мозга, легких",
   "переломы, кровотечения, склонность к кровотечениям, разрывы мышц, сухожилий, связок",
   "переломы, кровотечения, склонность к кровотечениям, разрывы мышц, сухожилий, связок",
   "гнойные артриты, повреждения кожного покрова, язвы, нарывы, фурункулы",
-  "дефекты развития или дегенеративные сужения позвоночного канала, отчетливые сужения межпозвоночных отвестий",
+  "дефекты развития или дегенеративные сужения позвоночного канала, отчетливые сужения межпозвоночных отверстий",
   "беременность, менструации, послеродовые кровотечения",
   "старческая немощь, переутомление, ощущение сильного голода, а также не ранее чем через 30 минут после обильного приема пищи или употребления алкогольных напитков",
   "сильная гипертония(давление 160/120), после перенесенных операций на сердце, наличие кардиостимулятора и других инородных предметов в теле",
@@ -36,7 +36,10 @@ export const SectionOne: FC = () => {
         bg-[linear-gradient(to_right,theme(colors.transparent)_0%,theme(colors.emerald.400)_10%,theme(colors.transparent))]
         dark:bg-[linear-gradient(to_right,theme(colors.transparent)_0%,theme(colors.slate.800)_10%,theme(colors.transparent))]"
         >
-          <span className="font-materialSymbolsOulined text-[1.4rem]/[1.5rem] md:text-[clamp(1.5rem,2vw,1.8rem)]/[1.5rem] text-neutral-700 dark:text-neutral-200 ">
+          <span
+            aria-hidden="true"
+            className="font-materialSymbolsOulined text-[1.4rem]/[1.5rem] md:text-[clamp(1.5rem,2vw,1.8rem)]/[1.5rem] text-neutral-700 dark:text-neutral-200 "
+          >
             info
           </span>
           <h3 className="dark:text-neutral-200 text-center">
@@ -74,7 +77,7 @@ export const SectionOne: FC = () => {
           мышц, проходят межпохвоночные грыжи, вплоть до полного исчезновения.
           Выводятся токсины, ускоряется обмен веществ, снижается вес, пассивная
           нагрузка для людей с малоподвижным образом жизни, отличные результаты
-          при поблемах в органах малого таза (простатит, бесплодие и др.).
+          при проблемах в органах малого таза (простатит, бесплодие и др.).
           Массаж проводится по мередианам и биологически активным точкам.
           Очущения приятные, сопровождаются легкой вибрацией.
         </p>
@@ -93,10 +96,13 @@ export const SectionOne: FC = () => {
       </article>
       <article className="text-[clamp(0.75rem,2vw,1rem)]/[1.1rem] px-1 sm:px-4 mt-10">
         <div className="flex items-start gap-x-2 w-fit mx-auto">
-          <span className="font-materialSymbolsOulined text-[clamp(1.4rem,2vw,1.8rem)]/[1.9rem] text-neutral-500 dark:text-neutral-300">
+          <span
+            aria-hidden="true"
+            className="font-materialSymbolsOulined text-[clamp(1.4rem,2vw,1.8rem)]/[1.9rem] text-neutral-500 dark:text-neutral-300"
+          >
             info
           </span>
-          <h3 className="w-fit mx-auto font-roboto font-semibold uppercase text-[clamp(1.1rem,2vw,1.8rem)]/[1.9rem] dark:text-neutral-200">
+          <h3 className="w-fit mx-auto font-semibold uppercase text-[clamp(1.1rem,2vw,1.8rem)]/[1.9rem] dark:text-neutral-200">
             Противопоказания:
           </h3>
         </div>
@@ -115,7 +121,7 @@ export const SectionOne: FC = () => {
                 className="p-2 overflow-hidden rounded-xl bg-emerald-600 dark:bg-slate-800 h-full 
               outline outline-1 outline-offset-4 dark:outline-slate-400"
               >
-                <span>thumb_down</span>
+                <span aria-hidden="true">thumb_down</span>
                 <span className="inline-block">{item}</span>
               </div>
             </li>

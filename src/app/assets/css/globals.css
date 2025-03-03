@@ -1,6 +1,7 @@
 @import url("./inter.css");
 @import url("./roboto.css");
 @import url("./mso.css");
+@import url("./oswald.css");
 
 @tailwind base;
 @tailwind components;
@@ -47,13 +48,13 @@
   }
 
   body {
-    @apply overflow-x-hidden dark:text-slate-200 dark:mydark mylight font-inter font-normal text-[clamp(0.8rem,8vw,2rem)]/[clamp(0.9rem,8vw,2.1rem)] min-h-[100vh] bg-[url('/images/massage1/massage8.jpg')] bg-no-repeat bg-fixed bg-cover bg-left-top;
+    @apply overflow-x-hidden dark:text-slate-200 dark:mydark mylight font-oswald font-normal text-[clamp(0.8rem,2.5vw,2rem)]/[clamp(0.9rem,2.5vw,2.1rem)] min-h-[100vh] bg-[url('/images/massage1/massage8.jpg')] bg-no-repeat bg-fixed bg-cover bg-left-top;
   }
   h2 {
-    @apply text-[clamp(1.5rem,2vw,2.5rem)]/[2.6rem] font-roboto font-semibold uppercase;
+    @apply text-[clamp(1.5rem,2vw,2.5rem)]/[2.6rem] font-oswald font-semibold uppercase;
   }
   h3 {
-    @apply font-roboto font-semibold uppercase text-[clamp(1.1rem,2vw,1.8rem)]/[1.9rem];
+    @apply font-oswald font-semibold uppercase text-[clamp(1.1rem,2vw,1.8rem)]/[1.9rem];
   }
   img {
     @apply block w-full h-full;

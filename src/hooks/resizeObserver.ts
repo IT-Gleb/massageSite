@@ -8,7 +8,8 @@ function useMyResizeObserver() {
 
   const getSnapShot = () => size;
   const getSereverSnapShot = () => {
-    return { width: 0, height: 0 };
+    // return { width: 0, height: 0 };
+    return false;
   };
 
   const subscribe = (callback: any) => {

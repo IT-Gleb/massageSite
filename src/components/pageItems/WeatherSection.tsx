@@ -78,9 +78,7 @@ export const WeatherSection: FC = () => {
     <article className="w-[98%] md:w-fit mx-auto bg-emerald-200 text-[0.8rem]/[1.6rem] dark:bg-slate-800 p-2 font-sans">
       <div className="grid grid-cols-2 md:flex md:flex-row md:items-start gap-x-2 justify-evenly text-emerald-700 dark:text-slate-400">
         <div className="block md:flex md:items-center md:gap-x-3">
-          <div className="font-bold font-roboto text-[clamp(0.8rem,2vw,1.2rem)]">
-            Сочи
-          </div>
+          <div className="font-bold text-[clamp(0.8rem,2vw,1.2rem)]">Сочи</div>
           <div className="flex items-start justify-between gap-x-2 py-1">
             <span className="text-emerald-700 dark:text-slate-500">
               {partDay}
@@ -105,7 +103,10 @@ export const WeatherSection: FC = () => {
             <span className="text-emerald-700 dark:text-slate-500">
               Осадки:
             </span>
-            <span className="font-materialSymbolsOulined text-[2rem]/[2rem]">
+            <span
+              aria-hidden="true"
+              className="font-materialSymbolsOulined text-[2rem]/[2rem]"
+            >
               {(WeatherData.precipitation as number) === 0
                 ? "sunny"
                 : (WeatherData.rain as number) !== 0
@@ -123,9 +124,7 @@ export const WeatherSection: FC = () => {
             </span>
             <span className="font-roboto font-bold text-[clamp(1rem,2vw,2rem)]/[2.1rem]">
               {Math.round(WeatherData.temperature2m as number)}
-              <sup>
-                <small>0</small>
-              </sup>
+              <sup>&deg;</sup>
             </span>
           </div>
           <div className="flex items-center justify-between gap-x-2">
@@ -134,9 +133,7 @@ export const WeatherSection: FC = () => {
             </span>
             <span className="font-roboto font-bold text-[clamp(1rem,2vw,2rem)]/[2.1rem]">
               {Math.round(WeatherData.apparentTemperature as number)}
-              <sup>
-                <small>0</small>
-              </sup>
+              <sup>&deg;</sup>
             </span>
           </div>
           <div className="flex items-center justify-between gap-x-2">
