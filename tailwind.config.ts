@@ -14,6 +14,7 @@ export default {
         roboto: ["Roboto"],
         materialSymbolsOulined: ["Material Symbols Outlined"],
         oswald: ["Oswald"],
+        verdana: ["Verdana", "Tahoma", "serif"],
       },
       colors: {
         background: "var(--background)",

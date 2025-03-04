@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Moho 14.1 build 20231027 -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Frame_0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="64px">
+<path id="S1" fill="#e6edff" fill-rule="evenodd" stroke="#04739d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M 7.484 6.881 C 13.060 1.790 24.582 1.578 32.130 1.785 C 40.184 2.005 52.529 2.886 58.072 8.734 C 60.995 11.818 61.884 18.105 61.963 22.354 C 62.071 28.130 61.179 36.932 57.053 40.977 C 51.739 46.186 40.219 46.001 32.778 46.072 C 24.967 46.147 12.966 46.439 7.206 41.162 C 3.233 37.522 1.527 29.502 1.554 24.114 C 1.583 18.647 3.446 10.567 7.484 6.881 Z"/>
+<path id="S2" fill="#e6edff" fill-rule="evenodd" stroke="none" d="M 39.635 62.386 C 39.635 62.386 33.761 54.683 33.761 54.683 C 33.760 54.682 26.775 46.239 26.774 46.238 C 26.775 46.237 33.425 36.708 33.426 36.707 C 33.427 36.708 40.818 45.799 40.818 45.800 C 40.818 45.801 40.227 53.861 40.227 53.861 C 40.227 53.862 39.635 62.386 39.635 62.386 Z"/>
+<path id="S2" fill="none" stroke="#04739d" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M 39.635 62.386 C 39.635 62.386 33.761 54.683 33.761 54.683 C 33.760 54.682 26.775 46.239 26.774 46.238 M 40.818 45.800 C 40.818 45.801 40.227 53.861 40.227 53.861 C 40.227 53.862 39.635 62.386 39.635 62.386 "/>
+</svg>
