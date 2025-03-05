@@ -15,3 +15,9 @@ declare type TSizes = {
   width: number;
   height: number;
 };
+
+declare interface IimageProps {
+  imageSrc: string;
+  width: number;
+  height: number;
+}

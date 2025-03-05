@@ -2,27 +2,31 @@
 
 import React, { FC } from "react";
 import { FoHowIcon } from "./foHowIcon";
-import { ItemSectionOne } from "./itemSectionOne";
+import { SvgHandsUp } from "@/components/svg_components/svgHandsUp";
+import { ImageRounded } from "../images/imageRounded";
+import { HeroNavigation } from "./heroNavigation";
 
 export const HeroComponent: FC = () => {
   return (
-    <section className="flex flex-col bg-green-100">
-      <div className="text-[0.8rem] font-oswald px-2 text-neutral-600 bg-white w-fit overflow-hidden">
-        Я смогу почь вам, если... Вы захотите помочь себе.
-      </div>
-
-      <section className="min-h-[45vh] grid grid-cols-1 sm:grid-cols-[1fr_1fr] gap-x-2 xl:gap-x-10">
-        <div className="mx-auto sm:ml-auto sm:mx-0 content-center xl:content-start">
+    <section className="flex flex-col bg-green-50">
+      <HeroNavigation />
+      <section className="w-[90%] xs:w-[70%] lg:w-[65%] mx-auto min-h-[45vh] grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-y-8 lg:gap-y-0 gap-x-2 xl:gap-x-10">
+        <div className="content-center lg:content-start">
           <FoHowIcon />
         </div>
-        <div className="mx-auto sm:mx-0 content-center xl:content-end text-indigo-900 font-roboto">
-          <h3 className="w-fit pr-5 pb-2 border-b-2 border-b-indigo-900 ">
-            Новый вид массажа
-          </h3>
+        <div className="w-fit mx-auto lg:mx-0 sm:content-center lg:content-end text-indigo-900 font-roboto mt-8 lg:mt-0">
+          <div className="w-fit ml-auto flex items-center gap-x-2">
+            <div className="w-[40px]">
+              <SvgHandsUp />
+            </div>
+            <h3 className=" pr-12 pb-2 border-b-2 border-b-indigo-900 ">
+              Новый вид массажа
+            </h3>
+          </div>
           <ul
-            className="text-[clamp(0.6vw,2vw,0.85vw)]/[clamp(0.7vw,2vw,1vw)] mt-6 
-          [&>li]:flex [&>li]:gap-x-2
-          [&>li>:nth-child(1)]:font-materialSymbolsOulined [&>li>:nth-child(1)]:text-indigo-900"
+            className="w-fit ml-auto text-[2.5vw]/[3.5vw] lg:text-[clamp(0.6vw,2vw,0.85vw)]/[clamp(0.7vw,2vw,1vw)] mt-6 
+           [&>li]:flex [&>li]:gap-x-2
+           [&>li>:nth-child(1)]:font-materialSymbolsOulined [&>li>:nth-child(1)]:text-indigo-900"
           >
             <li>
               <span>thumb_up</span>
@@ -41,59 +45,37 @@ export const HeroComponent: FC = () => {
               <span>Эффект 5 массажей</span>
             </li>
           </ul>
-          <p className="text-[clamp(0.7vw,2vw,0.85vw)]/[clamp(0.7vw,2vw,0.9vw)] font-oswald my-5 text-green-700">
+          <p className="text-[2.7vw]/[3vw] sm:text-[2.2vw]/[2.5vw] lg:text-[clamp(0.7vw,2vw,0.85vw)]/[clamp(0.7vw,2vw,0.9vw)] font-oswald mt-5 mb-1 text-green-700">
+            <span className="font-materialSymbolsOulined mr-2">info</span>
             Прошел все испытания. 100% безопасен. Имеет все сертификаты мирового
             стандарта.
           </p>
         </div>
       </section>
       <section className="min-h-[55vh] bg-green-300">
-        <div className="w-[60%] mx-auto grid grid-cols-3 gap-x-2 text-[clamp(0.8vw,1.5vw,1.1vw)]/[clamp(0.8vw,1.5vw,1.2vw)]">
-          <ItemSectionOne
-            title="Биоэнергомассаж"
-            imageSrc="/images/massage1/massage2.jpg"
-          >
-            <p>
-              В процессе бионергомассажа улучшается кровообращение,
-              восстанавливается микроциркуляция, проходят боли в позвоночнике,
-              плечевых, коленных, локтевых суставах и т.п.
-            </p>
-            <p>
-              Снижается гипертонус мышц, проходят межпозвоночные грыжи, вплоть
-              до полного исчезновения. Выводятся токсины, ускоряется обмен
-              веществ, снижается вес, пассивная нагрузка для людей с
-              малоподвижным образом жизни, отличные результаты при проблемах в
-              органах малого таза (простатит, бесплодие и др.).
-            </p>
-            <p>
-              Массаж проводится по мередианам и биологически активным точкам.
-              Очущения приятные, сопровождаются легкой вибрацией.
-            </p>
-            <p>
-              После массажа наносится лечебный согревающий бальзам и делается
-              обертывание пленкой. Вся процедура занимает примерно 1.5-2 часа.
-            </p>
-          </ItemSectionOne>
-          <ItemSectionOne
-            title={"Аппаратная восстановительная физеотерапия"}
-            imageSrc="/images/massage1/massage3.jpg"
-          >
-            <p>
-              Физиотерапия нового покаления с применением импульсного тока
-              низкой частоты, проводится специальными перчатками с серебрянной
-              ниттью, которые подключены к прибору с токами тойже частоты что и
-              клетки нашего организма.
-            </p>
-            <p>
-              Массаж обеспечивает глубокое проникновение в мышцы,суставы, кости,
-              причем при обычной процедуре ручного массажа этого достичь
-              невозможно.
-            </p>
-            <p className="font-bold">
-              <sup>*</sup>Имеются противопоказания. Консультируйтесь у
-              специалиста.
-            </p>
-          </ItemSectionOne>
+        <div className="w-[92%] sm:w-[75%] lg:w-[65%] mx-auto my-8 xl:my-4 flex flex-col font-oswald font-bold uppercase text-[15vw]/[15.5vw] lg:text-[7vw]/[7.5vw]">
+          <div className="place-self-start lg:place-self-stretch whitespace-nowrap text-[10vw]/[10.5vw] lg:text-[5vw]/[5.2vw]">
+            я{" "}
+            <span className="text-[11vw]/[11.5vw] lg:text-[3.5vw]/[3.7vw]">
+              смогу
+            </span>{" "}
+            <span className="text-[12vw]/[12.5vw] lg:text-[4.5vw]/[4.8vw]">
+              помочь
+            </span>
+          </div>
+          <div className="place-self-center my-10 flex items-center justify-between">
+            <div className="hidden lg:block">
+              <ImageRounded
+                imageSrc="/images/massage1/massage1.jpg"
+                width={200}
+                height={200}
+              />
+            </div>
+            ...если...
+          </div>
+          <div className="place-self-center lg:place-self-end whitespace-nowrap font-roboto text-[6vw]/[6.5vw] lg:text-[2.6vw]/[2.8vw]">
+            вы захотите помочь себе
+          </div>
         </div>
       </section>
     </section>

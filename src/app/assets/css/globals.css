@@ -54,7 +54,7 @@
     @apply text-[clamp(1.5vw,2vw,2.5vw)]/[2.6vw] font-oswald font-semibold uppercase;
   }
   h3 {
-    @apply font-oswald font-semibold uppercase text-[clamp(1vw,1.5vw,1.8vw)]/[1.9vw];
+    @apply font-oswald font-semibold uppercase text-[3vw]/[3.5vw] lg:text-[clamp(1.2vw,1.5vw,1.8vw)]/[1.9vw];
   }
   img {
     @apply block w-full h-full;
