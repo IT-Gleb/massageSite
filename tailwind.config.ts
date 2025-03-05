@@ -15,6 +15,7 @@ export default {
         materialSymbolsOulined: ["Material Symbols Outlined"],
         oswald: ["Oswald"],
         verdana: ["Verdana", "Tahoma", "serif"],
+        pacifico: ["Pacifico"],
       },
       colors: {
         background: "var(--background)",
