@@ -1,5 +1,3 @@
-"use client";
-
 import { useState, useRef, useSyncExternalStore } from "react";
 
 function useMyResizeObserver() {

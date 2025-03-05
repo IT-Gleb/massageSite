@@ -1,88 +1,155 @@
-import {
-  useScroll,
-  useTransform,
-  motion,
-  useAnimate,
-  useInView,
-} from "motion/react";
-import React, { FC, useEffect, useRef } from "react";
+"use client";
+
+import { motion, useInView, stagger, animate } from "motion/react";
+import React, { FC, useEffect, useRef, useState } from "react";
+import { ImageBlock } from "../images/imageBlock";
+import { ContentItemNumbered } from "./contentItemNumbered";
+import useMyResizeObserver from "@/hooks/resizeObserver";
+
+const AnimatedList = {
+  hidden: { opacity: 0 },
+  visual: {
+    opacity: [0, 1],
+    transition: {
+      delay: 1,
+      duration: 0.85,
+      when: "beforeChildren",
+      staggerChildren: 0.3,
+    },
+  },
+};
+
+const AnimatedItem = {
+  hidden: { opacity: 0 },
+  visual: { opacity: [0, 1] },
+};
 
 export const ContentOneComponent: FC = () => {
   const triggerRef = useRef(null);
-  const [target, animate] = useAnimate();
-  const [target2, animate2] = useAnimate();
-  const isView = useInView(triggerRef, { amount: 0.5, once: false });
+  const aTarget = useRef(null);
+  const [resizedRef, sizes] = useMyResizeObserver();
+
+  const [widthtImage, setWidthImage] = useState<number>(480);
+  const [heightImage, setHeightImage] = useState<number>(340);
+
+  const isView = useInView(triggerRef, {
+    // root: resizedRef,
+    amount: 0.5,
+    once: false,
+  });
 
   useEffect(() => {
-    (async function Abc() {
+    let tmpW: number = Math.round(sizes.width / 2 - 20);
+    let tmpH: number = Math.round(tmpW / 1.6);
+    if (!isNaN(tmpH) && tmpH > 0) {
+      if (heightImage !== tmpH) {
+        setHeightImage(tmpH);
+      }
+      if (widthtImage !== tmpW) {
+        setWidthImage(tmpW);
+      }
+    }
+  }, [sizes]);
+
+  useEffect(() => {
+    (async () => {
+      const asequence: any = [
+        ["#uuul", { opacity: [0, 1], y: [-100, 0] }, { duration: 0.7 }],
+        [
+          "#uuul li",
+          { opacity: [0, 1], y: [-100, 0] },
+          { at: 0, delay: stagger(0.1, { startDelay: 0.2 }), duration: 0.5 },
+          //{ delay: stagger(0.1, { startDelay: 0.2 }), duration: 0.5 },
+        ],
+      ];
+
       if (isView) {
-        await animate(
-          target.current,
-          { opacity: 1, x: [100, 0] },
-          { ease: "easeIn" }
-        );
-        await animate2(
-          target2.current,
-          { opacity: 1, x: [-100, 0] },
-          { delay: 0.15, ease: "easeOut" }
-        );
+        await animate(asequence);
       } else {
         await animate(
-          target.current,
-          { opacity: 0, x: [0, 100] },
-          { ease: "easeIn" }
-        );
-        await animate2(
-          target2.current,
-          { opacity: 0, x: [0, -100] },
-          { delay: 0.15, ease: "easeOut" }
+          aTarget.current,
+          { opacity: [1, 0], y: [0, -100] },
+          { duration: 0.7, ease: "linear" }
         );
       }
     })();
   }, [isView]);
 
   return (
-    <section className="w-[96%] lg:w-[75%] xl:w-[65%] mx-auto h-[150vh] bg-green-50 relative overflow-hidden">
-      <motion.div
-        ref={target}
-        initial={{ opacity: 0 }}
-        className="absolute z-20 w-[350px] h-[40%] top-[5%] right-5 bg-green-700 text-white place-content-around text-[1.5rem]/[1.6rem] p-4"
+    <section
+      ref={resizedRef}
+      className="w-[96%] lg:w-[75%] xl:w-[65%] mx-auto min-h-screen bg-green-50 relative overflow-hidden text-[2vw]/[2.2vw] lg:text-[1vw]/[1.2vw] pt-20
+      "
+    >
+      <h2 className="underline-offset-4 underline ml-8">Биоэнергомассаж</h2>
+      <motion.ul
+        ref={aTarget}
+        // variants={AnimatedList}
+        // initial="hidden"
+        // animate="visual"
+        id="uuul"
+        className="h-[75%] grid grid-cols-2 lg:grid-cols-4 auto-rows-min mt-5 font-inter gap-x-1 gap-y-2
+       [&>li>div]:rounded-lg [&>li>div]:overflow-hidden [&>li>div:has(img)]:border-none [&>li>div]:border-2 [&>li>div]:border-stone-300  
+       [&>li>div]:shadow-md [&>li>div>p]:bg-stone-50 [&>li>div>p]:text-stone-950 [&>li>div>p]:indent-4 [&>li>div>p]:p-2"
       >
-        fhvjfhvjfhj
-      </motion.div>
-      <motion.div
-        ref={target2}
-        initial={{ opacity: 0 }}
-        className="absolute z-20 w-[350px] h-[40%] top-[20%] left-5 bg-green-400 text-white place-content-around text-[1.5rem]/[1.6rem] p-4"
-      >
-        fhvjfhvjfhj
-      </motion.div>
-
-      <motion.div className="bg-green-50 mt-5 w-[70%] mr-auto">
-        <h3 className="bg-[linear-gradient(to_right,theme(colors.green.300),theme(colors.transparent)_50%)] p-2">
-          Content 1
-        </h3>
-        <div className="grid grid-cols-4 auto-rows-[320px] text-[1vw]/[1.2vw] gap-x-2 font-verdana [&>div>p]:border [&>div>p]:border-slate-400 [&>div>p]:p-2 [&>div>p]:indent-4 ">
-          <div className="place-content-center">
-            <p>Далеко-далеко за словесными горами ?</p>
-          </div>
-          <div className=" place-content-start">
-            <p>Lorem ipsum dolor sit amet consectetur ex?</p>
-          </div>
-          <div ref={triggerRef} className="place-content-end">
+        <motion.li className="place-content-start">
+          <ContentItemNumbered numered={1}>
+            <p className="text-center ml-2">
+              <strong>Аппаратная восстановительная физиотерапия</strong>{" "}
+              (биоэнергомассаж)
+            </p>
+          </ContentItemNumbered>
+        </motion.li>
+        <motion.li className="place-content-evenly">
+          <ContentItemNumbered numered={2}>
             <p>
-              Далеко-далеко за словесными горами в стране гласных и согласных
-              живут рыбные тексты.
+              Физиотерапия нового покаления с применением импульсного тока
+              низкой частоты, проводится специальными{" "}
+              <strong>перчатками</strong> с <strong>серебрянной нитью</strong>,
+              которые подключены к прибору с токами тойже частоты что и клетки
+              нашего организма.
+            </p>
+          </ContentItemNumbered>
+        </motion.li>
+        <motion.li className="hidden lg:block col-span-2 place-content-center mx-auto">
+          <ImageBlock
+            imageSrc="/images/massage1/massage_vector_4.jpg"
+            width={widthtImage}
+            height={heightImage}
+          />
+        </motion.li>
+        <motion.li className="col-span-1 order-2 lg:col-span-2 lg:place-content-center mx-auto">
+          <ImageBlock
+            imageSrc="/images/massage1/massage2.avif"
+            width={widthtImage}
+            height={heightImage}
+          />
+        </motion.li>
+        <motion.li className="order-1 lg:order-3 place-content-center lg:place-content-evenly mt-4">
+          <ContentItemNumbered numered={3}>
+            <p>
+              Массаж обеспечивает глубокое проникновение в мышцы,суставы, кости,
+              причем при обычной процедуре ручного массажа этого достичь
+              невозможно.
+            </p>
+          </ContentItemNumbered>
+        </motion.li>
+        <motion.li className="place-content-end order-5 col-span-2 w-fit lg:col-span-1 text-[1.5vw]/[1.8vw] lg:text-[0.75vw]/[1.1vw] font-bold mx-1">
+          <div>
+            <p>
+              {" "}
+              <span className="font-materialSymbolsOulined font-normal float-start">
+                info
+              </span>
+              Имеются противопоказания. Консультируйтесь у специалиста.
             </p>
           </div>
-          <div className=" place-content-around">
-            <p>
-              Далеко-далеко за, словесными горами в стране гласных и согласных
-              живут рыбные тексты.
-            </p>
-          </div>
-        </div>
-      </motion.div>
+        </motion.li>
+      </motion.ul>
+      <div
+        ref={triggerRef}
+        className="w-full h-[5vh] bg-[url('/images/svg/back.svg')] mt-5"
+      ></div>
     </section>
   );
 };

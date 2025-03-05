@@ -1,8 +1,7 @@
-"use client";
-
-import React, { FC, Suspense, useRef } from "react";
+import React, { FC, Suspense } from "react";
 import { HeroComponent } from "../hero/heroComponent";
 import { ContentOneComponent } from "./contentOneComponent";
+import { ContentTwoComponent } from "./contentTwoComponent";
 
 export const ContentMain: FC = () => {
   return (
@@ -12,6 +11,9 @@ export const ContentMain: FC = () => {
       </Suspense>
       <Suspense>
         <ContentOneComponent />
+      </Suspense>
+      <Suspense>
+        <ContentTwoComponent />
       </Suspense>
     </main>
   );
