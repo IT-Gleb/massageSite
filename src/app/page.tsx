@@ -1,7 +1,4 @@
-import { HeroComponent } from "@/components/version3/hero/heroComponent";
-//"use client";
-
-//import dynamic from "next/dynamic";
+import { ContentMain } from "@/components/version3/content/contentMain";
 import { Suspense } from "react";
 
 // const HeroComp = dynamic(
@@ -14,10 +11,8 @@ import { Suspense } from "react";
 
 export default async function Home() {
   return (
-    <main className="flex flex-col min-h-[100vh]">
-      <Suspense fallback={<div>идет загрузка...</div>}>
-        <HeroComponent />
-      </Suspense>
-    </main>
+    <Suspense>
+      <ContentMain />
+    </Suspense>
   );
 }

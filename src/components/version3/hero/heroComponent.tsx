@@ -67,7 +67,6 @@ export const HeroComponent: FC = () => {
           variants={Aitem}
           initial="initial"
           animate="animate"
-          whileInView={"animate"}
           className="w-fit mx-auto lg:mx-0 sm:content-center lg:content-end text-indigo-900 font-verdana mt-8 lg:mt-0"
         >
           <div className="w-fit ml-auto flex items-center gap-x-2">
