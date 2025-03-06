@@ -13,7 +13,7 @@ export const ContentItemNumbered: FC<PropsWithChildren<INumbered>> = ({
 }) => {
   return (
     <div className={`${clasString ? clasString : ""}`}>
-      <span className="float-left text-slate-400 text-[5vw]/[5.5vw] lg:text-[3vw]/[3.5vw] mt-2 mx-4 font-verdana ">
+      <span className="float-left text-slate-400 text-[5vw]/[5.5vw] lg:text-[2.5vw]/[3vw] mt-2 mx-4 font-verdana ">
         {numered}
       </span>
       {children}
