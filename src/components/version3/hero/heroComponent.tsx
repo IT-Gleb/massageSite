@@ -12,9 +12,9 @@ const Acontainer = {
   show: {
     opacity: 1,
     transition: {
-      delay: 0.5,
+      delay: 0.8,
       duration: 0.5,
-      staggerChildren: 1,
+      staggerChildren: 1.5,
     },
   },
 };
@@ -25,7 +25,7 @@ const Aitem = {
     opacity: [0, 1],
     x: 0,
     transition: {
-      delay: 1,
+      delay: 1.2,
       // repeat: Infinity,
       // repeatDelay: 2,
     },
@@ -38,9 +38,9 @@ const AText = {
     opacity: [0, 1],
     x: [50, 0],
     transition: {
-      delay: 1.5,
+      delay: 2.5,
       when: "beforeChildren",
-      staggerChildren: 0.5,
+      staggerChildren: 0.3,
     },
   },
 };
@@ -52,9 +52,15 @@ const AtextItem = {
 
 export const HeroComponent: FC = () => {
   return (
-    <section className="flex flex-col bg-green-50">
+    <section className="flex flex-col bg-green-50 relative">
       <HeroNavigation />
-      <section className="w-[90%] xs:w-[70%] lg:w-[65%] mx-auto min-h-[45vh] grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-y-8 lg:gap-y-0 gap-x-2 xl:gap-x-10">
+      <motion.div
+        initial={{ y: -350 }}
+        animate={{ y: [-350, 100, 0] }}
+        transition={{ duration: 0.5 }}
+        className="hidden lg:block absolute z-0 w-[450px] h-[450px] min-[2500px]:w-[650px] min-[2500px]:h-[650px] top-[-90px] min-[2500px]:top-[-120px] right-[11%] bg-[url('/images/massage1/hands_1.png')] bg-no-repeat bg-cover bg-bottom"
+      ></motion.div>
+      <section className="relative z-[5] w-[90%] xs:w-[70%] lg:w-[65%] mx-auto min-h-[45vh] grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-y-8 lg:gap-y-0 gap-x-2 xl:gap-x-10">
         <motion.div
           variants={Acontainer}
           initial="hidden"
@@ -133,7 +139,7 @@ export const HeroComponent: FC = () => {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: [0, 1], x: [25, 0] }}
-            transition={{ delay: 3 }}
+            transition={{ delay: 3.5 }}
             className="place-self-center my-10 flex items-center justify-between"
           >
             <div className="hidden lg:block">
@@ -148,7 +154,7 @@ export const HeroComponent: FC = () => {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: [0, 1], x: [-50, 0] }}
-            transition={{ delay: 3.5 }}
+            transition={{ delay: 4 }}
             className="place-self-center lg:place-self-end font-verdana text-[5.5vw]/[6vw] lg:text-[2vw]/[2.4vw]"
           >
             <p className="indent-2 text-right text-balance">

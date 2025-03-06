@@ -21,3 +21,5 @@ declare interface IimageProps {
   width: number;
   height: number;
 }
+
+declare type TScrollDownUp = "down" | "up";

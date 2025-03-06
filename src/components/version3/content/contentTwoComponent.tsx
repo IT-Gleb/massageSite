@@ -56,7 +56,7 @@ export const ContentTwoComponent: FC = () => {
         [
           "#dedicatedList",
           { opacity: [0, 1], y: [-200, 0] },
-          { duration: 0.7, delay: 1.2 },
+          { duration: 0.7, delay: 0.85 },
         ],
         [
           "#dedicatedList li",
