@@ -20,6 +20,16 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        mint: {
+          "100": "#FFFE99",
+          "200": "#FFD599",
+          "300": "#FFDB99",
+          "400": "#B3A36B",
+          "500": "#B3956B",
+          "600": "#EA9A62",
+          "700": "#A47345",
+          "800": "#A45445",
+        },
       },
     },
   },

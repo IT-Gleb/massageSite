@@ -1,9 +1,26 @@
 "use client";
-import React, { FC, useEffect, useRef } from "react";
+import React, { FC } from "react";
 import { ContentItemNumbered } from "./contentItemNumbered";
 import { ContainerContent } from "./containerContent";
-import { motion, animate, stagger, useInView } from "motion/react";
-import { useScrollDownUp } from "@/hooks/scrollUpDown";
+// import { motion, animate, stagger, useInView } from "motion/react";
+// import { useScrollDownUp } from "@/hooks/scrollUpDown";
+
+const asequence: any = [
+  [
+    "#dedicatedList",
+    { opacity: [0, 1], y: [-200, 0] },
+    { duration: 0.7, delay: 0.85 },
+  ],
+  [
+    "#dedicatedList li",
+    { opacity: [0, 1], x: [200, -50, 0] },
+    {
+      at: "<0.65",
+      //      delay: stagger(0.1, { startDelay: 0.25 }),
+      duration: 0.5,
+    },
+  ],
+];
 
 const protivStrings: { num: number; text: string }[] = [
   { num: 1, text: "неверие пациента в действие методики" },
@@ -40,55 +57,30 @@ const protivStrings: { num: number; text: string }[] = [
 // { num: 0, text: "Проконсультируйтесь с лечащим врачем" },
 
 export const ContentTwoComponent: FC = () => {
-  const tgRef = useRef(null);
-  const { scrollDirection } = useScrollDownUp();
+  // const tgRef = useRef(null);
+  // const { scrollDirection } = useScrollDownUp();
 
-  const isView = useInView(tgRef, {
-    // root: resizedRef,
-    amount: 1,
-    once: false,
-  });
+  // const isView = useInView(tgRef, {
+  //   // root: resizedRef,
+  //   amount: 1,
+  //   once: false,
+  // });
 
-  useEffect(() => {
-    // console.log(scrollDirection);
-    (async () => {
-      const asequence: any = [
-        [
-          "#dedicatedList",
-          { opacity: [0, 1], y: [-200, 0] },
-          { duration: 0.7, delay: 0.85 },
-        ],
-        [
-          "#dedicatedList li",
-          { opacity: [0, 1], x: [200, -50, 0] },
-          {
-            at: "<0.65",
-            delay: stagger(0.1, { startDelay: 0.25 }),
-            duration: 0.5,
-          },
-          //{ delay: stagger(0.1, { startDelay: 0.2 }), duration: 0.5 },
-        ],
-      ];
-
-      if (isView && scrollDirection === "down") {
-        await animate(asequence);
-      }
-      //else if (scrollDirection === "up") {
-      //   await animate(
-      //     aTarget.current,
-      //     { opacity: [1, 0], y: [0, -100] },
-      //     { duration: 0.7, ease: "linear" }
-      //   );
-      // }
-    })();
-  }, [isView]);
+  // useEffect(() => {
+  //   // console.log(scrollDirection);
+  //   (async () => {
+  //     if (isView && scrollDirection === "down") {
+  //       await animate(asequence);
+  //     }
+  //   })();
+  // }, [isView]);
 
   return (
     <ContainerContent backgroundClass="bg-sky-50/50">
-      <h2 ref={tgRef} className="underline underline-offset-4 w-fit ml-5">
+      <h2 className="underline underline-offset-4 w-fit ml-5">
         противопоказания
       </h2>
-      <motion.ul
+      <ul
         id="dedicatedList"
         className="grid grid-cols-2 xl:grid-cols-3 2xl:grid-cols-5 gap-2 text-[0.9vw]/[1.2vw] mt-10 mx-5 
         [&>li>div>p]:shadow-md
@@ -99,7 +91,7 @@ export const ContentTwoComponent: FC = () => {
         {protivStrings.map((item, index, array) => {
           if ([3, 8].includes(index)) {
             return (
-              <motion.li
+              <li
                 key={index}
                 className={`col-span-1 2xl:${
                   index === 3 || index === 8 ? "col-span-2" : "col-span-3"
@@ -116,11 +108,11 @@ export const ContentTwoComponent: FC = () => {
                 <p className="text-[3.5vw]/[3.8vw] lg:text-[1.6vw]/[1.8vw]">
                   {item.text}
                 </p>
-              </motion.li>
+              </li>
             );
           }
           return (
-            <motion.li
+            <li
               key={index}
               className={` ${
                 index === 7 || index === array.length - 1
@@ -133,10 +125,10 @@ export const ContentTwoComponent: FC = () => {
                   {item.text}.
                 </p>
               </ContentItemNumbered>
-            </motion.li>
+            </li>
           );
         })}
-      </motion.ul>
+      </ul>
       <div className="w-full h-[2vh] lg:h-[5vh] bg-[url('/images/svg/back.svg')] mt-5"></div>
     </ContainerContent>
   );

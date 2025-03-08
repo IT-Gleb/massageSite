@@ -7,7 +7,7 @@ export const FooterLayout: FC = () => {
   return (
     <footer className="text-green-50">
       <Suspense>
-        <ContainerContent backgroundClass="bg-green-600">
+        <ContainerContent backgroundClass="bg-green-700">
           <div className="pb-20 flex flex-wrap items-center gap-2 justify-evenly text-[4vw]/[4vw] md:text-[1.6vw]/[1.7vw] lg:text-[1vw]/[1.1vw]">
             <a href={`tel:+${InfoObj.phoneReg}`} className="font-oswald">
               тел.: {InfoObj.phone_mask}
