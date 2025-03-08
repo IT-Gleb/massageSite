@@ -223,6 +223,7 @@ export const SvgInfoGraphics1: FC<TAnimateProp> = ({ doAnimate }) => {
 
       ["#Frame_0>#group5>#chel_5", { opacity: [1] }, { duration: 5 }],
       //-------------------
+      ["#Frame_0", { opacity: [1, 0] }, { duration: 2 }],
     ];
 
     if (MyAnimation === null) {
@@ -239,7 +240,7 @@ export const SvgInfoGraphics1: FC<TAnimateProp> = ({ doAnimate }) => {
   }, [doAnimate]);
 
   return (
-    <svg
+    <motion.svg
       version="1.1"
       id="Frame_0"
       xmlns="http://www.w3.org/2000/svg"
@@ -2084,6 +2085,6 @@ export const SvgInfoGraphics1: FC<TAnimateProp> = ({ doAnimate }) => {
           />
         </motion.g>
       </g>
-    </svg>
+    </motion.svg>
   );
 };
