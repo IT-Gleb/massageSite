@@ -84,7 +84,7 @@ export const ContentTwoComponent: FC = () => {
   }, [isView]);
 
   return (
-    <ContainerContent backgroundClass="bg-green-50/50">
+    <ContainerContent backgroundClass="bg-sky-50/50">
       <h2 ref={tgRef} className="underline underline-offset-4 w-fit ml-5">
         противопоказания
       </h2>
@@ -96,18 +96,20 @@ export const ContentTwoComponent: FC = () => {
        [&>li>div>p]:indent-2 [&>li>div>p]:p-2 [&>li>div>p]:text-yellow-800 [&>li>div>p]:first-letter:uppercase [&>li>div>p]:pb-5
        "
       >
-        {protivStrings.map((item, index) => {
+        {protivStrings.map((item, index, array) => {
           if ([3, 8].includes(index)) {
             return (
               <motion.li
                 key={index}
-                className="col-span-1 2xl:col-span-2 place-content-around font-mono text-[1.6vw]/[1.8vw] text-center uppercase bg-yellow-50 shadow-md"
+                className={`col-span-1 2xl:${
+                  index === 3 || index === 8 ? "col-span-2" : "col-span-3"
+                } place-content-around font-mono text-[1.6vw]/[1.8vw] text-center uppercase bg-yellow-50 shadow-md`}
               >
                 <aside
-                  className="w-[26px] h-[26px] mx-auto mb-3 lg:mb-0 lg:w-[60px] lg:h-[60px] bg-yellow-300 text-red-500 
+                  className="w-[26px] h-[26px] mx-auto mb-3 lg:mb-0 lg:w-[50px] lg:h-[50px] min-[2500px]:w-[60px] min-[2500px]:h-[60px] bg-yellow-300 text-red-500 
                 lg:rounded-xl overflow-hidden p-1 lg:p-2 lg:float-start lg:mx-4"
                 >
-                  <span className="font-materialSymbolsOulined text-[3.5vw]/[4vw] sm:text-[1.8vw]/[2vw] lg:text-[2vw]/[2.1vw]">
+                  <span className="font-materialSymbolsOulined text-[3.5vw]/[4vw] sm:text-[1.6vw]/[1.8vw]">
                     error
                   </span>
                 </aside>
@@ -120,7 +122,11 @@ export const ContentTwoComponent: FC = () => {
           return (
             <motion.li
               key={index}
-              className="place-content-evenly overflow-hidden"
+              className={` ${
+                index === 7 || index === array.length - 1
+                  ? "2xl:col-span-2 2xl:w-[90%] 2xl:mx-auto 2xl:place-content-center"
+                  : "place-content-evenly"
+              } overflow-hidden`}
             >
               <ContentItemNumbered numered={item.num}>
                 <p className="text-[2.6vw]/[2.9vw] md:text-[1.6vw]/[1.8vw] lg:text-[0.75vw]/[1vw]">

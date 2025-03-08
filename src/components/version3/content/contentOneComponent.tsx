@@ -87,7 +87,7 @@ export const ContentOneComponent: FC = () => {
   }, [isView]);
 
   return (
-    <ContainerContent backgroundClass="bg-sky-50/50">
+    <ContainerContent backgroundClass="bg-green-50/50">
       <div ref={resizedRef}>
         <h2 ref={triggerRef} className="underline-offset-4 underline ml-8">
           Биоэнергомассаж
