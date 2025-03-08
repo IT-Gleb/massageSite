@@ -6,6 +6,7 @@ import { SvgHandsUp } from "@/components/svg_components/svgHandsUp";
 import { ImageRounded } from "../images/imageRounded";
 import { HeroNavigation } from "./heroNavigation";
 import { motion } from "motion/react";
+import { Loader } from "../loader/Loader";
 
 const Acontainer = {
   hidden: { opacity: 0 },

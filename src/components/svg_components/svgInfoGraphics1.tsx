@@ -1,234 +1,243 @@
 import React, { FC, useEffect, useState } from "react";
-import { motion, animate, stagger } from "motion/react";
+import { motion, animate, stagger, useReducedMotion } from "motion/react";
 
 type TAnimateProp = {
   doAnimate: boolean;
+  canAnimate: boolean;
 };
 
 let MyAnimation: any = null;
 
-export const SvgInfoGraphics1: FC<TAnimateProp> = ({ doAnimate }) => {
+const AnimationS: any = [
+  //-----Анимация первого текста-----
+  [
+    "#Frame_0>#textGroup>#text1",
+    { opacity: [0, 1], y: [-100, 20, 0] },
+    { delay: 1, duration: 0.5, type: "spring" },
+  ],
+  //---------------------------------
+  //-----Анимация первой иконки-----
+  [
+    "#Frame_0>#group1>#center2>#S1_2",
+    { pathLength: [0, 1] },
+    { at: "+0.75", duration: 0.5 },
+  ],
+  [
+    "#Frame_0>#group1>#center1>#S1",
+    { pathLength: [0, 1], pathOffset: [1, 0] },
+    { at: "-0.65", duration: 0.75 },
+  ],
+  [
+    "#Frame_0>#group1>#chel_1",
+    { opacity: [0, 1, 0, 1, 0, 1, 0, 1] },
+    { at: "+0.5", duration: 1 },
+  ],
+  ["#Frame_0>#group1>#chel_1", { opacity: [1] }, { duration: 1 }],
+  //-----Анимация первой иконки-----
+  //-----Анимация первой линии-----
+  ["#Frame_0>#lines>#line1>#S1", { pathLength: [0, 1] }, { duration: 0.5 }],
+  ["#Frame_0>#lines>#line1>#S1", { pathLength: [1] }, { duration: 1.5 }],
+  //-------------------------------
+  //-----Вторая иконка-----
+  [
+    "#Frame_0>#group2>#center2_2>#S1_2",
+    { pathLength: [0, 1] },
+    { at: "-1.55", duration: 0.5 },
+  ],
+  [
+    "#Frame_0>#group2>#center2_1>#S1",
+    { pathLength: [0, 1], pathOffset: [1, 0] },
+    { at: "-0.5", duration: 0.75 },
+  ],
+  //-----------------------
+  //----Вторая иконка-----
+  [
+    "#Frame_0>#group2>#chel_2",
+    { opacity: [0, 1, 0, 1, 0, 1] },
+    { duration: 0.5 },
+  ],
+  ["#Frame_0>#group2>#chel_2", { opacity: [1] }, { duration: 2 }],
+  //----Вторая иконка-----
+  //--Убрать 1-й текст-----
+  [
+    "#Frame_0>#textGroup>#text1",
+    { opacity: [1, 0], y: [0, -100] },
+    { at: "-3", duration: 0.5 },
+  ],
+  //-----------------------
+  //------Показать 2-й текст-------
+  [
+    "#Frame_0>#textGroup>#text2",
+    { opacity: [0, 1], x: [-100, 0] },
+    { duration: 0.5, type: "spring" },
+  ],
+  ["#Frame_0>#textGroup>#text2", { opacity: [1] }, { duration: 1 }],
+  //-------------------------------
+  //-----Анимация второй линии-----
+  ["#Frame_0>#lines>#line2>#S1_2", { pathLength: [0, 1] }, { duration: 0.5 }],
+  ["#Frame_0>#lines>#line2>#S1_2", { pathLength: [1] }, { duration: 1.5 }],
+  //-------------------------------
+  //Убрать 2-й текст
+  [
+    "#Frame_0>#textGroup>#text2",
+    { opacity: [1, 0], x: [0, -100] },
+    { at: "-2", duration: 0.5, type: "spring" },
+  ],
+  //--------------------------
+  //------Показать 3-й текст-------
+  [
+    "#Frame_0>#textGroup>#text3",
+    { opacity: [0, 1], x: [-100, 0] },
+    { duration: 0.5, type: "spring" },
+  ],
+  [
+    "#Frame_0>#textGroup>#text3",
+    { opacity: [1] },
+    { type: "spring", duration: 1 },
+  ],
+  //-------------------------------
+
+  //----Третья иконка-----
+  [
+    "#Frame_0>#group3>#center3_2>#S1_2",
+    { pathLength: [0, 1] },
+    { at: "-1.55", duration: 0.5 },
+  ],
+  [
+    "#Frame_0>#group3>#center3_1>#S1",
+    { pathLength: [0, 1], pathOffset: [1, 0] },
+    { at: "-0.5", duration: 0.75 },
+  ],
+
+  [
+    "#Frame_0>#group3>#chel_3",
+    { opacity: [0, 1, 0, 1, 0, 1] },
+    { duration: 0.5 },
+  ],
+  //-----Checked-----
+  [
+    "#Frame_0>#group3>#check_3>#S10",
+    { opacity: [0, 1], pathLength: [0, 1] },
+    { duration: 0.55 },
+  ],
+  //-----------------
+  ["#Frame_0>#group3>#chel_3", { opacity: [1] }, { duration: 2 }],
+  //----Третья иконка-----
+  //----------Третья линия-----
+  [
+    "#Frame_0>#lines>#line3>#S1_2_2",
+    { pathLength: [0, 1] },
+    { duration: 0.35 },
+  ],
+  //--------------------------
+  //Убрать 3-й текст-------
+  [
+    "#Frame_0>#textGroup>#text3",
+    { opacity: [1, 0], x: [0, -100] },
+    { at: "-0.5", duration: 0.5, type: "spring" },
+  ],
+  [
+    "#Frame_0>#textGroup>#text4",
+    { opacity: [0, 1], x: [-100, 0] },
+    { type: "spring", duration: 0.5 },
+  ],
+  //---------------
+  //------Четвертая иконка-------------
+  [
+    "#Frame_0>#group4>#center4_2>#S1_2",
+    { pathLength: [0, 1] },
+    { duration: 0.5 },
+  ],
+  [
+    "#Frame_0>#group4>#center4_1>#S1",
+    { pathLength: [0, 1], pathOffset: [1, 0] },
+    { at: "-0.5", duration: 0.75 },
+  ],
+
+  [
+    "#Frame_0>#group4>#chel_4",
+    { opacity: [0, 1, 0, 1, 0, 1] },
+    { duration: 0.5 },
+  ],
+  [
+    "#Frame_0>#group4>#hands",
+    { opacity: [0, 1, 0, 1, 0, 1] },
+    { duration: 0.5 },
+  ],
+  ["#Frame_0>#group4>#hands", { opacity: [1] }, { duration: 2 }],
+  //-------------------
+  //четвертая линия
+  [
+    "#Frame_0>#lines>#line4>#S1_2_2_2",
+    { pathLength: [0, 1] },
+    { duration: 0.5 },
+  ],
+  //-------------------
+  //-------Текcт-------
+  [
+    "#Frame_0>#textGroup>#text4",
+    { opacity: [1, 0], x: [0, -100] },
+    { at: "-0.6", duration: 0.35 },
+  ],
+  [
+    "#Frame_0>#textGroup>#text5",
+    { opacity: [0, 1], x: [-100, 0] },
+    { type: "spring", duration: 0.5 },
+  ],
+  //--------------------
+  //Пятая иконка
+  [
+    "#Frame_0>#group5>#center5_1>#S1",
+    {
+      pathLength: [0, 1],
+      stroke: ["#25657F", "#25657F", "#25657F", "#7DBD2E"],
+    },
+    { duration: 0.5 },
+  ],
+  [
+    "#Frame_0>#group5>#center5_2>#S1_2",
+    {
+      pathLength: [0, 1],
+      pathOffset: [1, 0],
+      stroke: ["#25657F", "#25657F", "#25657F", "#7DBD2E"],
+    },
+    { at: "-0.5", duration: 1 },
+  ],
+  [
+    "#Frame_0>#group5>#chel_5",
+    { opacity: [0, 1, 0, 1, 0, 1] },
+    { duration: 0.5 },
+  ],
+  [
+    "#Frame_0>#group5>#chel_5 path",
+    { fill: ["#25657F", "#7DBD2E"] },
+    { duration: 1 },
+  ],
+
+  ["#Frame_0>#group5>#chel_5", { opacity: [1] }, { duration: 5 }],
+  //-------------------
+  ["#Frame_0", { opacity: [1, 0] }, { duration: 2 }],
+];
+
+export const SvgInfoGraphics1: FC<TAnimateProp> = ({
+  doAnimate,
+  canAnimate,
+}) => {
   const [animTime, setAnimTime] = useState<number>(0);
 
   useEffect(() => {
-    const AnimationS: any = [
-      //-----Анимация первого текста-----
-      [
-        "#Frame_0>#textGroup>#text1",
-        { opacity: [0, 1], y: [-100, 20, 0] },
-        { delay: 1, duration: 0.5, type: "spring" },
-      ],
-      //---------------------------------
-      //-----Анимация первой иконки-----
-      [
-        "#Frame_0>#group1>#center2>#S1_2",
-        { pathLength: [0, 1] },
-        { at: "+0.75", duration: 0.5 },
-      ],
-      [
-        "#Frame_0>#group1>#center1>#S1",
-        { pathLength: [0, 1], pathOffset: [1, 0] },
-        { at: "-0.65", duration: 0.75 },
-      ],
-      [
-        "#Frame_0>#group1>#chel_1",
-        { opacity: [0, 1, 0, 1, 0, 1, 0, 1] },
-        { at: "+0.5", duration: 1 },
-      ],
-      ["#Frame_0>#group1>#chel_1", { opacity: [1] }, { duration: 1 }],
-      //-----Анимация первой иконки-----
-      //-----Анимация первой линии-----
-      ["#Frame_0>#lines>#line1>#S1", { pathLength: [0, 1] }, { duration: 0.5 }],
-      ["#Frame_0>#lines>#line1>#S1", { pathLength: [1] }, { duration: 1.5 }],
-      //-------------------------------
-      //-----Вторая иконка-----
-      [
-        "#Frame_0>#group2>#center2_2>#S1_2",
-        { pathLength: [0, 1] },
-        { at: "-1.55", duration: 0.5 },
-      ],
-      [
-        "#Frame_0>#group2>#center2_1>#S1",
-        { pathLength: [0, 1], pathOffset: [1, 0] },
-        { at: "-0.5", duration: 0.75 },
-      ],
-      //-----------------------
-      //----Вторая иконка-----
-      [
-        "#Frame_0>#group2>#chel_2",
-        { opacity: [0, 1, 0, 1, 0, 1] },
-        { duration: 0.5 },
-      ],
-      ["#Frame_0>#group2>#chel_2", { opacity: [1] }, { duration: 2 }],
-      //----Вторая иконка-----
-      //--Убрать 1-й текст-----
-      [
-        "#Frame_0>#textGroup>#text1",
-        { opacity: [1, 0], y: [0, -100] },
-        { at: "-3", duration: 0.5 },
-      ],
-      //-----------------------
-      //------Показать 2-й текст-------
-      [
-        "#Frame_0>#textGroup>#text2",
-        { opacity: [0, 1], x: [-100, 0] },
-        { duration: 0.5, type: "spring" },
-      ],
-      ["#Frame_0>#textGroup>#text2", { opacity: [1] }, { duration: 1 }],
-      //-------------------------------
-      //-----Анимация второй линии-----
-      [
-        "#Frame_0>#lines>#line2>#S1_2",
-        { pathLength: [0, 1] },
-        { duration: 0.5 },
-      ],
-      ["#Frame_0>#lines>#line2>#S1_2", { pathLength: [1] }, { duration: 1.5 }],
-      //-------------------------------
-      //Убрать 2-й текст
-      [
-        "#Frame_0>#textGroup>#text2",
-        { opacity: [1, 0], x: [0, -100] },
-        { at: "-2", duration: 0.5, type: "spring" },
-      ],
-      //--------------------------
-      //------Показать 3-й текст-------
-      [
-        "#Frame_0>#textGroup>#text3",
-        { opacity: [0, 1], x: [-100, 0] },
-        { duration: 0.5, type: "spring" },
-      ],
-      [
-        "#Frame_0>#textGroup>#text3",
-        { opacity: [1] },
-        { type: "spring", duration: 1 },
-      ],
-      //-------------------------------
-
-      //----Третья иконка-----
-      [
-        "#Frame_0>#group3>#center3_2>#S1_2",
-        { pathLength: [0, 1] },
-        { at: "-1.55", duration: 0.5 },
-      ],
-      [
-        "#Frame_0>#group3>#center3_1>#S1",
-        { pathLength: [0, 1], pathOffset: [1, 0] },
-        { at: "-0.5", duration: 0.75 },
-      ],
-
-      [
-        "#Frame_0>#group3>#chel_3",
-        { opacity: [0, 1, 0, 1, 0, 1] },
-        { duration: 0.5 },
-      ],
-      //-----Checked-----
-      [
-        "#Frame_0>#group3>#check_3>#S10",
-        { opacity: [0, 1], pathLength: [0, 1] },
-        { duration: 0.55 },
-      ],
-      //-----------------
-      ["#Frame_0>#group3>#chel_3", { opacity: [1] }, { duration: 2 }],
-      //----Третья иконка-----
-      //----------Третья линия-----
-      [
-        "#Frame_0>#lines>#line3>#S1_2_2",
-        { pathLength: [0, 1] },
-        { duration: 0.35 },
-      ],
-      //--------------------------
-      //Убрать 3-й текст-------
-      [
-        "#Frame_0>#textGroup>#text3",
-        { opacity: [1, 0], x: [0, -100] },
-        { at: "-0.5", duration: 0.5, type: "spring" },
-      ],
-      [
-        "#Frame_0>#textGroup>#text4",
-        { opacity: [0, 1], x: [-100, 0] },
-        { type: "spring", duration: 0.5 },
-      ],
-      //---------------
-      //------Четвертая иконка-------------
-      [
-        "#Frame_0>#group4>#center4_2>#S1_2",
-        { pathLength: [0, 1] },
-        { duration: 0.5 },
-      ],
-      [
-        "#Frame_0>#group4>#center4_1>#S1",
-        { pathLength: [0, 1], pathOffset: [1, 0] },
-        { at: "-0.5", duration: 0.75 },
-      ],
-
-      [
-        "#Frame_0>#group4>#chel_4",
-        { opacity: [0, 1, 0, 1, 0, 1] },
-        { duration: 0.5 },
-      ],
-      [
-        "#Frame_0>#group4>#hands",
-        { opacity: [0, 1, 0, 1, 0, 1] },
-        { duration: 0.5 },
-      ],
-      ["#Frame_0>#group4>#hands", { opacity: [1] }, { duration: 2 }],
-      //-------------------
-      //четвертая линия
-      [
-        "#Frame_0>#lines>#line4>#S1_2_2_2",
-        { pathLength: [0, 1] },
-        { duration: 0.5 },
-      ],
-      //-------------------
-      //-------Текcт-------
-      [
-        "#Frame_0>#textGroup>#text4",
-        { opacity: [1, 0], x: [0, -100] },
-        { at: "-0.6", duration: 0.35 },
-      ],
-      [
-        "#Frame_0>#textGroup>#text5",
-        { opacity: [0, 1], x: [-100, 0] },
-        { type: "spring", duration: 0.5 },
-      ],
-      //--------------------
-      //Пятая иконка
-      [
-        "#Frame_0>#group5>#center5_1>#S1",
-        {
-          pathLength: [0, 1],
-          stroke: ["#25657F", "#25657F", "#25657F", "#7DBD2E"],
-        },
-        { duration: 0.5 },
-      ],
-      [
-        "#Frame_0>#group5>#center5_2>#S1_2",
-        {
-          pathLength: [0, 1],
-          pathOffset: [1, 0],
-          stroke: ["#25657F", "#25657F", "#25657F", "#7DBD2E"],
-        },
-        { at: "-0.5", duration: 1 },
-      ],
-      [
-        "#Frame_0>#group5>#chel_5",
-        { opacity: [0, 1, 0, 1, 0, 1] },
-        { duration: 0.5 },
-      ],
-      [
-        "#Frame_0>#group5>#chel_5 path",
-        { fill: ["#25657F", "#7DBD2E"] },
-        { duration: 1 },
-      ],
-
-      ["#Frame_0>#group5>#chel_5", { opacity: [1] }, { duration: 5 }],
-      //-------------------
-      ["#Frame_0", { opacity: [1, 0] }, { duration: 2 }],
-    ];
-
     if (MyAnimation === null) {
       MyAnimation = animate(AnimationS, { repeat: Infinity });
     }
+    //Проверить на reduce Motion
+    if (!canAnimate) {
+      console.log("Reduce Motion detected");
+      setAnimTime(25);
+      MyAnimation.time = 25;
+      MyAnimation.pause();
+      return;
+    }
+
     if (doAnimate) {
       MyAnimation.time = animTime;
       MyAnimation.play();
@@ -237,7 +246,7 @@ export const SvgInfoGraphics1: FC<TAnimateProp> = ({ doAnimate }) => {
       setAnimTime(MyAnimation.time);
       MyAnimation.pause();
     }
-  }, [doAnimate]);
+  }, [doAnimate, canAnimate]);
 
   return (
     <motion.svg
