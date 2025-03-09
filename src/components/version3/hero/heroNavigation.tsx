@@ -1,10 +1,11 @@
+import { ancorsArray } from "@/utils/functions";
 import { InfoObj } from "@/utils/info";
 import React, { FC } from "react";
 
 export const HeroNavigation: FC = () => {
   return (
     <nav
-      className="text-[clamp(1rem,1.5rem,1.8rem)]/[clamp(1rem,1.5rem,1.9rem)] font-oswald px-2 text-neutral-700
+      className="text-[clamp(1rem,1.5rem,1.8rem)]/[clamp(1rem,1.5rem,1.9rem)] font-oswald px-2 text-neutral-700 z-30
          py-1 overflow-hidden flex items-start justify-between gap-x-2"
     >
       <a
@@ -17,13 +18,17 @@ export const HeroNavigation: FC = () => {
         {InfoObj.phone_mask}
       </a>
       <div className="flex items-center gap-x-2 mr-2 xl:mr-20 font-verdana ">
-        <a href="#" title="Услуги" className="flex items-center gap-x-1">
-          <span className="font-materialSymbolsOulined">
+        <a
+          href={ancorsArray[0].ancor}
+          title="Услуги"
+          className="flex items-center gap-x-1 cursor-pointer"
+        >
+          <span className="inline-block font-materialSymbolsOulined">
             medical_information
           </span>
         </a>
         <a
-          href="#"
+          href={ancorsArray[1].ancor}
           title="реклама видео массажа"
           className="flex items-center gap-x-1"
         >
@@ -31,7 +36,7 @@ export const HeroNavigation: FC = () => {
         </a>
         <a
           title="Местоположение"
-          href="#"
+          href={ancorsArray[2].ancor}
           className="flex items-center gap-x-1"
         >
           <span className="font-materialSymbolsOulined">location_on</span>

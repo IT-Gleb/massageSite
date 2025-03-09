@@ -76,7 +76,7 @@ export const ContentTwoComponent: FC = () => {
   // }, [isView]);
 
   return (
-    <ContainerContent backgroundClass="bg-sky-50/50">
+    <ContainerContent backgroundClass="bg-green-50/50">
       <h2 className="underline underline-offset-4 w-fit ml-5">
         противопоказания
       </h2>

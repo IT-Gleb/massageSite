@@ -19,7 +19,7 @@ export const AnimoButton: FC<TButtonProps> = ({ title, click }) => {
   return (
     <div
       ref={btnRef}
-      className={`w-[80px] h-[28px] md:w-[120px] md:h-[32px] p-[2px] border-2 border-mint-600 rounded-3xl overflow-hidden 
+      className={`w-[80px] h-[28px] md:w-[120px] md:h-[32px] p-[2px] border-2 border-mint-800 rounded-3xl overflow-hidden
       ${
         position === "left"
           ? "bg-[linear-gradient(to_right,theme(colors.mint.500),theme(colors.mint.300))]"
@@ -32,7 +32,7 @@ export const AnimoButton: FC<TButtonProps> = ({ title, click }) => {
         style={{
           x: position === "right" ? sizes.width - 34 : 2,
         }}
-        className="w-[20px] h-[20px] md:w-[24px] md:h-[24px] rounded-full border-2 border-mint-700 bg-mint-300 cursor-pointer"
+        className="w-[20px] h-[20px] md:w-[24px] md:h-[24px] rounded-full border-2 border-mint-900 bg-mint-300 cursor-pointer"
         title={title}
         onClick={(e) => {
           e.preventDefault();

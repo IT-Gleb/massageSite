@@ -1,4 +1,9 @@
 export const CaruselDataAttributeName: string = "carusel-item";
+export const ancorsArray: { ancor: string; idString: string }[] = [
+  { ancor: "#services", idString: "services" },
+  { ancor: "#videoCaps", idString: "videoCaps" },
+  { ancor: "#locationCaps", idString: "locationCaps" },
+];
 
 //Рандом целого числа из диапазона
 export function randomInteger(min: number, max: number): number {

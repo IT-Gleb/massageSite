@@ -7,6 +7,7 @@ export default {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   darkMode: "class",
+
   theme: {
     extend: {
       fontFamily: {
@@ -21,6 +22,7 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         mint: {
+          "50": "#FFEBCD",
           "100": "#FFFE99",
           "200": "#FFD599",
           "300": "#FFDB99",
@@ -29,6 +31,8 @@ export default {
           "600": "#EA9A62",
           "700": "#A47345",
           "800": "#A45445",
+          "900": "#2d666f",
+          "950": "#2f4858",
         },
       },
     },

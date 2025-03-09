@@ -2,15 +2,15 @@
 @import url("./roboto.css");
 @import url("./mso.css");
 @import url("./oswald.css");
-@import url("./pacifico.css");
+/* @import url("./pacifico.css"); */
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: theme(colors.emerald.50);
-  --foreground: theme(colors.emerald.700);
+  --background: theme(colors.green.50);
+  --foreground: theme(colors.green.700);
   --darkbackground: theme(colors.slate.700);
   --darkforeground: theme(colors.slate.200);
   /* --darkbg: #99154b; */
@@ -34,6 +34,9 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   .mydark {
     @apply text-slate-200 bg-slate-700;
   }
