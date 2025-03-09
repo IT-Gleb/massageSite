@@ -13,9 +13,10 @@ import { ContentItemNumbered } from "./contentItemNumbered";
 import useMyResizeObserver from "@/hooks/resizeObserver";
 import { useScrollDownUp } from "@/hooks/scrollUpDown";
 import { ContainerContent } from "./containerContent";
+import { SvgInfo } from "@/components/svg_components/svgInfo";
 
 const asequence: any = [
-  ["#uuul", { opacity: [0, 1], y: [500, 0] }, { duration: 0.7 }],
+  ["#uuul", { opacity: [0, 1], y: [500, 0] }, { delay: 0.5, duration: 0.7 }],
   [
     "#uuul li",
     { opacity: [0, 1], y: [500, 0] },
@@ -107,7 +108,7 @@ export const ContentOneComponent: FC = () => {
             id="uuul"
             className="h-[75%] grid grid-cols-2 lg:grid-cols-4 auto-rows-min mt-10 font-inter gap-x-1 gap-y-2
        [&>li>div]:rounded-lg [&>li>div]:overflow-hidden [&>li>div:has(img)]:border-none [&>li>div]:border-2 [&>li>div]:border-stone-300  
-       [&>li>div]:shadow-md [&>li>div>p]:bg-stone-50 [&>li>div>p]:text-stone-950 [&>li>div>p]:indent-4 [&>li>div>p]:p-2"
+       [&>li>div]:shadow-md [&>li>div>p]:bg-stone-50 [&>li>div>p]:text-[1.8vw]/[1.9vw] lg:[&>li>div>p]:text-[1.2vw]/[1.4vw] [&>li>div>p]:text-stone-950 [&>li>div>p]:indent-4 [&>li>div>p]:p-2"
           >
             <motion.li className="place-content-start mt-5">
               <ContentItemNumbered numered={1}>
@@ -152,14 +153,11 @@ export const ContentOneComponent: FC = () => {
               </ContentItemNumbered>
             </motion.li>
             <motion.li className="place-content-end order-5 col-span-2 w-fit lg:col-span-1 text-[1.5vw]/[1.8vw] lg:text-[0.75vw]/[1.1vw] font-bold mx-1">
-              <div>
-                <p>
-                  {" "}
-                  <span className="font-materialSymbolsOulined font-normal float-start">
-                    info
-                  </span>
-                  Имеются противопоказания. Консультируйтесь у специалиста.
-                </p>
+              <div className="p-1">
+                <div className="w-[16px] h-[16px] lg:w-[24px] lg:h-[24px] float-left mt-2 mr-2">
+                  <SvgInfo />
+                </div>
+                <p>Имеются противопоказания. Консультируйтесь у специалиста.</p>
               </div>
             </motion.li>
           </motion.ul>

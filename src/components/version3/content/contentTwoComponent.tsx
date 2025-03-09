@@ -2,6 +2,7 @@
 import React, { FC } from "react";
 import { ContentItemNumbered } from "./contentItemNumbered";
 import { ContainerContent } from "./containerContent";
+import { SvgWarning } from "@/components/svg_components/svgWarning";
 // import { motion, animate, stagger, useInView } from "motion/react";
 // import { useScrollDownUp } from "@/hooks/scrollUpDown";
 
@@ -101,9 +102,9 @@ export const ContentTwoComponent: FC = () => {
                   className="w-[26px] h-[26px] mx-auto mb-3 lg:mb-0 lg:w-[50px] lg:h-[50px] min-[2500px]:w-[60px] min-[2500px]:h-[60px] bg-yellow-300 text-red-500 
                 lg:rounded-xl overflow-hidden p-1 lg:p-2 lg:float-start lg:mx-4"
                 >
-                  <span className="font-materialSymbolsOulined text-[3.5vw]/[4vw] sm:text-[1.6vw]/[1.8vw]">
-                    error
-                  </span>
+                  <div className="w-[18px] h-[18px] lg:w-[32px] lg:h-[32px]">
+                    <SvgWarning />
+                  </div>
                 </aside>
                 <p className="text-[3.5vw]/[3.8vw] lg:text-[1.6vw]/[1.8vw]">
                   {item.text}

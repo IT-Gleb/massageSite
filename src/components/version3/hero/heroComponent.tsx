@@ -7,6 +7,8 @@ import { ImageRounded } from "../images/imageRounded";
 import { HeroNavigation } from "./heroNavigation";
 import { motion } from "motion/react";
 import { Loader } from "../loader/Loader";
+import { SvgInfo } from "@/components/svg_components/svgInfo";
+import { SvgThumb } from "@/components/svg_components/svgThumb";
 
 const Acontainer = {
   hidden: { opacity: 0 },
@@ -86,31 +88,43 @@ export const HeroComponent: FC = () => {
           </div>
           <ul
             className="w-fit ml-auto text-[2.5vw]/[3.5vw] lg:text-[clamp(0.6vw,2vw,0.85vw)]/[clamp(0.7vw,2vw,1vw)] mt-6 
-           [&>li]:flex [&>li]:gap-x-2
-           [&>li>:nth-child(1)]:font-materialSymbolsOulined [&>li>:nth-child(1)]:text-indigo-900"
+           [&>li]:flex [&>li]:items-center [&>li]:gap-x-2
+           [&>li>:nth-child(1)]:font-materialSymbolsOulined [&>li>:nth-child(1)]:text-indigo-900 "
           >
             <li>
-              <span aria-hidden="true">thumb_up</span>
+              <div className="w-[32px] h-[32px]">
+                <SvgThumb />
+              </div>
               <span>Инновационный прибор</span>
             </li>
             <li>
-              <span aria-hidden="true">thumb_up</span>
+              <div className="w-[32px] h-[32px]">
+                <SvgThumb />
+              </div>
               <span>Ультрозвуковая насадка</span>
             </li>
             <li>
-              <span aria-hidden="true">thumb_up</span>
+              <div className="w-[32px] h-[32px]">
+                <SvgThumb />
+              </div>
               <span>Прогресс в сфере массажа и лечения</span>
             </li>
             <li>
-              <span aria-hidden="true">thumb_up</span>
+              <div className="w-[32px] h-[32px]">
+                <SvgThumb />
+              </div>
               <span>Эффект 5 массажей</span>
             </li>
           </ul>
-          <p className="text-[2.7vw]/[3vw] sm:text-[2.2vw]/[2.5vw] lg:text-[clamp(0.7vw,2vw,0.85vw)]/[clamp(0.7vw,2vw,0.9vw)] font-oswald mt-5 mb-1 text-green-700">
-            <span className="font-materialSymbolsOulined mr-2">info</span>
-            Прошел все испытания. 100% безопасен. Имеет все сертификаты мирового
-            стандарта.
-          </p>
+          <div className="flex items-end justify-center gap-x-2 text-green-700">
+            <div className="w-[22px] h-[22px]">
+              <SvgInfo />
+            </div>
+            <p className="text-[2.7vw]/[3vw] sm:text-[2.2vw]/[2.5vw] lg:text-[clamp(0.7vw,2vw,0.85vw)]/[clamp(0.7vw,2vw,0.9vw)] font-oswald mt-5 mb-1">
+              Прошел все испытания. 100% безопасен. Имеет все сертификаты
+              мирового стандарта.
+            </p>
+          </div>
         </motion.div>
       </section>
       <section className="min-h-[55vh] bg-green-200">

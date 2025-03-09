@@ -1,3 +1,7 @@
+import { SvgLocation } from "@/components/svg_components/svgLocation";
+import { SvgMedicalKit } from "@/components/svg_components/svgMedicalKit";
+import { SvgPhone } from "@/components/svg_components/svgPhone";
+import { SvgVideoCam } from "@/components/svg_components/svgVideoCam";
 import { ancorsArray } from "@/utils/functions";
 import { InfoObj } from "@/utils/info";
 import React, { FC } from "react";
@@ -12,8 +16,8 @@ export const HeroNavigation: FC = () => {
         href={`tel:+${InfoObj.phoneReg}`}
         className="flex items-center gap-x-2"
       >
-        <div className="text-[clamp(1.1rem,2vw,1.5vw)]/[clamp(1.1rem,2vw,1.5vw)] text-indigo-900 font-materialSymbolsOulined">
-          phone
+        <div className="text-indigo-900 w-[28px] h-[28px]">
+          <SvgPhone />
         </div>
         {InfoObj.phone_mask}
       </a>
@@ -23,23 +27,27 @@ export const HeroNavigation: FC = () => {
           title="Услуги"
           className="flex items-center gap-x-1 cursor-pointer"
         >
-          <span className="inline-block font-materialSymbolsOulined">
-            medical_information
-          </span>
+          <div className="text-indigo-900 w-[28px] h-[28px]">
+            <SvgMedicalKit />
+          </div>
         </a>
         <a
           href={ancorsArray[1].ancor}
           title="реклама видео массажа"
           className="flex items-center gap-x-1"
         >
-          <span className="font-materialSymbolsOulined">videocam</span>
+          <div className="text-indigo-900 w-[28px] h-[28px]">
+            <SvgVideoCam />
+          </div>
         </a>
         <a
           title="Местоположение"
           href={ancorsArray[2].ancor}
           className="flex items-center gap-x-1"
         >
-          <span className="font-materialSymbolsOulined">location_on</span>
+          <div className="text-indigo-900 w-[28px] h-[28px]">
+            <SvgLocation />
+          </div>
         </a>
       </div>
     </nav>

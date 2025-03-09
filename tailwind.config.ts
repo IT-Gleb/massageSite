@@ -13,10 +13,10 @@ export default {
       fontFamily: {
         inter: ["Inter"],
         roboto: ["Roboto"],
-        materialSymbolsOulined: ["Material Symbols Outlined"],
+        // materialSymbolsOulined: ["Material Symbols Outlined"],
         oswald: ["Oswald"],
         verdana: ["Verdana", "Tahoma", "serif"],
-        pacifico: ["Pacifico"],
+        // pacifico: ["Pacifico"],
       },
       colors: {
         background: "var(--background)",

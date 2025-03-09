@@ -5,6 +5,10 @@ import React, { FC } from "react";
 import Link from "next/link";
 import { InfoObj } from "@/utils/info";
 import { ancorsArray } from "@/utils/functions";
+import { SvgPhone } from "@/components/svg_components/svgPhone";
+import { SvgLocation } from "@/components/svg_components/svgLocation";
+import { SvgMedicalKit } from "@/components/svg_components/svgMedicalKit";
+import { SvgVideoCam } from "@/components/svg_components/svgVideoCam";
 
 export const TopMenu: FC = () => {
   const { scrollY } = useScroll();
@@ -23,7 +27,9 @@ export const TopMenu: FC = () => {
               className="flex items-center gap-x-2"
             >
               <span>{InfoObj.phone_mask}</span>
-              <span className="font-materialSymbolsOulined">phone</span>
+              <div className="text-slate-200 w-[28px] h-[28px]">
+                <SvgPhone />
+              </div>
             </Link>
           </li>
           <li>
@@ -33,23 +39,27 @@ export const TopMenu: FC = () => {
                 className="flex items-center gap-x-2"
               >
                 <span className="hidden md:inline-block">Услуги</span>
-                <span className="font-materialSymbolsOulined">
-                  medical_information
-                </span>
+                <div className="text-slate-200 w-[28px] h-[28px]">
+                  <SvgMedicalKit />
+                </div>
               </a>
               <a
                 href={ancorsArray[1].ancor}
                 className="flex items-center gap-x-2"
               >
                 <span className="hidden md:inline-block">Видео</span>
-                <span className="font-materialSymbolsOulined">videocam</span>
+                <div className="text-slate-200 w-[28px] h-[28px]">
+                  <SvgVideoCam />
+                </div>
               </a>
               <a
                 href={ancorsArray[2].ancor}
                 className="flex items-center gap-x-2"
               >
                 <span className="hidden md:inline-block">Местонахождение</span>
-                <span className="font-materialSymbolsOulined">location_on</span>
+                <div className="text-slate-200 w-[28px] h-[28px]">
+                  <SvgLocation />
+                </div>
               </a>
             </div>
           </li>

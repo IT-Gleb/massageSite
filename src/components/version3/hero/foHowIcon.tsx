@@ -15,11 +15,11 @@ export const FoHowIcon: FC = () => {
       </div>
       <div className="absolute right-[8%] min-[1400px]:right-[10%] min-[2200px]:right-[15%] top-[70%] lg:top-[60%] -translate-y-[10%] z-[2]">
         <div className="relative w-[100px] h-[100px] sm:w-[135px] sm:h-[135px] 2xl:w-[150px] 2xl:h-[150px] rounded-full border-4 lg:border-8 border-indigo-900 object-fit object-cover overflow-hidden">
-          <Image
+          <img
             aria-hidden="true"
             src={"/images/massage1/chemodan.jpg"}
             alt="Биоэнергомассажёр"
-            fill
+            loading="lazy"
             className="block w-full h-full"
           />
         </div>
