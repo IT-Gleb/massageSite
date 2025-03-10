@@ -7,7 +7,7 @@ import {
   animate,
   MotionConfig,
 } from "motion/react";
-import React, { FC, useEffect, useRef, useState } from "react";
+import React, { FC, RefObject, useEffect, useRef, useState } from "react";
 import { ImageBlock } from "../images/imageBlock";
 import { ContentItemNumbered } from "./contentItemNumbered";
 import useMyResizeObserver from "@/hooks/resizeObserver";
@@ -68,8 +68,8 @@ export const ContentOneComponent: FC = () => {
 
   useEffect(() => {
     let tmpW: number = isMobile
-      ? Math.round(sizes.width - 20)
-      : Math.round(sizes.width / 2 - 20);
+      ? Math.round((sizes as TSizes).width - 20)
+      : Math.round((sizes as TSizes).width / 2 - 20);
     let tmpH: number = Math.round(tmpW / 1.6);
     if (!isNaN(tmpH) && tmpH > 0) {
       if (heightImage !== tmpH) {
@@ -99,7 +99,10 @@ export const ContentOneComponent: FC = () => {
 
   return (
     <ContainerContent backgroundClass="bg-indigo-50/50">
-      <div ref={resizedRef} className="min-h-[75vh]">
+      <div
+        ref={resizedRef as RefObject<HTMLDivElement>}
+        className="min-h-[75vh]"
+      >
         <h2 ref={triggerRef} className="underline-offset-4 underline ml-8">
           Биоэнергомассаж
         </h2>

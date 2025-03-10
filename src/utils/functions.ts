@@ -60,3 +60,33 @@ export function whatPartDay(param: number): string {
 
   return result;
 }
+
+//Нужно разобраться
+export function throttle(func: any, ms: number) {
+  let isThrottled = false,
+    savedArgs: any;
+  // savedThis: any;
+
+  const wrapper = () => {
+    if (isThrottled) {
+      // (2)
+      savedArgs = arguments;
+      // savedThis = this as any;
+      return;
+    }
+
+    func.call(arguments); // (1)
+
+    isThrottled = true;
+
+    setTimeout(() => {
+      isThrottled = false; // (3)
+      if (savedArgs) {
+        wrapper.call(savedArgs);
+        savedArgs = null;
+      }
+    }, ms);
+  };
+
+  return wrapper;
+}

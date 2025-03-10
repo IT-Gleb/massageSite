@@ -1,12 +1,12 @@
-import { useState, useRef, useSyncExternalStore } from "react";
+import { useState, useRef, useSyncExternalStore, Ref, RefObject } from "react";
 
 function useMyResizeObserver() {
-  const targetRef = useRef<HTMLElement>(undefined);
-  const [size, setSize] = useState<any>({ width: 0, height: 0 });
+  const targetRef = useRef<HTMLElement>(null);
+  const [size, setSize] = useState<TSizes | boolean>({ width: 0, height: 0 });
 
   const getSnapShot = () => size;
   const getSereverSnapShot = () => {
-    // return { width: 0, height: 0 };
+    //return { width: 0, height: 0 };
     return false;
   };
 
@@ -21,17 +21,27 @@ function useMyResizeObserver() {
     });
 
     if (targetRef.current) {
-      observer.observe(targetRef.current);
+      observer.observe(targetRef.current, { box: "device-pixel-content-box" });
+    } else {
+      observer.unobserve(targetRef.current as unknown as HTMLElement);
     }
-
     return () => {
       observer.disconnect();
     };
   };
 
+  // const valueSize = useDeferredValue(
+  //   size,
+  //   useSyncExternalStore(subscribe, getSnapShot, getSereverSnapShot)
+  // );
+
+  // useCallback(() => {
+  //   useSyncExternalStore(subscribe, getSnapShot, getSereverSnapShot);
+  // }, [targetRef.current, setSize]);
+
   return [
-    targetRef,
-    useSyncExternalStore(subscribe, getSnapShot, getSereverSnapShot),
+    targetRef as RefObject<HTMLElement>,
+    useSyncExternalStore(subscribe, getSnapShot, getSereverSnapShot) as TSizes,
   ];
 }
 

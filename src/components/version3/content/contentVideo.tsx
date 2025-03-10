@@ -47,7 +47,7 @@ export const ContentVideo: FC = () => {
         Видео
       </h2>
       <p className="my-10 text-[1.75em]/[1.9em] xl:text-[1em]/[1em]">
-        Реклама используемого оборудования
+        Использую в работе.
       </p>
       <div
         ref={targetRef}
