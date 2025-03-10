@@ -2,6 +2,7 @@
 
 import { MobileQuery, PlanshetQuery, useMediaQuery } from "@/hooks/checkDevice";
 import React, { FC, useEffect, useRef, useState } from "react";
+import { UpdateButton } from "../version3/ui/buttons/updateButton";
 
 const iframeSrc: string =
   "https://yandex.ru/map-widget/v1/?ll=39.726966%2C43.607111&masstransit%5BstopId%5D=stop__9973503&mode=masstransit&tab=overview&z=18.6";
@@ -18,6 +19,12 @@ export const YandexLocation: FC<TMapParam> = (param) => {
   const isMobile: boolean = useMediaQuery(MobileQuery);
   const isPlanshet: boolean = useMediaQuery(PlanshetQuery);
   const iframeRef = useRef<HTMLIFrameElement>(null);
+
+  const handleClick = () => {
+    if (iframeRef.current) {
+      iframeRef.current.src = iframeSrc + "";
+    }
+  };
 
   useEffect(() => {
     const element = React.createElement("iframe", {
@@ -64,5 +71,12 @@ export const YandexLocation: FC<TMapParam> = (param) => {
     }
   }, [isMobile, isPlanshet]);
 
-  return <div className="overflow-hidden relative">{frame}</div>;
+  return (
+    <div className="overflow-hidden relative flex items-start gap-2 flex-wrap-reverse">
+      {frame}
+      <div className="place-self-start order-0 md:order-1">
+        <UpdateButton title="Обновить" click={handleClick} />
+      </div>
+    </div>
+  );
 };

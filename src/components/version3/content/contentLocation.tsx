@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import { ContainerContent } from "./containerContent";
 import { YandexLocation } from "@/components/yandexMap/yandexMap";
 import { ancorsArray } from "@/utils/functions";
+import { UpdateButton } from "../ui/buttons/updateButton";
 
 export const ContentLocation: FC = () => {
   return (
