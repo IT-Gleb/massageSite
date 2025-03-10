@@ -1,3 +1,5 @@
+"use client";
+
 import React, { FC, memo, useEffect, useRef, useState } from "react";
 import { CircleLoader } from "./circleLoader";
 
@@ -29,7 +31,7 @@ export const Loader: FC = memo(() => {
   //console.log(Percent);
 
   return (
-    <div className="w-[40px] h-[40px] p-1">
+    <div className="w-[120px] h-[120px] p-1">
       <CircleLoader percent={Percent} colorBegin="#0089ba" colorEnd="#f9f871" />
     </div>
   );

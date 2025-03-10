@@ -1,5 +1,4 @@
 import { ContentMain } from "@/components/version3/content/contentMain";
-import { Suspense } from "react";
 
 // const HeroComp = dynamic(
 //   () =>
@@ -10,9 +9,5 @@ import { Suspense } from "react";
 // );
 
 export default async function Home() {
-  return (
-    <Suspense>
-      <ContentMain />
-    </Suspense>
-  );
+  return <ContentMain />;
 }

@@ -16,7 +16,7 @@ export const HeroNavigation: FC = () => {
         href={`tel:+${InfoObj.phoneReg}`}
         className="flex items-center gap-x-2"
       >
-        <div className="text-indigo-900 w-[28px] h-[28px]">
+        <div className="text-indigo-900 w-[18px] h-[18px] lg:w-[28px] lg:h-[28px]">
           <SvgPhone />
         </div>
         {InfoObj.phone_mask}
@@ -27,7 +27,7 @@ export const HeroNavigation: FC = () => {
           title="Услуги"
           className="flex items-center gap-x-1 cursor-pointer"
         >
-          <div className="text-indigo-900 w-[28px] h-[28px]">
+          <div className="text-indigo-900 w-[18px] h-[18px] lg:w-[28px] lg:h-[28px]">
             <SvgMedicalKit />
           </div>
         </a>
@@ -36,7 +36,7 @@ export const HeroNavigation: FC = () => {
           title="реклама видео массажа"
           className="flex items-center gap-x-1"
         >
-          <div className="text-indigo-900 w-[28px] h-[28px]">
+          <div className="text-indigo-900 w-[18px] h-[18px] lg:w-[28px] lg:h-[28px]">
             <SvgVideoCam />
           </div>
         </a>
@@ -45,7 +45,7 @@ export const HeroNavigation: FC = () => {
           href={ancorsArray[2].ancor}
           className="flex items-center gap-x-1"
         >
-          <div className="text-indigo-900 w-[28px] h-[28px]">
+          <div className="text-indigo-900 w-[18px] h-[18px] lg:w-[28px] lg:h-[28px]">
             <SvgLocation />
           </div>
         </a>
