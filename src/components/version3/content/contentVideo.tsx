@@ -46,10 +46,12 @@ export const ContentVideo: FC = () => {
       <h2 id={ancorsArray[1].idString} className="underline underline-offset-8">
         Видео
       </h2>
-      <p className="my-10">Реклама используемого оборудования</p>
+      <p className="my-10 text-[1.75em]/[1.9em] xl:text-[1em]/[1em]">
+        Реклама используемого оборудования
+      </p>
       <div
         ref={targetRef}
-        className="my-10 w-[96%] xl:w-[75%] mx-auto flex items-center justify-between gap-10 flex-wrap"
+        className="my-10 w-[96%] xl:w-[75%] mx-auto flex items-center justify-center xl:justify-between gap-5 xl:gap-10 flex-wrap"
       >
         <div className="h-[640px] object-cover object-left-top">
           <video

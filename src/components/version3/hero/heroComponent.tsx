@@ -87,30 +87,30 @@ export const HeroComponent: FC = () => {
             </h3>
           </div>
           <ul
-            className="w-fit ml-auto text-[2.5vw]/[3.5vw] lg:text-[clamp(0.6vw,2vw,0.85vw)]/[clamp(0.7vw,2vw,1vw)] mt-6 
+            className="w-fit ml-auto text-[3vw]/[3.2vw] lg:text-[clamp(0.8vw,2vw,1vw)]/[clamp(1vw,2vw,1.5vw)] mt-6 
            [&>li]:flex [&>li]:items-center [&>li]:gap-x-2
            [&>li>:nth-child(1)]:font-materialSymbolsOulined [&>li>:nth-child(1)]:text-indigo-900 "
           >
             <li>
-              <div className="w-[32px] h-[32px]">
+              <div className="w-[18px] h-[18px] lg:w-[22px] lg:h-[22px]">
                 <SvgThumb />
               </div>
               <span>Инновационный прибор</span>
             </li>
             <li>
-              <div className="w-[32px] h-[32px]">
+              <div className="w-[18px] h-[18px] lg:w-[22px] lg:h-[22px]">
                 <SvgThumb />
               </div>
               <span>Ультрозвуковая насадка</span>
             </li>
             <li>
-              <div className="w-[32px] h-[32px]">
+              <div className="w-[18px] h-[18px] lg:w-[22px] lg:h-[22px]">
                 <SvgThumb />
               </div>
               <span>Прогресс в сфере массажа и лечения</span>
             </li>
             <li>
-              <div className="w-[32px] h-[32px]">
+              <div className="w-[18px] h-[18px] lg:w-[22px] lg:h-[22px]">
                 <SvgThumb />
               </div>
               <span>Эффект 5 массажей</span>

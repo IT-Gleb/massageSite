@@ -17,6 +17,7 @@ export const metadata: Metadata = {
   title: "Массаж Fohow в Сочи. Индивидуальный подход к клиенту.",
   description:
     "Кабинет индивидуалного специалиста по массажу Fohow. В Центральном районе г.Сочи. Индивидуальный подход к клиенту",
+  //  <link rel="icon" type="image/png" sizes="32x32" href="/path/to/favicon-32x32.png">
 };
 
 export default function RootLayout({

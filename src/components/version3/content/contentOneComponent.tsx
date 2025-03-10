@@ -14,6 +14,7 @@ import useMyResizeObserver from "@/hooks/resizeObserver";
 import { useScrollDownUp } from "@/hooks/scrollUpDown";
 import { ContainerContent } from "./containerContent";
 import { SvgInfo } from "@/components/svg_components/svgInfo";
+import useMyMediaQuery from "@/hooks/myMediaQuery";
 
 const asequence: any = [
   ["#uuul", { opacity: [0, 1], y: [500, 0] }, { delay: 0.5, duration: 0.7 }],
@@ -22,7 +23,7 @@ const asequence: any = [
     { opacity: [0, 1], y: [500, 0] },
     {
       //at: "-0.5",
-      at: "<0.75",
+      at: "<0.5",
       delay: stagger(0.1, { startDelay: 0.2 }),
       duration: 0.5,
     },
@@ -52,6 +53,7 @@ export const ContentOneComponent: FC = () => {
   const triggerRef = useRef(null);
   const aTarget = useRef(null);
   const [resizedRef, sizes] = useMyResizeObserver();
+  const isMobile = useMyMediaQuery("only screen and (max-width:1023px)");
 
   const [widthtImage, setWidthImage] = useState<number>(480);
   const [heightImage, setHeightImage] = useState<number>(340);
@@ -65,7 +67,9 @@ export const ContentOneComponent: FC = () => {
   const { scrollDirection } = useScrollDownUp();
 
   useEffect(() => {
-    let tmpW: number = Math.round(sizes.width / 2 - 20);
+    let tmpW: number = isMobile
+      ? Math.round(sizes.width - 20)
+      : Math.round(sizes.width / 2 - 20);
     let tmpH: number = Math.round(tmpW / 1.6);
     if (!isNaN(tmpH) && tmpH > 0) {
       if (heightImage !== tmpH) {
@@ -95,7 +99,7 @@ export const ContentOneComponent: FC = () => {
 
   return (
     <ContainerContent backgroundClass="bg-indigo-50/50">
-      <div ref={resizedRef}>
+      <div ref={resizedRef} className="min-h-[75vh]">
         <h2 ref={triggerRef} className="underline-offset-4 underline ml-8">
           Биоэнергомассаж
         </h2>
@@ -106,9 +110,9 @@ export const ContentOneComponent: FC = () => {
             // initial="hidden"
             // animate="visual"
             id="uuul"
-            className="h-[75%] grid grid-cols-2 lg:grid-cols-4 auto-rows-min mt-10 font-inter gap-x-1 gap-y-2
+            className="flex flex-col lg:grid lg:grid-cols-4 mt-10  font-inter gap-x-1 gap-y-2
        [&>li>div]:rounded-lg [&>li>div]:overflow-hidden [&>li>div:has(img)]:border-none [&>li>div]:border-2 [&>li>div]:border-stone-300  
-       [&>li>div]:shadow-md [&>li>div>p]:bg-stone-50 [&>li>div>p]:text-[1.8vw]/[1.9vw] lg:[&>li>div>p]:text-[1.2vw]/[1.4vw] [&>li>div>p]:text-stone-950 [&>li>div>p]:indent-4 [&>li>div>p]:p-2"
+       [&>li>div]:shadow-md [&>li>div>p]:bg-stone-50 [&>li>div>p]:text-[1.8em]/[1.9em] md:[&>li>div>p]:text-[1em]/[1.1em] lg:[&>li>div>p]:text-[1.2vw]/[1.4vw] [&>li>div>p]:text-stone-950 [&>li>div>p]:indent-4 [&>li>div>p]:p-2"
           >
             <motion.li className="place-content-start mt-5">
               <ContentItemNumbered numered={1}>
@@ -129,21 +133,21 @@ export const ContentOneComponent: FC = () => {
                 </p>
               </ContentItemNumbered>
             </motion.li>
-            <motion.li className="hidden lg:block col-span-2 place-content-center mx-auto">
+            <motion.li className="hidden lg:block place-content-center mx-auto">
               <ImageBlock
                 imageSrc="/images/massage1/massage_vector_4.jpg"
                 width={widthtImage}
                 height={heightImage}
               />
             </motion.li>
-            <motion.li className="col-span-1 order-2 lg:col-span-2 lg:place-content-center mx-auto">
+            <motion.li className="lg:col-span-2 lg:place-content-center mx-auto">
               <ImageBlock
                 imageSrc="/images/massage1/massage2.avif"
                 width={widthtImage}
                 height={heightImage}
               />
             </motion.li>
-            <motion.li className="order-1 lg:order-3 place-content-center lg:place-content-evenly mt-4">
+            <motion.li className=" place-content-center lg:place-content-evenly mt-4">
               <ContentItemNumbered numered={3}>
                 <p>
                   Массаж обеспечивает глубокое проникновение в мышцы,суставы,
@@ -152,7 +156,7 @@ export const ContentOneComponent: FC = () => {
                 </p>
               </ContentItemNumbered>
             </motion.li>
-            <motion.li className="place-content-end order-5 col-span-2 w-fit lg:col-span-1 text-[1.5vw]/[1.8vw] lg:text-[0.75vw]/[1.1vw] font-bold mx-1">
+            <motion.li className="place-content-end col-span-2 w-fit lg:col-span-1 text-[1.5vw]/[1.8vw] lg:text-[0.75vw]/[1.1vw] font-bold mx-1">
               <div className="p-1">
                 <div className="w-[16px] h-[16px] lg:w-[24px] lg:h-[24px] float-left mt-2 mr-2">
                   <SvgInfo />
@@ -162,8 +166,8 @@ export const ContentOneComponent: FC = () => {
             </motion.li>
           </motion.ul>
         </MotionConfig>
-        <div className="w-full h-[2vh] lg:h-[5vh] bg-[url('/images/svg/back.svg')] mt-5"></div>
       </div>
+      <div className="w-full h-[2vh] lg:h-[5vh] bg-[url('/images/svg/back.svg')] mt-5"></div>
     </ContainerContent>
   );
 };

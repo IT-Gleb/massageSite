@@ -52,7 +52,7 @@
   }
 
   body {
-    @apply overflow-x-hidden flex flex-col dark:text-slate-200 dark:mydark mylight font-verdana font-normal text-[clamp(1vw,2vw,1.8vw)]/[clamp(1.1vw,2.5vw,2vw)] min-h-[100vh];
+    @apply overflow-x-hidden flex flex-col dark:text-slate-200 dark:mydark mylight font-verdana font-normal text-[clamp(2.1vw,2.5vw,3.2vw)]/[clamp(2.1vw,2.5vw,3.4vw)] lg:text-[clamp(1em,2vw,2.1em)]/[clamp(1.1em,2.2vw,2.4em)] min-h-[100vh];
   }
   h2 {
     @apply text-[6vw]/[6.5vw] md:text-[clamp(1.8vw,2vw,2.5vw)]/[2.6vw] font-oswald font-semibold uppercase;
