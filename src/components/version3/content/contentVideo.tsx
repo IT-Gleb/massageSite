@@ -43,7 +43,10 @@ export const ContentVideo: FC = () => {
 
   return (
     <ContainerContent backgroundClass="bg-green-50/50">
-      <h2 id={ancorsArray[1].idString} className="underline underline-offset-8">
+      <h2
+        id={ancorsArray[1].idString}
+        className="underline underline-offset-[10px]"
+      >
         Видео
       </h2>
       <p className="my-10 text-[1.75em]/[1.9em] xl:text-[1em]/[1em]">

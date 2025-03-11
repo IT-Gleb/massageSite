@@ -5,10 +5,13 @@ import { CaruselDataAttributeName } from "@/utils/functions";
 import respData from "../../../public/json/responses.json";
 
 function sortBydate(a: TTextItems, b: TTextItems) {
-  if (a.date.toLowerCase() > b.date.toLowerCase()) {
-    return -1;
-  } else {
+  const dt1: Date = new Date(a.date);
+  const dt2: Date = new Date(b.date);
+
+  if (dt1 > dt2) {
     return 1;
+  } else {
+    return -1;
   }
 }
 
@@ -55,6 +58,10 @@ export const CaruselResponses: FC = () => {
       tmp.push(abc);
       indx++;
     }
+    if (tmp.length > 1) {
+      tmp.sort(sortBydate);
+    }
+
     setResponseData(tmp);
     setCountItem(tmp.length);
     setActiveIndex(tmp.length > 0 ? 0 : -1);
@@ -75,7 +82,7 @@ export const CaruselResponses: FC = () => {
           ref={caruselRef}
           className="absolute top-1 flex gap-x-3 items-start"
         >
-          {responseData.sort(sortBydate).map((item, index) => {
+          {responseData.map((item, index) => {
             return (
               <CaruselItem key={index} {...item} activeIndex={activeIndex} />
             );
