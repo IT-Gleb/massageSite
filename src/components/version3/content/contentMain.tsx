@@ -9,6 +9,7 @@ import { ContentLocation } from "./contentLocation";
 import { ContentResponses } from "./contentResponses";
 import { ContentVideo } from "./contentVideo";
 import { PhoneMenuButton } from "../ui/buttons/phoneMenuButton";
+import { ContentHealing } from "./contentHealing";
 
 export const ContentMain: FC = () => {
   return (
@@ -23,6 +24,9 @@ export const ContentMain: FC = () => {
       <Suspense>
         <ContentHowRecord />
       </Suspense>
+      {/* <Suspense>
+        <ContentHealing />
+      </Suspense> */}
       <Suspense>
         <ContentVideo />
       </Suspense>

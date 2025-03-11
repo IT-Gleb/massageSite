@@ -42,7 +42,7 @@ export const ContentVideo: FC = () => {
   }, [isView]);
 
   return (
-    <ContainerContent backgroundClass="bg-green-50/50">
+    <ContainerContent backgroundClass="bg-indigo-50/50">
       <h2
         id={ancorsArray[1].idString}
         className="underline underline-offset-[10px]"

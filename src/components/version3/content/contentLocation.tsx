@@ -6,7 +6,7 @@ import { UpdateButton } from "../ui/buttons/updateButton";
 
 export const ContentLocation: FC = () => {
   return (
-    <ContainerContent backgroundClass="bg-green-50/50">
+    <ContainerContent backgroundClass="bg-indigo-50/50">
       <h2 className=" underline underline-offset-8">Местонахождение</h2>
       <div id={ancorsArray[2].idString} className="w-fit mx-auto mt-10">
         <YandexLocation width={800} height={600} />

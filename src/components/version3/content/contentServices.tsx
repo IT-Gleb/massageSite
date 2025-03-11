@@ -14,24 +14,28 @@ export const ContentServices: FC = () => {
               <CardService
                 title="Массаж спины"
                 imageSrc="/images/massage1/massage5.jpg"
+                index={1}
               />
             </li>
             <li>
               <CardService
                 title="Массаж воротниковой зоны"
                 imageSrc="/images/massage1/massage4.jpg"
+                index={2}
               />
             </li>
             <li>
               <CardService
                 title="Массаж ног (стоп,коленей)"
                 imageSrc="/images/massage1/massage_legs.jpg"
+                index={3}
               />
             </li>
             <li>
               <CardService
                 title="Массаж лица"
                 imageSrc="/images/massage1/massage2.jpg"
+                index={4}
               />
             </li>
           </ul>

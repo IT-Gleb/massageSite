@@ -98,7 +98,7 @@ export const ContentOneComponent: FC = () => {
   }, [isView]);
 
   return (
-    <ContainerContent backgroundClass="bg-indigo-50/50">
+    <ContainerContent backgroundClass="bg-green-50/50">
       <div
         ref={resizedRef as RefObject<HTMLDivElement>}
         className="min-h-[75vh]"
