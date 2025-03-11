@@ -1,6 +1,7 @@
 {
-  "name": "Massage-Fohow-Sochi",
+  "name": "Массаж Fohow в Сочи",
   "short_name": "Fohow",
+  "description": "Индивидуальный кабинет массажа Fohow. Биоэнергомассаж в Сочи.",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
