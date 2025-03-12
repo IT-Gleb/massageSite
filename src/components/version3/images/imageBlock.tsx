@@ -5,6 +5,7 @@ export const ImageBlock: FC<IimageProps> = ({
   width,
   height,
   isAlt,
+  altText,
 }) => {
   return (
     <div
@@ -14,12 +15,17 @@ export const ImageBlock: FC<IimageProps> = ({
       {isAlt ? (
         <img
           src={imageSrc}
-          alt=""
+          alt={altText}
           loading="lazy"
           className="block w-full h-full"
         />
       ) : (
-        <img src={imageSrc} loading="lazy" className="block w-full h-full" />
+        <img
+          src={imageSrc}
+          alt=""
+          loading="lazy"
+          className="block w-full h-full"
+        />
       )}
     </div>
   );
