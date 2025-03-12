@@ -38,7 +38,7 @@ export const SvgHandsUp = () => {
         </g>
         <g id="hand2">
           <path
-            id="S2_2"
+            id="S2_2_1"
             fill="currentColor"
             fillRule="evenodd"
             stroke="none"
