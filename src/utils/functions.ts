@@ -1,4 +1,20 @@
 export const CaruselDataAttributeName: string = "carusel-item";
+const Months: string[] = [
+  "",
+  "Январь",
+  "Февраль",
+  "Март",
+  "Апрель",
+  "Май",
+  "Июнь",
+  "Июль",
+  "Август",
+  "Сентябрь",
+  "Октябрь",
+  "Ноябрь",
+  "Декабрь",
+];
+
 export const ancorsArray: { ancor: string; idString: string }[] = [
   { ancor: "#services", idString: "services" },
   { ancor: "#videoCaps", idString: "videoCaps" },
@@ -89,4 +105,30 @@ export function throttle(func: any, ms: number) {
   };
 
   return wrapper;
+}
+
+function zeroToNumber(param: number): string | number {
+  let res: string | number = 0;
+  param < 10 ? (res = `0${param}`) : (res = param);
+  return res;
+}
+
+export function stringFromDate(param: string): string {
+  let res: string = "";
+
+  const date1 = new Date(param);
+  let Day = zeroToNumber(date1.getUTCDate());
+  let Month = date1.getUTCMonth() + 1;
+  let Year = date1.getUTCFullYear();
+
+  let strMonth: string = "";
+  if ([3, 8].includes(Month)) {
+    strMonth = Months[Month].substring(0, Months[Month].length) + "а";
+  }
+  if ([1, 2, 4, 5, 6, 7, 9, 10, 11, 12].includes(Month)) {
+    strMonth = Months[Month].substring(0, Months[Month].length - 1) + "я";
+  }
+  res = `${Day} ${strMonth.toLowerCase()} ${Year}г.`;
+
+  return res;
 }

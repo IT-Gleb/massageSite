@@ -53,7 +53,7 @@ export const CaruselResponses: FC = () => {
   };
 
   useEffect(() => {
-    if (respData.length < 1) {
+    if (!respData || respData.length < 1) {
       setResponseData([]);
       setCountItem(0);
       setActiveIndex(-1);

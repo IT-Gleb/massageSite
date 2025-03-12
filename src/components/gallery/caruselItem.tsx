@@ -1,4 +1,4 @@
-import { CaruselDataAttributeName } from "@/utils/functions";
+import { CaruselDataAttributeName, stringFromDate } from "@/utils/functions";
 import React, { FC, useEffect, useRef } from "react";
 import { SvgCheck } from "../svg_components/svgCheck";
 import { SvgPeople } from "../svg_components/svgPeople";
@@ -52,7 +52,7 @@ export const CaruselItem: FC<TTextItems & TParamActiveIndex> = (param) => {
         aria-hidden="true"
         className="text-[0.8rem] text-green-500 dark:text-slate-500 p-1"
       >
-        {param.date}
+        {stringFromDate(param.date)}
       </p>
     </article>
   );

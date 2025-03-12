@@ -23,13 +23,17 @@ export const PhoneMenuButton: FC = () => {
         <div className="hidden lg:block w-[50px] h-[5px] ml-1 bg-mint-900 border border-green-100 rounded-md"></div>
         <div className="hidden lg:block w-[50px] h-[5px] ml-2 bg-mint-900 border border-green-100 rounded-md"></div>
       </div>
-      <div className="w-[50px] h-[50px] lg:w-[60px] lg:h-[60px] bg-mint-950 text-green-100 rounded-full border-2 border-green-100 overflow-hidden p-2 cursor-pointer">
+      <motion.div
+        initial={{ scale: 1 }}
+        whileHover={{ scale: [1, 1.2] }}
+        className="w-[50px] h-[50px] lg:w-[60px] lg:h-[60px] bg-mint-950 text-green-100 rounded-full shadow-md shadow-black/30 border-2 border-green-100 overflow-hidden p-2 cursor-pointer"
+      >
         <div className="w-[32px] h-[32px] lg:w-[40px] lg:h-[40px] mx-auto">
           <a href={`tel:+${InfoObj.phoneReg}`}>
             <SvgPhone />
           </a>
         </div>
-      </div>
+      </motion.div>
     </motion.div>
   );
 };
