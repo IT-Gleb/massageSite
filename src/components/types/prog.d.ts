@@ -25,3 +25,10 @@ declare interface IimageProps {
 }
 
 declare type TScrollDownUp = "down" | "up";
+declare type TScrollLeftRight = "left" | "right";
+
+declare type TParamActiveIndex = {
+  activeIndex: number;
+  RootRef: RefObject<HTMLDivElement> | null;
+  SelfRef: RefObject<HTMLElement> | null;
+};

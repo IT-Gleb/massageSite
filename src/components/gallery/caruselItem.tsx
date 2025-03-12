@@ -1,28 +1,13 @@
-import { CaruselDataAttributeName, stringFromDate } from "@/utils/functions";
-import React, { FC, useEffect, useRef } from "react";
+import { stringFromDate } from "@/utils/functions";
+import React, { FC } from "react";
 import { SvgCheck } from "../svg_components/svgCheck";
 import { SvgPeople } from "../svg_components/svgPeople";
 
-type TParamActiveIndex = {
-  activeIndex: number;
-};
-
 export const CaruselItem: FC<TTextItems & TParamActiveIndex> = (param) => {
-  const articleRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    if (articleRef.current) {
-      articleRef.current.setAttribute(
-        CaruselDataAttributeName,
-        param.index.toString()
-      );
-    }
-  }, [param]);
-
   return (
     <article
-      ref={articleRef}
-      className={`max-[365px]:w-[268px] w-[275px] md:w-[320px] h-[240px] bg-green-50 dark:bg-slate-100 ${
+      ref={param.SelfRef}
+      className={`max-[365px]:w-[268px] w-[275px] md:w-[320px] h-[240px] bg-transparent dark:bg-slate-100 ${
         param.index === param.activeIndex
           ? "border-2 border-green-700 dark:border-neutral-300"
           : ""

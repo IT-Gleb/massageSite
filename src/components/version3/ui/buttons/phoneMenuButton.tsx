@@ -9,7 +9,7 @@ export const PhoneMenuButton: FC = () => {
   const { scrollY } = useScroll();
 
   const ifShow = useTransform(scrollY, [400, 1000], [0, 1]);
-  const Yposition = useTransform(scrollY, [400, 1000], [-3000, 0]);
+  const Yposition = useTransform(scrollY, [500, 1000], [-3000, 0]);
 
   return (
     <motion.div
@@ -25,7 +25,7 @@ export const PhoneMenuButton: FC = () => {
       </div>
       <motion.div
         initial={{ scale: 1 }}
-        whileHover={{ scale: [1, 1.2] }}
+        whileTap={{ scale: [1, 1.2] }}
         className="w-[50px] h-[50px] lg:w-[60px] lg:h-[60px] bg-mint-950 text-green-100 rounded-full shadow-md shadow-black/30 border-2 border-green-100 overflow-hidden p-2 cursor-pointer"
       >
         <div className="w-[32px] h-[32px] lg:w-[40px] lg:h-[40px] mx-auto">
