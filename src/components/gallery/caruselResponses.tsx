@@ -9,15 +9,17 @@ function sortBydate(a: TTextItems, b: TTextItems) {
   const dt2: Date = new Date(b.date);
 
   if (dt1 > dt2) {
-    return 1;
-  } else {
     return -1;
+  } else {
+    return 1;
   }
 }
 
 export const CaruselResponses: FC = () => {
   const [responseData, setResponseData] = useState<TTextItems[]>([]);
-  const [countItem, setCountItem] = useState<number>(responseData.length);
+  const [countItem, setCountItem] = useState<number>(
+    responseData.length > 0 ? responseData.length : 0
+  );
   const [activeIndex, setActiveIndex] = useState<number>(
     countItem > 0 ? 0 : -1
   );
@@ -51,6 +53,13 @@ export const CaruselResponses: FC = () => {
   };
 
   useEffect(() => {
+    if (respData.length < 1) {
+      setResponseData([]);
+      setCountItem(0);
+      setActiveIndex(-1);
+      return;
+    }
+
     const tmp: TTextItems[] = [];
     let indx: number = 0;
     for (let item of respData) {
@@ -65,7 +74,7 @@ export const CaruselResponses: FC = () => {
     setResponseData(tmp);
     setCountItem(tmp.length);
     setActiveIndex(tmp.length > 0 ? 0 : -1);
-  }, []);
+  }, [respData]);
 
   return (
     <>
