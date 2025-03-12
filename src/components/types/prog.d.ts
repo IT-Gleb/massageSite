@@ -20,6 +20,8 @@ declare interface IimageProps {
   imageSrc: string;
   width: number;
   height: number;
+  isAlt: boolean;
+  altText?: string;
 }
 
 declare type TScrollDownUp = "down" | "up";

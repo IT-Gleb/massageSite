@@ -163,6 +163,8 @@ export const HeroComponent: FC = () => {
                 imageSrc="/images/massage1/massage1.jpg"
                 width={160}
                 height={160}
+                isAlt={true}
+                altText="массаж"
               />
             </div>
             <span>...если...</span>

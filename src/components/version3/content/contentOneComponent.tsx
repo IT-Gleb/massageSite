@@ -141,6 +141,7 @@ export const ContentOneComponent: FC = () => {
                 imageSrc="/images/massage1/massage_vector_4.jpg"
                 width={widthtImage}
                 height={heightImage}
+                isAlt={false}
               />
             </motion.li>
             <motion.li className="lg:col-span-2 lg:place-content-center mx-auto">
@@ -148,6 +149,7 @@ export const ContentOneComponent: FC = () => {
                 imageSrc="/images/massage1/massage2.avif"
                 width={widthtImage}
                 height={heightImage}
+                isAlt={false}
               />
             </motion.li>
             <motion.li className=" place-content-center lg:place-content-evenly mt-4">
