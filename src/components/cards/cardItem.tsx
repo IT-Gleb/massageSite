@@ -39,12 +39,12 @@ export const CardItem: FC<TCardParams> = (param) => {
           {param.title}
         </h4>
       </header>
-      <main className="p-2 flex-auto text-emerald-800 dark:text-slate-800 font-inter indent-4 text-[clamp(0.7rem,3vw,0.9rem)]/[clamp(0.7rem,3vw,1.1rem)]">
+      <div className="p-2 flex-auto text-emerald-800 dark:text-slate-800 font-inter indent-4 text-[clamp(0.7rem,3vw,0.9rem)]/[clamp(0.7rem,3vw,1.1rem)]">
         <div className="float-start mr-4 mb-1">{param.icon}</div>
         <p ref={pRef} className="text-balance">
           <code id="subject"></code>
         </p>
-      </main>
+      </div>
       <footer className="flex flex-col gap-y-[2px]">
         <div className="w-full h-[3px] bg-emerald-500 dark:bg-slate-700 rounded-md"></div>
         <div className="w-full h-[3px] bg-emerald-500 dark:bg-slate-700 rounded-md"></div>
