@@ -26,7 +26,7 @@ export const SectionForma: FC<TFormaParams> = ({
         </div>
       </div>
 
-      <section className="bg-emerald-50 dark:bg-slate-600 rounded-3xl overflow-hidden ">
+      <div className="bg-emerald-50 dark:bg-slate-600 rounded-3xl overflow-hidden ">
         <header className="bg-emerald-400 dark:bg-slate-800">
           <div className="flex gap-x-2 items-center w-fit mx-auto py-2">
             <div
@@ -40,7 +40,7 @@ export const SectionForma: FC<TFormaParams> = ({
           </div>
         </header>
         {children}
-      </section>
+      </div>
     </div>
   );
 };

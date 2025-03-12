@@ -55,7 +55,7 @@ const AtextItem = {
 
 export const HeroComponent: FC = () => {
   return (
-    <section className="flex flex-col bg-green-50 relative">
+    <div className="flex flex-col bg-green-50 relative">
       <HeroNavigation />
       <motion.div
         initial={{ y: -350 }}
@@ -64,7 +64,7 @@ export const HeroComponent: FC = () => {
         className="hidden lg:block absolute z-0 w-[450px] h-[450px] min-[2500px]:w-[650px] min-[2500px]:h-[650px] top-[-90px] min-[2500px]:top-[-120px] right-[11%] 
         bg-[url('/images/massage1/hands_1.png')] bg-no-repeat bg-cover bg-bottom [mask-image:linear-gradient(to_bottom,theme(colors.black),theme(colors.transparent)_70%)]"
       ></motion.div>
-      <section className="relative z-[5] w-[90%] xs:w-[70%] lg:w-[65%] mx-auto min-h-[45vh] grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-y-8 lg:gap-y-0 gap-x-2 xl:gap-x-10">
+      <div className="relative z-[5] w-[90%] xs:w-[70%] lg:w-[65%] mx-auto min-h-[45vh] grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-y-8 lg:gap-y-0 gap-x-2 xl:gap-x-10">
         <motion.div
           variants={Acontainer}
           initial="hidden"
@@ -127,8 +127,8 @@ export const HeroComponent: FC = () => {
             </p>
           </div>
         </motion.div>
-      </section>
-      <section className="min-h-[55vh] bg-green-200">
+      </div>
+      <div className="min-h-[55vh] bg-green-200">
         <div className="w-[92%] sm:w-[75%] lg:w-[65%] mx-auto my-8 xl:my-4 flex flex-col text-green-900 font-verdana font-bold uppercase text-[15vw]/[15.5vw] lg:text-[7vw]/[7.5vw]">
           <motion.div className="w-full place-self-start lg:place-self-stretch text-[10vw]/[10.5vw] lg:text-[5vw]/[5.2vw]">
             <motion.p
@@ -181,7 +181,7 @@ export const HeroComponent: FC = () => {
             </p>
           </motion.div>
         </div>
-      </section>
-    </section>
+      </div>
+    </div>
   );
 };
