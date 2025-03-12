@@ -116,7 +116,7 @@ const AnimationS: any = [
   ],
   //-----Checked-----
   [
-    "#Frame_0>#group3>#check_3>#S10",
+    "#Frame_0>#group3>#check_3>#S10_1",
     { opacity: [0, 1], pathLength: [0, 1] },
     { duration: 0.55 },
   ],
@@ -682,7 +682,7 @@ export const SvgInfoGraphics1: FC<TAnimateProp> = ({
           <g id="check_3">
             <motion.path
               initial={{ opacity: 0, pathLength: 0, pathOffset: 0 }}
-              //id="S10"
+              id="S10_1"
               fill="none"
               stroke="#92b776"
               strokeWidth="7"
