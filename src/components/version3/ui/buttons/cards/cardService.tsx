@@ -4,15 +4,21 @@ type TCardItemProps = {
   title: string;
   imageSrc: string;
   index: number;
+  altText?: string;
 };
 
-export const CardService: FC<TCardItemProps> = ({ title, imageSrc, index }) => {
+export const CardService: FC<TCardItemProps> = ({
+  title,
+  imageSrc,
+  index,
+  altText,
+}) => {
   return (
     <article className="flex items-start gap-x-2 border border-green-700/50 shadow-sm bg-green-300/20">
       <header className="w-[120px] h-[120px] overflow-hidden object-cover object-left-top [mask-image:linear-gradient(to_right,theme(colors.black)_60%,theme(colors.transparent))]">
         <img
           src={imageSrc}
-          alt="Изображение массаж Fohow"
+          alt={altText !== undefined ? altText : ""}
           className="-scale-x-100"
         />
       </header>

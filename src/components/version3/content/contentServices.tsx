@@ -15,6 +15,7 @@ export const ContentServices: FC = () => {
                 title="Массаж спины"
                 imageSrc="/images/massage1/massage5.jpg"
                 index={1}
+                altText="массаж спины"
               />
             </li>
             <li>
@@ -22,6 +23,7 @@ export const ContentServices: FC = () => {
                 title="Массаж воротниковой зоны"
                 imageSrc="/images/massage1/massage4.jpg"
                 index={2}
+                altText="Массаж воротниковой зоны"
               />
             </li>
             <li>
@@ -29,6 +31,7 @@ export const ContentServices: FC = () => {
                 title="Массаж ног (стоп,коленей)"
                 imageSrc="/images/massage1/massage_legs.jpg"
                 index={3}
+                altText="Массаж ног (стоп,коленей)"
               />
             </li>
             <li>
@@ -36,10 +39,11 @@ export const ContentServices: FC = () => {
                 title="Массаж лица"
                 imageSrc="/images/massage1/massage2.jpg"
                 index={4}
+                altText="Массаж лица"
               />
             </li>
           </ul>
-          <p className="indent-4 mt-10 text-[2em]/[1.5em] lg:text-[clamp(1.5vw,2vw,2vw)]/[clamp(1.5vw,2vw,2.1vw)]">
+          <p className="indent-4 mt-10 text-[2em]/[2.1em] lg:text-[clamp(1.5vw,2vw,2vw)]/[clamp(1.5vw,2vw,2.1vw)]">
             Насколько полезен будет массаж, во многом зависит от периодичности
             его проведения.
           </p>
