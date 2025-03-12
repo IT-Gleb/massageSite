@@ -11,11 +11,11 @@ export const ContainerContent: FC<TContainerProps> = ({
 }) => {
   return (
     <div className={`w-full ${backgroundClass}`}>
-      <section
+      <div
         className={`w-[96%] lg:w-[75%] xl:w-[65%] mx-auto relative overflow-hidden text-[2vw]/[2.2vw] lg:text-[1vw]/[1.2vw] pt-20`}
       >
         {children}
-      </section>
+      </div>
     </div>
   );
 };
