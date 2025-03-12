@@ -4,7 +4,7 @@ export const SvgLogo3 = () => {
   return (
     <svg
       version="1.1"
-      id="Frame_0"
+      id="Frame_4"
       xmlns="http://www.w3.org/2000/svg"
       xmlnsXlink="http://www.w3.org/1999/xlink"
       width="100%"
@@ -15,7 +15,7 @@ export const SvgLogo3 = () => {
       <g id="logo">
         <g id="body">
           <path
-            id="S1"
+            id="S25"
             fill="none"
             stroke="currentColor"
             strokeWidth="2"
