@@ -37,7 +37,8 @@ export const CaruselItem: FC<TTextItems & TParamActiveIndex> = (param) => {
         aria-hidden="true"
         className="text-[0.8rem] text-green-500 dark:text-slate-500 p-1"
       >
-        {stringFromDate(param.date)}
+        {/* {stringFromDate(param.date)} */}
+        No date
       </p>
     </article>
   );
