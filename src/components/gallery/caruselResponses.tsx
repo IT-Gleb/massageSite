@@ -26,10 +26,6 @@ export const CaruselResponses: FC = () => {
   );
   const centerRef = useRef<HTMLDivElement>(null);
 
-  const { scrollXDirection } = useScrollLeftRight(
-    centerRef as RefObject<HTMLDivElement>
-  );
-
   const Refs = respData.map(() => useRef<HTMLElement>(null));
   // const Entrys: boolean[] = respData.map(() => false);
 
