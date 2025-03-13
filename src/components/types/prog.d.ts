@@ -29,6 +29,5 @@ declare type TScrollLeftRight = "left" | "right";
 
 declare type TParamActiveIndex = {
   activeIndex: number;
-  RootRef: RefObject<HTMLDivElement> | null;
-  SelfRef: RefObject<HTMLElement> | null;
+  selfRef: RefObject<HTMLElement> | null;
 };

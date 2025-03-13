@@ -37,37 +37,28 @@ export const CaruselResponses: FC = () => {
     Refs[index].current = element;
   };
 
-  const handleViewPortEnter = (
-    entry: IntersectionObserverEntry | null,
-    pindex: number
-  ) => {
-    let workIndex: number = 0;
-    if (entry?.isIntersecting && scrollXDirection === "right") {
-      workIndex =
-        pindex < responseData.length ? (workIndex = pindex - 1) : pindex;
-
-      workIndex < 0 ? 0 : workIndex;
-    }
-    if (entry?.isIntersecting && scrollXDirection === "left") {
-      workIndex = pindex + 1;
-      workIndex >= responseData.length ? workIndex - 1 : workIndex;
-      pindex === 0 ? (workIndex = 0) : workIndex;
-    }
-    //console.log(workIndex, pindex);
-    setActiveIndex(workIndex);
-  };
-
   // const handleViewPortLeave = (
   //   entry: IntersectionObserverEntry | null,
   //   pindex: number
   // ) => {
-  //   if (!entry?.isIntersecting) {
-  //     Entrys[pindex] = false;
-  //     const tmpEntrys = Entrys.filter((item) => item === false);
+  //   let workIndex: number = 0;
+  //   if (!entry?.isIntersecting && scrollXDirection === "right") {
+  //     workIndex =
+  //       pindex < responseData.length ? (workIndex = pindex + 2) : pindex;
+
+  //     workIndex < 0 ? 0 : workIndex;
   //   }
+  //   if (!entry?.isIntersecting && scrollXDirection === "left") {
+  //     workIndex = pindex - 2;
+  //     workIndex > 1 ? workIndex - 2 : workIndex;
+  //     pindex === 0 ? (workIndex = 0) : workIndex;
+  //   }
+  //   //console.log(workIndex, pindex);
+  //   setActiveIndex(workIndex);
   // };
 
   const handleAIndex = (param: number) => {
+    //console.log(param);
     let indx: number =
       param < 1 ? 0 : param >= countItem ? countItem - 1 : param;
     setActiveIndex(indx);
@@ -109,7 +100,7 @@ export const CaruselResponses: FC = () => {
   }, [respData]);
 
   return (
-    <div className="w-fit mx-auto">
+    <div className="w-fit mx-auto relative">
       <div
         ref={centerRef}
         className="relative max-[552px]:w-[280px] max-[600px]:w-[430px] sm:w-[560px] md:w-[656px] 2xl:w-[986px] min-[1960px]:w-[1320px]
@@ -120,21 +111,26 @@ export const CaruselResponses: FC = () => {
           scrollbarWidth: "none",
         }}
       >
-        <div className="absolute top-1 flex gap-x-3 items-start">
+        <div className="absolute top-1 flex gap-x-3 items-start z-0">
           {responseData.map((item, index) => {
             return (
               <motion.div
                 key={index}
-                onViewportEnter={(entry) => handleViewPortEnter(entry, index)}
+                // onViewportEnter={(entry) => handleViewPortEnter(entry, index)}
                 // onViewportLeave={(entry) => handleViewPortLeave(entry, index)}
-                viewport={{ root: centerRef, amount: 0.5 }}
+                onViewportEnter={(entry) => {
+                  if (entry?.isIntersecting) {
+                    // console.log("inView:", index);
+                    setActiveIndex(index);
+                  }
+                }}
+                viewport={{ root: centerRef, margin: "0% -50% 100% -50%" }}
                 className="w-fit mx-auto"
               >
                 <CaruselItem
                   {...item}
-                  SelfRef={setCallBackRef(index)}
                   activeIndex={activeIndex}
-                  RootRef={centerRef}
+                  selfRef={setCallBackRef(index)}
                 />
               </motion.div>
             );

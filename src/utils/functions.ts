@@ -115,8 +115,21 @@ function zeroToNumber(param: number): string | number {
 
 export function stringFromDate(param: string): string {
   let res: string = "";
+  //У меня поступает строка yyyy-mm-dd
+  //В сафари должна дата быть mm/dd/yyyy
+  let safaryArray = param.split("-").reverse();
+  let safaryString: string = "";
+  const tmp: { day: string; month: string; year: string } = {
+    day: zeroToNumber(Number(safaryArray[0]) + 1) as string,
+    month: zeroToNumber(Number(safaryArray[1])) as string,
+    year: safaryArray[2],
+  };
 
-  const date1 = new Date(param);
+  safaryString = `${tmp.month}/${tmp.day}/${tmp.year}`;
+
+  //console.log(param, safaryString);
+
+  const date1 = new Date(safaryString);
   let Day = zeroToNumber(date1.getUTCDate());
   let Month = date1.getUTCMonth() + 1;
   let Year = date1.getUTCFullYear();

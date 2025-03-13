@@ -6,7 +6,7 @@ import { SvgPeople } from "../svg_components/svgPeople";
 export const CaruselItem: FC<TTextItems & TParamActiveIndex> = (param) => {
   return (
     <article
-      ref={param.SelfRef}
+      ref={param.selfRef}
       className={`max-[365px]:w-[268px] w-[275px] md:w-[320px] h-[240px] bg-transparent dark:bg-slate-100 ${
         param.index === param.activeIndex
           ? "border-2 border-green-700 dark:border-neutral-300"
