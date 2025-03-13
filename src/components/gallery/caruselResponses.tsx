@@ -2,12 +2,15 @@ import React, { FC, RefObject, useEffect, useRef, useState } from "react";
 import { CaruselItem } from "./caruselItem";
 import { CaruselButtons } from "./caruselButtons";
 import respData from "../../../public/json/responses.json";
-import { useScrollLeftRight } from "@/hooks/scrollUpDown";
+
 import { motion } from "motion/react";
+import { toSlashDate } from "@/utils/functions";
 
 function sortBydate(a: TTextItems, b: TTextItems) {
-  const dt1: Date = new Date(a.date);
-  const dt2: Date = new Date(b.date);
+  const aDate: string = toSlashDate(a.date);
+  const bDate: string = toSlashDate(b.date);
+  const dt1: Date = new Date(aDate);
+  const dt2: Date = new Date(bDate);
 
   if (dt1 > dt2) {
     return -1;

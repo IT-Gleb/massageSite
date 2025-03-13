@@ -46,7 +46,7 @@ export function getNowYear(): number {
   let result: number = 0;
   const dtNow = new Date();
 
-  result = dtNow.getFullYear();
+  result = dtNow.getUTCFullYear();
 
   return result;
 }
@@ -113,19 +113,27 @@ function zeroToNumber(param: number): string | number {
   return res;
 }
 
-export function stringFromDate(param: string): string {
+export function toSlashDate(param: string): string {
   let res: string = "";
   //У меня поступает строка yyyy-mm-dd
   //В сафари должна дата быть mm/dd/yyyy
   let safaryArray = param.split("-").reverse();
-  let safaryString: string = "";
   const tmp: { day: string; month: string; year: string } = {
     day: zeroToNumber(Number(safaryArray[0]) + 1) as string,
     month: zeroToNumber(Number(safaryArray[1])) as string,
     year: safaryArray[2],
   };
+  res = `${tmp.month}/${tmp.day}/${tmp.year}`;
 
-  safaryString = `${tmp.month}/${tmp.day}/${tmp.year}`;
+  return res;
+}
+
+export function stringFromDate(param: string): string {
+  let res: string = "";
+  //У меня поступает строка yyyy-mm-dd
+  //В сафари должна дата быть mm/dd/yyyy
+
+  let safaryString: string = toSlashDate(param);
 
   //console.log(param, safaryString);
 
