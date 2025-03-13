@@ -57,7 +57,7 @@ export const SvgLogo2 = () => {
         </g>
         <g id="hand1">
           <path
-            id="S2"
+            //id="S2"
             fill="currentColor"
             fillRule="evenodd"
             stroke="none"
@@ -87,7 +87,7 @@ export const SvgLogo2 = () => {
         </g>
         <g id="hand2">
           <path
-            id="S2"
+            //id="S2"
             fill="currentColor"
             fillRule="evenodd"
             stroke="none"

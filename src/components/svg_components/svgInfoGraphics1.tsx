@@ -18,7 +18,7 @@ const AnimationS: any = [
   //---------------------------------
   //-----Анимация первой иконки-----
   [
-    "#Frame_0>#group1>#center2>#S1_2",
+    "#Frame_0>#group1>#center2>path",
     { pathLength: [0, 1] },
     { at: "+0.75", duration: 0.5 },
   ],
@@ -40,7 +40,7 @@ const AnimationS: any = [
   //-------------------------------
   //-----Вторая иконка-----
   [
-    "#Frame_0>#group2>#center2_2>#S1_2",
+    "#Frame_0>#group2>#center2_2>path",
     { pathLength: [0, 1] },
     { at: "-1.55", duration: 0.5 },
   ],
@@ -74,8 +74,8 @@ const AnimationS: any = [
   ["#Frame_0>#textGroup>#text2", { opacity: [1] }, { duration: 1 }],
   //-------------------------------
   //-----Анимация второй линии-----
-  ["#Frame_0>#lines>#line2>#S1_2", { pathLength: [0, 1] }, { duration: 0.5 }],
-  ["#Frame_0>#lines>#line2>#S1_2", { pathLength: [1] }, { duration: 1.5 }],
+  ["#Frame_0>#lines>#line2>path", { pathLength: [0, 1] }, { duration: 0.5 }],
+  ["#Frame_0>#lines>#line2>path", { pathLength: [1] }, { duration: 1.5 }],
   //-------------------------------
   //Убрать 2-й текст
   [
@@ -99,7 +99,7 @@ const AnimationS: any = [
 
   //----Третья иконка-----
   [
-    "#Frame_0>#group3>#center3_2>#S1_2",
+    "#Frame_0>#group3>#center3_2>path",
     { pathLength: [0, 1] },
     { at: "-1.55", duration: 0.5 },
   ],
@@ -144,7 +144,7 @@ const AnimationS: any = [
   //---------------
   //------Четвертая иконка-------------
   [
-    "#Frame_0>#group4>#center4_2>#S1_2",
+    "#Frame_0>#group4>#center4_2>path",
     { pathLength: [0, 1] },
     { duration: 0.5 },
   ],
@@ -195,7 +195,7 @@ const AnimationS: any = [
     { duration: 0.5 },
   ],
   [
-    "#Frame_0>#group5>#center5_2>#S1_2",
+    "#Frame_0>#group5>#center5_2>path",
     {
       pathLength: [0, 1],
       pathOffset: [1, 0],
@@ -275,7 +275,7 @@ export const SvgInfoGraphics1: FC<TAnimateProp> = ({
           <g id="center2">
             <motion.path
               initial={{ pathLength: 0 }}
-              id="S1_2"
+              //id="S1_2"
               fill="none"
               stroke="#3998bd"
               strokeWidth="1"
@@ -285,7 +285,7 @@ export const SvgInfoGraphics1: FC<TAnimateProp> = ({
           </g>
           <motion.g initial={{ opacity: 0 }} id="chel_1">
             <path
-              id="S2"
+              //id="S2"
               fill="#005865"
               fillRule="evenodd"
               stroke="none"
@@ -360,7 +360,7 @@ export const SvgInfoGraphics1: FC<TAnimateProp> = ({
           <g id="center2_2">
             <motion.path
               initial={{ pathLength: 0, pathOffset: 0 }}
-              id="S1_2"
+              //id="S1_2"
               fill="none"
               stroke="#3998bd"
               strokeWidth="1"
@@ -377,7 +377,7 @@ export const SvgInfoGraphics1: FC<TAnimateProp> = ({
               d="M 169.247 82.415 C 170.202 81.324 172.782 80.862 172.782 80.862 C 172.783 80.862 183.026 80.862 183.027 80.862 C 183.028 80.862 192.947 80.966 192.948 80.966 C 192.948 80.966 196.123 81.190 197.044 82.166 C 198.136 83.322 198.062 87.094 198.062 87.094 C 198.062 87.097 198.139 109.051 198.139 109.053 C 198.139 109.056 198.139 137.241 198.139 137.244 C 198.137 137.244 183.028 137.244 183.027 137.244 C 183.025 137.244 167.917 137.244 167.915 137.244 C 167.915 137.241 167.915 109.056 167.915 109.053 C 167.915 109.051 167.915 87.751 167.915 87.749 C 167.915 87.748 167.881 83.976 169.247 82.415 Z"
             />
             <path
-              id="S1_2"
+              //id="S1_2"
               fill="#e3e3e3"
               fillRule="evenodd"
               stroke="none"
@@ -589,7 +589,7 @@ export const SvgInfoGraphics1: FC<TAnimateProp> = ({
           <g id="center3_2">
             <motion.path
               initial={{ pathLength: 0 }}
-              id="S1_2"
+              //id="S1_2"
               fill="none"
               stroke="#3998bd"
               strokeWidth="1"
@@ -607,7 +607,7 @@ export const SvgInfoGraphics1: FC<TAnimateProp> = ({
               d="M 348.846 130.787 C 360.294 130.787 383.188 130.787 383.189 130.787 "
             />
             <path
-              id="S2"
+              //id="S2"
               fill="none"
               stroke="#25657f"
               strokeWidth="3"
@@ -639,7 +639,7 @@ export const SvgInfoGraphics1: FC<TAnimateProp> = ({
               d="M 348.752 174.235 C 352.568 174.235 360.200 174.235 360.200 174.235 "
             />
             <path
-              id="S1_2"
+              //id="S1_2"
               fill="none"
               stroke="#25657f"
               strokeWidth="3"
@@ -647,7 +647,7 @@ export const SvgInfoGraphics1: FC<TAnimateProp> = ({
               d="M 348.846 139.482 C 358.983 139.451 379.255 139.388 379.256 139.388 "
             />
             <path
-              id="S2_2"
+              //id="S2_2"
               fill="none"
               stroke="#25657f"
               strokeWidth="3"
@@ -707,7 +707,7 @@ export const SvgInfoGraphics1: FC<TAnimateProp> = ({
           <g id="center4_2">
             <motion.path
               initial={{ pathLength: 0 }}
-              id="S1_2"
+              //id="S1_2"
               fill="none"
               stroke="#3998bd"
               strokeWidth="1"
@@ -725,7 +725,7 @@ export const SvgInfoGraphics1: FC<TAnimateProp> = ({
               d="M 199.837 217.623 C 220.726 217.483 262.503 217.202 262.505 217.202 "
             />
             <path
-              id="S2"
+              //id="S2"
               fill="none"
               stroke="#143a4a"
               strokeWidth="2"
@@ -1949,7 +1949,7 @@ export const SvgInfoGraphics1: FC<TAnimateProp> = ({
           <motion.g id="center5_2">
             <motion.path
               initial={{ pathLength: 0 }}
-              id="S1_2"
+              //id="S1_2"
               fill="none"
               stroke="#3998bd"
               strokeWidth="1"
@@ -1966,7 +1966,7 @@ export const SvgInfoGraphics1: FC<TAnimateProp> = ({
               d="M 52.443 205.792 C 52.443 205.791 58.272 203.266 58.273 203.265 C 58.274 203.266 64.103 205.791 64.103 205.792 C 64.103 205.793 62.219 222.819 62.219 222.820 C 62.219 222.821 64.103 231.639 64.103 231.640 C 64.103 231.640 58.274 232.379 58.273 232.379 C 58.273 232.379 52.443 231.640 52.443 231.640 C 52.443 231.639 54.327 222.779 54.327 222.778 C 54.327 222.777 52.443 205.793 52.443 205.792 Z"
             />
             <path
-              id="S2"
+              //id="S2"
               fill="#25657f"
               fillRule="evenodd"
               stroke="none"
@@ -2017,7 +2017,7 @@ export const SvgInfoGraphics1: FC<TAnimateProp> = ({
           <g id="line2">
             <motion.path
               initial={{ pathLength: 0 }}
-              id="S1_2"
+              //id="S1_2"
               fill="none"
               stroke="#3998bd"
               strokeWidth="2"
