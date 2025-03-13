@@ -39,9 +39,10 @@ export const ContentMain: FC = () => {
       <Suspense>
         <ContentResponses />
       </Suspense>
-      <Suspense>
+
+      {/* <Suspense>
         <ContentLocation />
-      </Suspense>
+      </Suspense> */}
       <Suspense>
         <PhoneMenuButton />
       </Suspense>
