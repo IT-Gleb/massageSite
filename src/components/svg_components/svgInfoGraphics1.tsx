@@ -23,7 +23,7 @@ const AnimationS: any = [
     { at: "+0.75", duration: 0.5 },
   ],
   [
-    "#Frame_0>#group1>#center1>#S1",
+    "#Frame_0>#group1>#center1>path",
     { pathLength: [0, 1], pathOffset: [1, 0] },
     { at: "-0.65", duration: 0.75 },
   ],
@@ -35,8 +35,8 @@ const AnimationS: any = [
   ["#Frame_0>#group1>#chel_1", { opacity: [1] }, { duration: 1 }],
   //-----Анимация первой иконки-----
   //-----Анимация первой линии-----
-  ["#Frame_0>#lines>#line1>#S1", { pathLength: [0, 1] }, { duration: 0.5 }],
-  ["#Frame_0>#lines>#line1>#S1", { pathLength: [1] }, { duration: 1.5 }],
+  ["#Frame_0>#lines>#line1>path", { pathLength: [0, 1] }, { duration: 0.5 }],
+  ["#Frame_0>#lines>#line1>path", { pathLength: [1] }, { duration: 1.5 }],
   //-------------------------------
   //-----Вторая иконка-----
   [
@@ -45,7 +45,7 @@ const AnimationS: any = [
     { at: "-1.55", duration: 0.5 },
   ],
   [
-    "#Frame_0>#group2>#center2_1>#S1",
+    "#Frame_0>#group2>#center2_1>path",
     { pathLength: [0, 1], pathOffset: [1, 0] },
     { at: "-0.5", duration: 0.75 },
   ],
@@ -104,7 +104,7 @@ const AnimationS: any = [
     { at: "-1.55", duration: 0.5 },
   ],
   [
-    "#Frame_0>#group3>#center3_1>#S1",
+    "#Frame_0>#group3>#center3_1>path",
     { pathLength: [0, 1], pathOffset: [1, 0] },
     { at: "-0.5", duration: 0.75 },
   ],
@@ -149,7 +149,7 @@ const AnimationS: any = [
     { duration: 0.5 },
   ],
   [
-    "#Frame_0>#group4>#center4_1>#S1",
+    "#Frame_0>#group4>#center4_1>path",
     { pathLength: [0, 1], pathOffset: [1, 0] },
     { at: "-0.5", duration: 0.75 },
   ],
@@ -187,7 +187,7 @@ const AnimationS: any = [
   //--------------------
   //Пятая иконка
   [
-    "#Frame_0>#group5>#center5_1>#S1",
+    "#Frame_0>#group5>#center5_1>path",
     {
       pathLength: [0, 1],
       stroke: ["#25657F", "#25657F", "#25657F", "#7DBD2E"],
@@ -264,7 +264,7 @@ export const SvgInfoGraphics1: FC<TAnimateProp> = ({
           <g id="center1">
             <motion.path
               initial={{ pathLength: 0, pathOffset: 0 }}
-              id="S1"
+              //id="S1"
               fill="none"
               stroke="#3998bd"
               strokeWidth="3"
@@ -349,7 +349,7 @@ export const SvgInfoGraphics1: FC<TAnimateProp> = ({
           <g id="center2_1">
             <motion.path
               initial={{ pathLength: 0, pathOffset: 0 }}
-              id="S1"
+              //id="S1"
               fill="none"
               stroke="#3998bd"
               strokeWidth="3"
@@ -370,7 +370,7 @@ export const SvgInfoGraphics1: FC<TAnimateProp> = ({
           </g>
           <motion.g initial={{ opacity: 0 }} id="chel_2">
             <path
-              id="S1"
+              //id="S1"
               fill="#005865"
               fillRule="evenodd"
               stroke="none"
@@ -578,7 +578,7 @@ export const SvgInfoGraphics1: FC<TAnimateProp> = ({
           <g id="center3_1">
             <motion.path
               initial={{ pathLength: 0 }}
-              id="S1"
+              //id="S1"
               fill="none"
               stroke="#3998bd"
               strokeWidth="3"
@@ -696,7 +696,7 @@ export const SvgInfoGraphics1: FC<TAnimateProp> = ({
           <g id="center4_1">
             <motion.path
               initial={{ pathLength: 0 }}
-              id="S1"
+              //id="S1"
               fill="none"
               stroke="#3998bd"
               strokeWidth="3"
@@ -717,7 +717,7 @@ export const SvgInfoGraphics1: FC<TAnimateProp> = ({
           </g>
           <motion.g initial={{ opacity: 0 }} id="chel_4">
             <path
-              id="S1"
+              //id="S1"
               fill="none"
               stroke="#143a4a"
               strokeWidth="2"
@@ -1938,7 +1938,7 @@ export const SvgInfoGraphics1: FC<TAnimateProp> = ({
           <motion.g id="center5_1">
             <motion.path
               initial={{ pathLength: 0 }}
-              id="S1"
+              //id="S1"
               fill="none"
               stroke="#3998bd"
               strokeWidth="3"
@@ -1959,7 +1959,7 @@ export const SvgInfoGraphics1: FC<TAnimateProp> = ({
           </motion.g>
           <motion.g initial={{ opacity: 0 }} id="chel_5">
             <path
-              id="S1"
+              //id="S1"
               fill="#25657f"
               fillRule="evenodd"
               stroke="none"
@@ -2006,7 +2006,7 @@ export const SvgInfoGraphics1: FC<TAnimateProp> = ({
           <g id="line1">
             <motion.path
               initial={{ pathLength: 0 }}
-              id="S1"
+              //id="S1"
               fill="none"
               stroke="#3998bd"
               strokeWidth="2"
@@ -2051,7 +2051,7 @@ export const SvgInfoGraphics1: FC<TAnimateProp> = ({
         <g id="textGroup">
           <motion.g initial={{ fillOpacity: 0 }} id="text1">
             <path
-              id="S1"
+              //id="S1"
               fill="#ff472e"
               fillRule="evenodd"
               stroke="none"
@@ -2060,7 +2060,7 @@ export const SvgInfoGraphics1: FC<TAnimateProp> = ({
           </motion.g>
           <motion.g initial={{ opacity: 0 }} id="text2">
             <path
-              id="S1"
+              //id="S1"
               fill="#25657f"
               fillRule="evenodd"
               stroke="none"
@@ -2069,7 +2069,7 @@ export const SvgInfoGraphics1: FC<TAnimateProp> = ({
           </motion.g>
           <motion.g initial={{ opacity: 0 }} id="text3">
             <path
-              id="S1"
+              //id="S1"
               fill="#25657f"
               fillRule="evenodd"
               stroke="none"
@@ -2078,7 +2078,7 @@ export const SvgInfoGraphics1: FC<TAnimateProp> = ({
           </motion.g>
           <motion.g initial={{ opacity: 0 }} id="text4">
             <path
-              id="S1"
+              //id="S1"
               fill="#25657f"
               fillRule="evenodd"
               stroke="none"
@@ -2087,7 +2087,7 @@ export const SvgInfoGraphics1: FC<TAnimateProp> = ({
           </motion.g>
           <motion.g initial={{ opacity: 0 }} id="text5">
             <path
-              id="S1"
+              //id="S1"
               fill="#25657f"
               fillRule="evenodd"
               stroke="none"
