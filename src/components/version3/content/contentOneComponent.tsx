@@ -89,7 +89,7 @@ export const ContentOneComponent: FC = () => {
         await animate(
           aTarget.current,
           { y: [500, 0] },
-          { duration: 0.7, ease: "linear" }
+          { delay: 0.5, duration: 0.7, ease: "linear" }
         );
       }
       //else if (scrollDirection === "up") {
