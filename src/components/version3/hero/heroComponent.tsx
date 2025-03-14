@@ -2,13 +2,12 @@
 
 import React, { FC } from "react";
 import { FoHowIcon } from "./foHowIcon";
-import { SvgHandsUp } from "@/components/svg_components/svgHandsUp";
 import { ImageRounded } from "../images/imageRounded";
 import { HeroNavigation } from "./heroNavigation";
 import { motion } from "motion/react";
-import { Loader } from "../loader/Loader";
 import { SvgInfo } from "@/components/svg_components/svgInfo";
 import { SvgThumb } from "@/components/svg_components/svgThumb";
+import { SvgHandsLeafs } from "@/components/svg_components/svgHandsLeafs";
 
 const Acontainer = {
   hidden: { opacity: 0 },
@@ -81,7 +80,7 @@ export const HeroComponent: FC = () => {
         >
           <div className="w-fit ml-auto flex items-center gap-x-2">
             <div className="w-[40px]">
-              <SvgHandsUp />
+              <SvgHandsLeafs />
             </div>
             <h3 className=" pr-12 pb-2 border-b-2 border-b-indigo-900 ">
               Новый вид массажа
