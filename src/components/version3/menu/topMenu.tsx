@@ -16,7 +16,7 @@ export const TopMenu: FC = () => {
 
   return (
     <motion.div
-      className="fixed w-full flex flex-col z-10 bg-green-700 text-green-50 shadow-md"
+      className="fixed w-full flex flex-col z-10 bg-green-700 text-green-50 py-1 shadow-md "
       style={{ y }}
     >
       <nav className="w-[90%] md:w-[75%] xl:w-[65%] mx-auto place-content-center">
