@@ -5,8 +5,8 @@ import { ContentTwoComponent } from "./contentTwoComponent";
 import { TopMenu } from "../menu/topMenu";
 import { ContentServices } from "./contentServices";
 //import { ContentHowRecord } from "./contentHowRecord";
-import { ContentLocation } from "./contentLocation";
-import { ContentResponses } from "./contentResponses";
+// import { ContentLocation } from "./contentLocation";
+// import { ContentResponses } from "./contentResponses";
 import { ContentVideo } from "./contentVideo";
 import { PhoneMenuButton } from "../ui/buttons/phoneMenuButton";
 // import { ContentHealing } from "./contentHealing";
@@ -38,13 +38,13 @@ export const ContentMain: FC = () => {
         <Suspense>
           <ContentTwoComponent />
         </Suspense>
-        <Suspense>
+        {/* <Suspense>
           <ContentResponses />
-        </Suspense>
+        </Suspense> */}
 
-        <Suspense>
+        {/* <Suspense>
           <ContentLocation />
-        </Suspense>
+        </Suspense> */}
         <Suspense>
           <PhoneMenuButton />
         </Suspense>
