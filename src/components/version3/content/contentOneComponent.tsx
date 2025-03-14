@@ -81,26 +81,26 @@ export const ContentOneComponent: FC = () => {
     }
   }, [sizes]);
 
-  useEffect(() => {
-    // console.log(scrollDirection);
-    (async () => {
-      if (isView && scrollDirection === "down") {
-        // await animate(asequence);
-        await animate(
-          aTarget.current,
-          { y: [500, 0] },
-          { type: "spring", delay: 0.5, duration: 0.7 }
-        );
-      }
-      //else if (scrollDirection === "up") {
-      //   await animate(
-      //     aTarget.current,
-      //     { opacity: [1, 0], y: [0, -100] },
-      //     { duration: 0.7, ease: "linear" }
-      //   );
-      // }
-    })();
-  }, [isView]);
+  // useEffect(() => {
+  //   // console.log(scrollDirection);
+  //   (async () => {
+  //     if (isView && scrollDirection === "down") {
+  //       // await animate(asequence);
+  //       await animate(
+  //         aTarget.current,
+  //         { y: [500, 0] },
+  //         { type: "spring", delay: 0.5, duration: 0.7 }
+  //       );
+  //     }
+  //     //else if (scrollDirection === "up") {
+  //     //   await animate(
+  //     //     aTarget.current,
+  //     //     { opacity: [1, 0], y: [0, -100] },
+  //     //     { duration: 0.7, ease: "linear" }
+  //     //   );
+  //     // }
+  //   })();
+  // }, [isView]);
 
   return (
     <ContainerContent backgroundClass="bg-green-50/50">
