@@ -1,6 +1,6 @@
 import React, { FC, Suspense } from "react";
 import { HeroComponent } from "../hero/heroComponent";
-//import { ContentOneComponent } from "./contentOneComponent";
+import { ContentOneComponent } from "./contentOneComponent";
 import { ContentTwoComponent } from "./contentTwoComponent";
 import { TopMenu } from "../menu/topMenu";
 import { ContentServices } from "./contentServices";
@@ -32,10 +32,10 @@ export const ContentMain: FC = () => {
         <Suspense>
           <ContentVideo />
         </Suspense>
-        {/* <Suspense>
+        <Suspense>
           <ContentOneComponent />
         </Suspense>
-        */}
+
         <Suspense>
           <ContentTwoComponent />
         </Suspense>
