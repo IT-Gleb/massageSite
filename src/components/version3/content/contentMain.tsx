@@ -4,7 +4,7 @@ import { HeroComponent } from "../hero/heroComponent";
 // import { ContentTwoComponent } from "./contentTwoComponent";
 // import { ContentHowRecord } from "./contentHowRecord";
 import { TopMenu } from "../menu/topMenu";
-// import { ContentServices } from "./contentServices";
+import { ContentServices } from "./contentServices";
 // import { ContentLocation } from "./contentLocation";
 // import { ContentResponses } from "./contentResponses";
 // import { ContentVideo } from "./contentVideo";
@@ -23,11 +23,11 @@ export const ContentMain: FC = () => {
         <Suspense fallback={<div>идет загрузка...</div>}>
           <HeroComponent />
         </Suspense>
-        <h2>Привет, Алёна! -2 </h2>
-        {/*
         <Suspense>
           <ContentServices />
         </Suspense>
+        <h2>Привет, Алёна! -2 </h2>
+        {/*
         <Suspense>
           <ContentHowRecord />
         </Suspense>
