@@ -1,14 +1,14 @@
 import React, { FC, Suspense } from "react";
 import { HeroComponent } from "../hero/heroComponent";
-// import { ContentOneComponent } from "./contentOneComponent";
-// import { ContentTwoComponent } from "./contentTwoComponent";
+import { ContentOneComponent } from "./contentOneComponent";
+import { ContentTwoComponent } from "./contentTwoComponent";
 import { TopMenu } from "../menu/topMenu";
 import { ContentServices } from "./contentServices";
-import { ContentHowRecord } from "./contentHowRecord";
-// import { ContentLocation } from "./contentLocation";
-// import { ContentResponses } from "./contentResponses";
-// import { ContentVideo } from "./contentVideo";
-// import { PhoneMenuButton } from "../ui/buttons/phoneMenuButton";
+//import { ContentHowRecord } from "./contentHowRecord";
+ import { ContentLocation } from "./contentLocation";
+ import { ContentResponses } from "./contentResponses";
+ import { ContentVideo } from "./contentVideo";
+ import { PhoneMenuButton } from "../ui/buttons/phoneMenuButton";
 // import { ContentHealing } from "./contentHealing";
 import { FooterLayout } from "../layout/footerLayout";
 
@@ -26,11 +26,9 @@ export const ContentMain: FC = () => {
         <Suspense>
           <ContentServices />
         </Suspense>
-        <Suspense>
+        {/* <Suspense>
           <ContentHowRecord />
-        </Suspense>
-        <h2>Привет, Алёна! -3 </h2>
-        {/*
+        </Suspense> */}
         <Suspense>
           <ContentVideo />
         </Suspense>
@@ -44,12 +42,12 @@ export const ContentMain: FC = () => {
           <ContentResponses />
         </Suspense> */}
 
-        {/* <Suspense>
+        <Suspense>
         <ContentLocation />
-      </Suspense> */}
-        {/* <Suspense>
+      </Suspense>
+        <Suspense>
           <PhoneMenuButton />
-        </Suspense> */}
+        </Suspense>
       </main>
       <Suspense>
         <FooterLayout />
