@@ -20,10 +20,10 @@ export const ContentMain: FC = () => {
       </Suspense>
 
       <main className="flex flex-col min-h-[100vh] bg-white flex-auto">
-        <h2>Привет, Алёна! -1 </h2>
         <Suspense fallback={<div>идет загрузка...</div>}>
           <HeroComponent />
         </Suspense>
+        <h2>Привет, Алёна! -2 </h2>
         {/*
         <Suspense>
           <ContentServices />
