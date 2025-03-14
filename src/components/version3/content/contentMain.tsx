@@ -8,7 +8,7 @@ import { ContentServices } from "./contentServices";
 // import { ContentLocation } from "./contentLocation";
 // import { ContentResponses } from "./contentResponses";
 import { ContentVideo } from "./contentVideo";
-//import { PhoneMenuButton } from "../ui/buttons/phoneMenuButton";
+import { PhoneMenuButton } from "../ui/buttons/phoneMenuButton";
 // import { ContentHealing } from "./contentHealing";
 import { FooterLayout } from "../layout/footerLayout";
 
@@ -46,9 +46,9 @@ export const ContentMain: FC = () => {
         {/* <Suspense>
           <ContentLocation />
         </Suspense> */}
-        {/* <Suspense>
+        <Suspense>
           <PhoneMenuButton />
-        </Suspense> */}
+        </Suspense>
       </main>
       <Suspense>
         <FooterLayout />
