@@ -2,9 +2,9 @@ import React, { FC, Suspense } from "react";
 import { HeroComponent } from "../hero/heroComponent";
 // import { ContentOneComponent } from "./contentOneComponent";
 // import { ContentTwoComponent } from "./contentTwoComponent";
-// import { ContentHowRecord } from "./contentHowRecord";
 import { TopMenu } from "../menu/topMenu";
 import { ContentServices } from "./contentServices";
+import { ContentHowRecord } from "./contentHowRecord";
 // import { ContentLocation } from "./contentLocation";
 // import { ContentResponses } from "./contentResponses";
 // import { ContentVideo } from "./contentVideo";
@@ -26,11 +26,11 @@ export const ContentMain: FC = () => {
         <Suspense>
           <ContentServices />
         </Suspense>
-        <h2>Привет, Алёна! -2 </h2>
-        {/*
         <Suspense>
           <ContentHowRecord />
         </Suspense>
+        <h2>Привет, Алёна! -3 </h2>
+        {/*
         <Suspense>
           <ContentVideo />
         </Suspense>
