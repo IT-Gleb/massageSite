@@ -67,6 +67,10 @@ export const ContentOneComponent: FC = () => {
   const { scrollDirection } = useScrollDownUp();
 
   useEffect(() => {
+    if (typeof sizes === "boolean") {
+      return;
+    }
+
     let tmpW: number = isMobile
       ? Math.round((sizes as TSizes).width - 20)
       : Math.round((sizes as TSizes).width / 2 - 20);
