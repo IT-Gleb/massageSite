@@ -5,10 +5,10 @@ import { ContentTwoComponent } from "./contentTwoComponent";
 import { TopMenu } from "../menu/topMenu";
 import { ContentServices } from "./contentServices";
 //import { ContentHowRecord } from "./contentHowRecord";
- import { ContentLocation } from "./contentLocation";
- import { ContentResponses } from "./contentResponses";
- import { ContentVideo } from "./contentVideo";
- import { PhoneMenuButton } from "../ui/buttons/phoneMenuButton";
+import { ContentLocation } from "./contentLocation";
+import { ContentResponses } from "./contentResponses";
+import { ContentVideo } from "./contentVideo";
+import { PhoneMenuButton } from "../ui/buttons/phoneMenuButton";
 // import { ContentHealing } from "./contentHealing";
 import { FooterLayout } from "../layout/footerLayout";
 
@@ -40,11 +40,11 @@ export const ContentMain: FC = () => {
         </Suspense>
         <Suspense>
           <ContentResponses />
-        </Suspense> */}
+        </Suspense>
 
         <Suspense>
-        <ContentLocation />
-      </Suspense>
+          <ContentLocation />
+        </Suspense>
         <Suspense>
           <PhoneMenuButton />
         </Suspense>
