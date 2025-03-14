@@ -52,7 +52,7 @@ const asequence: any = [
 export const ContentOneComponent: FC = () => {
   const triggerRef = useRef(null);
   const aTarget = useRef(null);
-  //const [resizedRef, sizes] = useMyResizeObserver();
+  const [resizedRef, sizes] = useMyResizeObserver();
   const isMobile = useMyMediaQuery("only screen and (max-width:1023px)");
 
   const [widthtImage, setWidthImage] = useState<number>(340);
@@ -66,20 +66,20 @@ export const ContentOneComponent: FC = () => {
 
   const { scrollDirection } = useScrollDownUp();
 
-  // useEffect(() => {
-  //   let tmpW: number = isMobile
-  //     ? Math.round((sizes as TSizes).width - 20)
-  //     : Math.round((sizes as TSizes).width / 2 - 20);
-  //   let tmpH: number = Math.round(tmpW / 1.6);
-  //   if (!isNaN(tmpH) && tmpH > 0) {
-  //     if (heightImage !== tmpH) {
-  //       setHeightImage(tmpH);
-  //     }
-  //     if (widthtImage !== tmpW) {
-  //       setWidthImage(tmpW);
-  //     }
-  //   }
-  // }, [sizes]);
+  useEffect(() => {
+    let tmpW: number = isMobile
+      ? Math.round((sizes as TSizes).width - 20)
+      : Math.round((sizes as TSizes).width / 2 - 20);
+    let tmpH: number = Math.round(tmpW / 1.6);
+    if (!isNaN(tmpH) && tmpH > 0) {
+      if (heightImage !== tmpH) {
+        setHeightImage(tmpH);
+      }
+      if (widthtImage !== tmpW) {
+        setWidthImage(tmpW);
+      }
+    }
+  }, [sizes]);
 
   useEffect(() => {
     // console.log(scrollDirection);
@@ -105,7 +105,7 @@ export const ContentOneComponent: FC = () => {
   return (
     <ContainerContent backgroundClass="bg-green-50/50">
       <div
-        // ref={resizedRef as RefObject<HTMLDivElement>}
+        ref={resizedRef as RefObject<HTMLDivElement>}
         className="min-h-[75vh]"
       >
         <h2 ref={triggerRef} className="underline-offset-4 underline ml-8">

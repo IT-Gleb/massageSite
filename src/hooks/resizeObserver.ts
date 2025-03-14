@@ -1,4 +1,4 @@
-import { useState, useRef, useSyncExternalStore, Ref, RefObject } from "react";
+import { useState, useRef, useSyncExternalStore, RefObject } from "react";
 
 function useMyResizeObserver() {
   const targetRef = useRef<HTMLElement>(null);
@@ -21,9 +21,7 @@ function useMyResizeObserver() {
     });
 
     if (targetRef.current) {
-      observer.observe(targetRef.current, { box: "device-pixel-content-box" });
-    } else {
-      observer.unobserve(targetRef.current as unknown as HTMLElement);
+      observer.observe(targetRef.current, { box: "content-box" });
     }
     return () => {
       observer.disconnect();
