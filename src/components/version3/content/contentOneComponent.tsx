@@ -85,7 +85,12 @@ export const ContentOneComponent: FC = () => {
     // console.log(scrollDirection);
     (async () => {
       if (isView && scrollDirection === "down") {
-        await animate(asequence);
+        // await animate(asequence);
+        await animate(
+          aTarget.current,
+          { y: [500, 0] },
+          { duration: 0.7, ease: "linear" }
+        );
       }
       //else if (scrollDirection === "up") {
       //   await animate(
