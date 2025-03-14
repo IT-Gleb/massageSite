@@ -5,7 +5,7 @@ import {
   useInView,
   stagger,
   animate,
-  MotionConfig,
+  // MotionConfig,
 } from "motion/react";
 import React, { FC, RefObject, useEffect, useRef, useState } from "react";
 import { ImageBlock } from "../images/imageBlock";
@@ -106,71 +106,71 @@ export const ContentOneComponent: FC = () => {
         <h2 ref={triggerRef} className="underline-offset-4 underline ml-8">
           Биоэнергомассаж
         </h2>
-        <MotionConfig reducedMotion="never">
-          <motion.ul
-            ref={aTarget}
-            // variants={AnimatedList}
-            // initial="hidden"
-            // animate="visual"
-            id="uuul"
-            className="flex flex-col lg:grid lg:grid-cols-4 mt-10  font-inter gap-x-1 gap-y-2
+        {/* <MotionConfig reducedMotion="never"> */}
+        <motion.ul
+          ref={aTarget}
+          // variants={AnimatedList}
+          // initial="hidden"
+          // animate="visual"
+          id="uuul"
+          className="flex flex-col lg:grid lg:grid-cols-4 mt-10  font-inter gap-x-1 gap-y-2
        [&>li>div]:rounded-lg [&>li>div]:overflow-hidden [&>li>div:has(img)]:border-none [&>li>div]:border-2 [&>li>div]:border-stone-300  
        [&>li>div]:shadow-md [&>li>div>p]:bg-stone-50 [&>li>div>p]:text-[1.8em]/[1.9em] md:[&>li>div>p]:text-[1em]/[1.1em] lg:[&>li>div>p]:text-[1.2vw]/[1.4vw] [&>li>div>p]:text-stone-950 [&>li>div>p]:indent-4 [&>li>div>p]:p-2"
-          >
-            <motion.li className="place-content-start mt-5">
-              <ContentItemNumbered numered={1}>
-                <p className="text-center ml-2">
-                  <strong>Аппаратная восстановительная физиотерапия</strong>{" "}
-                  (биоэнергомассаж)
-                </p>
-              </ContentItemNumbered>
-            </motion.li>
-            <motion.li className="place-content-evenly">
-              <ContentItemNumbered numered={2}>
-                <p>
-                  Физиотерапия нового покаления с применением импульсного тока
-                  низкой частоты, проводится специальными{" "}
-                  <strong>перчатками</strong> с{" "}
-                  <strong>серебрянной нитью</strong>, которые подключены к
-                  прибору с токами тойже частоты что и клетки нашего организма.
-                </p>
-              </ContentItemNumbered>
-            </motion.li>
-            <motion.li className="hidden lg:block place-content-center mx-auto">
-              <ImageBlock
-                imageSrc="/images/massage1/massage_vector_4.jpg"
-                width={widthtImage}
-                height={heightImage}
-                isAlt={false}
-              />
-            </motion.li>
-            <motion.li className="lg:col-span-2 lg:place-content-center mx-auto">
-              <ImageBlock
-                imageSrc="/images/massage1/massage2.avif"
-                width={widthtImage}
-                height={heightImage}
-                isAlt={false}
-              />
-            </motion.li>
-            <motion.li className=" place-content-center lg:place-content-evenly mt-4">
-              <ContentItemNumbered numered={3}>
-                <p>
-                  Массаж обеспечивает глубокое проникновение в мышцы,суставы,
-                  кости, причем при обычной процедуре ручного массажа этого
-                  достичь невозможно.
-                </p>
-              </ContentItemNumbered>
-            </motion.li>
-            <motion.li className="place-content-end col-span-2 w-fit lg:col-span-1 text-[1.5vw]/[1.8vw] lg:text-[0.75vw]/[1.1vw] font-bold mx-1">
-              <div className="p-1">
-                <div className="w-[16px] h-[16px] lg:w-[24px] lg:h-[24px] float-left mt-2 mr-2">
-                  <SvgInfo />
-                </div>
-                <p>Имеются противопоказания. Консультируйтесь у специалиста.</p>
+        >
+          <motion.li className="place-content-start mt-5">
+            <ContentItemNumbered numered={1}>
+              <p className="text-center ml-2">
+                <strong>Аппаратная восстановительная физиотерапия</strong>{" "}
+                (биоэнергомассаж)
+              </p>
+            </ContentItemNumbered>
+          </motion.li>
+          <motion.li className="place-content-evenly">
+            <ContentItemNumbered numered={2}>
+              <p>
+                Физиотерапия нового покаления с применением импульсного тока
+                низкой частоты, проводится специальными{" "}
+                <strong>перчатками</strong> с <strong>серебрянной нитью</strong>
+                , которые подключены к прибору с токами тойже частоты что и
+                клетки нашего организма.
+              </p>
+            </ContentItemNumbered>
+          </motion.li>
+          <motion.li className="hidden lg:block place-content-center mx-auto">
+            <ImageBlock
+              imageSrc="/images/massage1/massage_vector_4.jpg"
+              width={widthtImage}
+              height={heightImage}
+              isAlt={false}
+            />
+          </motion.li>
+          <motion.li className="lg:col-span-2 lg:place-content-center mx-auto">
+            <ImageBlock
+              imageSrc="/images/massage1/massage2.avif"
+              width={widthtImage}
+              height={heightImage}
+              isAlt={false}
+            />
+          </motion.li>
+          <motion.li className=" place-content-center lg:place-content-evenly mt-4">
+            <ContentItemNumbered numered={3}>
+              <p>
+                Массаж обеспечивает глубокое проникновение в мышцы,суставы,
+                кости, причем при обычной процедуре ручного массажа этого
+                достичь невозможно.
+              </p>
+            </ContentItemNumbered>
+          </motion.li>
+          <motion.li className="place-content-end col-span-2 w-fit lg:col-span-1 text-[1.5vw]/[1.8vw] lg:text-[0.75vw]/[1.1vw] font-bold mx-1">
+            <div className="p-1">
+              <div className="w-[16px] h-[16px] lg:w-[24px] lg:h-[24px] float-left mt-2 mr-2">
+                <SvgInfo />
               </div>
-            </motion.li>
-          </motion.ul>
-        </MotionConfig>
+              <p>Имеются противопоказания. Консультируйтесь у специалиста.</p>
+            </div>
+          </motion.li>
+        </motion.ul>
+        {/* </MotionConfig> */}
       </div>
       <div className="w-full h-[2vh] lg:h-[5vh] bg-[url('/images/svg/back.svg')] mt-5"></div>
     </ContainerContent>
