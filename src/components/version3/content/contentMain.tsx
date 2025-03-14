@@ -5,7 +5,7 @@ import { ContentTwoComponent } from "./contentTwoComponent";
 import { TopMenu } from "../menu/topMenu";
 import { ContentServices } from "./contentServices";
 //import { ContentHowRecord } from "./contentHowRecord";
-// import { ContentLocation } from "./contentLocation";
+import { ContentLocation } from "./contentLocation";
 import { ContentResponses } from "./contentResponses";
 import { ContentVideo } from "./contentVideo";
 import { PhoneMenuButton } from "../ui/buttons/phoneMenuButton";
@@ -43,9 +43,9 @@ export const ContentMain: FC = () => {
           <ContentResponses />
         </Suspense>
 
-        {/* <Suspense>
+        <Suspense>
           <ContentLocation />
-        </Suspense> */}
+        </Suspense>
         <Suspense>
           <PhoneMenuButton />
         </Suspense>
