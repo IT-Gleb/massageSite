@@ -14,7 +14,7 @@ export const ContentServices: FC = () => {
             <li>
               <CardService
                 title="Массаж спины"
-                imageSrc="/images/massage1/massage5.jpg"
+                imageSrc="/images/massage1/massage3.webp"
                 index={1}
                 altText="массаж спины"
               />
@@ -22,7 +22,7 @@ export const ContentServices: FC = () => {
             <li>
               <CardService
                 title="Массаж воротниковой зоны"
-                imageSrc="/images/massage1/massage4.jpg"
+                imageSrc="/images/massage1/massage4.webp"
                 index={2}
                 altText="Массаж воротниковой зоны"
               />
@@ -30,7 +30,7 @@ export const ContentServices: FC = () => {
             <li>
               <CardService
                 title="Массаж ног (стоп,коленей)"
-                imageSrc="/images/massage1/massage_legs.jpg"
+                imageSrc="/images/massage1/massage_legs.webp"
                 index={3}
                 altText="Массаж ног (стоп,коленей)"
               />
@@ -38,7 +38,7 @@ export const ContentServices: FC = () => {
             <li>
               <CardService
                 title="Массаж лица"
-                imageSrc="/images/massage1/massage2.jpg"
+                imageSrc="/images/massage1/massage2.webp"
                 index={4}
                 altText="Массаж лица"
               />

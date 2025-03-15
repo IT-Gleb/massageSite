@@ -184,7 +184,7 @@ export const AnimatedHeader: FC<TParamFC> = (param) => {
             </ul>
           </motion.div>
         </motion.div>
-        <div className="hidden md:block overflow-hidden rounded-es-full border-s-8 border-s-pink-50 dark:border-s-slate-950 md:bg-[url('/images/massage5.jpg')] bg-no-repeat bg-cover bg-left-top"></div>
+        <div className="hidden md:block overflow-hidden rounded-es-full border-s-8 border-s-pink-50 dark:border-s-slate-950 md:bg-[url('/images/massage5.webp')] bg-no-repeat bg-cover bg-left-top"></div>
       </motion.div>
     </>
   );

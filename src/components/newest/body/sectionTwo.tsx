@@ -68,21 +68,21 @@ export const SectionTwo: FC = () => {
           </div>
           <div className="w-[120px] md:w-[160px] overflow-hidden rounded-2xl object-cover object-left-top">
             <img
-              src="/images/massage1/massage4.jpg"
+              src="/images/massage1/massage4.webp"
               alt="прибор"
               loading="lazy"
             />
           </div>
           <div className="w-[120px] md:w-[160px] overflow-hidden rounded-2xl object-cover object-left-top">
             <img
-              src="/images/massage1/massage5.jpg"
+              src="/images/massage1/massage5.webp"
               alt="прибор"
               loading="lazy"
             />
           </div>
           <div className="w-[120px] md:w-[160px] overflow-hidden rounded-2xl object-cover object-left-top">
             <img
-              src="/images/massage1/massage2.jpg"
+              src="/images/massage1/massage2.webp"
               alt="прибор"
               loading="lazy"
             />

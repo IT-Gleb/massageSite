@@ -59,7 +59,7 @@ export const ContentVideo: FC = () => {
             ref={videoRef}
             muted
             controls
-            poster="/images/massage1/fohow_logo.jpg"
+            poster="/images/massage1/fohow_logo.webp"
             className="block w-full h-full"
           >
             <source src="/video/video2.mp4" type="video/mp4" />
@@ -71,7 +71,7 @@ export const ContentVideo: FC = () => {
             ref={videoRef2}
             muted
             controls
-            poster="/images/massage1/fohow_logo.jpg"
+            poster="/images/massage1/fohow_logo.webp"
             className="block w-full h-full"
           >
             <source src="/video/video1.mp4" type="video/mp4" />

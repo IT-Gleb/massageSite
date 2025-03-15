@@ -48,7 +48,7 @@ export const SectionOne: FC = () => {
         </header>
         <div className="w-[140px] object-cover object-left-top rounded-2xl float-right overflow-hidden">
           <img
-            src="/images/massage1/massage2.jpg"
+            src="/images/massage1/massage2.webp"
             alt="физеотерапия масаж"
             loading="lazy"
             className="block w-full h-full"
@@ -64,7 +64,7 @@ export const SectionOne: FC = () => {
         </p>
         <div className="w-[140px] object-cover object-left-top rounded-2xl float-left overflow-hidden mr-2">
           <img
-            src="/images/massage1/massage3.jpg"
+            src="/images/massage1/massage3.webp"
             alt="физеотерапия масаж"
             loading="lazy"
             className="block w-full h-full"
@@ -83,7 +83,7 @@ export const SectionOne: FC = () => {
         </p>
         <div className="w-[140px] object-cover object-left-top rounded-2xl float-right overflow-hidden mr-2 min-[768px]:hidden">
           <img
-            src="/images/massage1/massage5.jpg"
+            src="/images/massage1/massage5.webp"
             alt="физеотерапия масаж"
             loading="lazy"
             className="block w-full h-full"

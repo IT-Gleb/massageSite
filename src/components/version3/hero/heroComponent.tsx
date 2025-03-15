@@ -40,7 +40,7 @@ const AText = {
     opacity: [0, 1],
     x: [50, 0],
     transition: {
-      delay: 0.75,
+      delay: 0.5,
       when: "beforeChildren",
       staggerChildren: 0.3,
     },
@@ -154,12 +154,12 @@ export const HeroComponent: FC = () => {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: [0, 1], x: [25, 0] }}
-            transition={{ delay: 3.5 }}
+            transition={{ delay: 1.5 }}
             className="place-self-center my-10 flex items-center justify-between"
           >
             <div className="hidden lg:block">
               <ImageRounded
-                imageSrc="/images/massage1/massage1.jpg"
+                imageSrc="/images/massage1/massage1.webp"
                 width={160}
                 height={160}
                 isAlt={true}
@@ -171,7 +171,7 @@ export const HeroComponent: FC = () => {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: [0, 1], x: [-50, 0] }}
-            transition={{ delay: 4 }}
+            transition={{ delay: 2 }}
             className="place-self-center lg:place-self-end font-verdana text-[5.5vw]/[6vw] lg:text-[2vw]/[2.4vw]"
           >
             <p className="indent-2 text-right text-balance">

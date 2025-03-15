@@ -25,7 +25,7 @@ export const Item1: FC = () => {
         </div>
         <div className="object-cover object-center overflow-hidden p-1">
           <img
-            src="/images/massage1/massage2.jpg"
+            src="/images/massage1/massage2.webp"
             alt="one"
             loading="lazy"
             className="block w-full h-full rounded-2xl"
@@ -35,7 +35,7 @@ export const Item1: FC = () => {
       <div className="col-span-2 row-span-1 flex items-center justify-end">
         <div className="w-[174px] object-fill object-center overflow-hidden p-1">
           <img
-            src="/images/massage1/massage3.jpg"
+            src="/images/massage1/massage3.webp"
             alt="one"
             loading="lazy"
             className="block w-full h-full rounded-2xl"
@@ -51,7 +51,7 @@ export const Item1: FC = () => {
         </div>
         <div className="w-[180px] object-cover object-center overflow-hidden p-1">
           <img
-            src="/images/massage1/massage4.jpg"
+            src="/images/massage1/massage4.webp"
             alt="one"
             loading="lazy"
             className="block w-full h-full rounded-2xl"
@@ -67,7 +67,7 @@ export const Item1: FC = () => {
         </div>
         <div className="w-[180px] object-cover object-center overflow-hidden p-1">
           <img
-            src="/images/massage1/massage5.jpg"
+            src="/images/massage1/massage5.webp"
             alt="one"
             loading="lazy"
             className="block w-full h-full rounded-2xl"
