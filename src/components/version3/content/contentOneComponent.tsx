@@ -155,7 +155,7 @@ export const ContentOneComponent: FC = () => {
             </motion.li>
             <motion.li className="hidden lg:block lg:col-span-2 place-content-center mx-auto">
               <ImageBlock
-                imageSrc="/images/massage1/massage_vector_4.jpg"
+                imageSrc="/images/massage1/massage_vector_4.webp"
                 width={widthtImage}
                 height={heightImage}
                 isAlt={false}

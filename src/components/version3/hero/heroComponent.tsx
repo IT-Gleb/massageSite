@@ -61,7 +61,7 @@ export const HeroComponent: FC = () => {
         animate={{ y: [-350, 100, 0] }}
         transition={{ duration: 0.5 }}
         className="hidden lg:block absolute z-0 w-[450px] h-[450px] min-[2500px]:w-[650px] min-[2500px]:h-[650px] top-[-90px] min-[2500px]:top-[-120px] right-[11%] 
-        bg-[url('/images/massage1/hands_1.png')] bg-no-repeat bg-cover bg-bottom [mask-image:linear-gradient(to_bottom,theme(colors.black),theme(colors.transparent)_70%)]"
+        bg-[url('/images/massage1/hands_1.webp')] bg-no-repeat bg-cover bg-bottom [mask-image:linear-gradient(to_bottom,theme(colors.black),theme(colors.transparent)_70%)]"
       ></motion.div>
       <div className="relative z-[5] w-[90%] xs:w-[70%] lg:w-[65%] mx-auto min-h-[45vh] grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-y-8 lg:gap-y-0 gap-x-2 xl:gap-x-10">
         <div
