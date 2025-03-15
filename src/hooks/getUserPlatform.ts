@@ -6,7 +6,8 @@ export const useUserOS = () => {
     mac: "macOS",
     linux: "Linux",
     android: "Android",
-    "iphone|ipad|ipod|mac|safari": "iOS",
+    safari: "iOS",
+    "iphone|ipad|ipod|mac": "iOS",
   };
 
   if (!isServer) {
@@ -19,7 +20,9 @@ export const useUserOS = () => {
     // );
     let keyOS: string | undefined =
       Object.keys(osObj).find((item) =>
-        new RegExp(osObj[item].toLowerCase(), "gi").test(Navigator.userAgent)
+        new RegExp(osObj[item].toLowerCase(), "gi").test(
+          Navigator.userAgent.toLowerCase()
+        )
       ) || undefined;
     typeof keyOS !== "undefined" ? (userOS = osObj[keyOS]) : "unknown";
   }

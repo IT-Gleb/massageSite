@@ -45,7 +45,9 @@ export const ContentHowRecord: FC = () => {
         <div ref={animoRef} className="w-full mt-[4rem] flex-auto">
           <SvgInfoGraphics1 doAnimate={inView} canAnimate={!canAnimation} />
         </div>
+        <span className="text-[0.5rem]/[0.5rem]">{userOS}</span>
       </div>
+
       <div className="w-full h-[2vh] lg:h-[5vh] bg-[url('/images/svg/back.svg')] mt-5"></div>
     </ContainerContent>
   );
