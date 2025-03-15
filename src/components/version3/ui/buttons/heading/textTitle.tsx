@@ -6,8 +6,13 @@ type TTextTitle = {
 
 export const TextTitle: FC<TTextTitle> = ({ title }) => {
   return (
-    <div className="relative">
-      <h2 className="pl-8 underline underline-offset-8">{title}</h2>
+    <div
+      className="flex items-center gap-x-2 before:content-[''] before:w-[5%] before:h-[20px] before:bg-[url('/images/svg/back_dark.svg')]
+    after:content-[''] after:w-[15%] after:h-[20px] after:bg-[url('/images/svg/back_dark.svg')]"
+    >
+      <h2 className="underline underline-offset-8 whitespace-nowrap">
+        {title}
+      </h2>
     </div>
   );
 };
