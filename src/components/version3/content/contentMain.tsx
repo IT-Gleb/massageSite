@@ -6,7 +6,6 @@ import { ContentOneComponent } from "./contentOneComponent";
 import { ContentTwoComponent } from "./contentTwoComponent";
 import { TopMenu } from "../menu/topMenu";
 import { ContentServices } from "./contentServices";
-//import { ContentHowRecord } from "./contentHowRecord";
 import { ContentLocation } from "./contentLocation";
 import { ContentResponses } from "./contentResponses";
 import { ContentVideo } from "./contentVideo";

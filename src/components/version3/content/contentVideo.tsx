@@ -44,9 +44,9 @@ export const ContentVideo: FC = () => {
 
   return (
     <ContainerContent backgroundClass="bg-indigo-50/50">
-      <span id={ancorsArray[1].idString}>
+      <div id={ancorsArray[1].idString}>
         <TextTitle title="Видео" />
-      </span>
+      </div>
       <p className="my-10 text-[1.75em]/[1.9em] xl:text-[1em]/[1em]">
         Использую в работе.
       </p>
