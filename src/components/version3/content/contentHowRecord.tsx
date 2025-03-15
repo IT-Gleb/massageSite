@@ -15,8 +15,8 @@ export const ContentHowRecord: FC = () => {
   const [canAnimation, setCanAnimation] = useState<boolean>(
     preferReducedMotion !== null
       ? preferReducedMotion
-        ? preferReducedMotion
-        : !preferReducedMotion
+        ? !preferReducedMotion
+        : preferReducedMotion
       : false
   );
 
@@ -43,7 +43,7 @@ export const ContentHowRecord: FC = () => {
           />
         </div>
         <div ref={animoRef} className="w-full mt-[4rem] flex-auto">
-          <SvgInfoGraphics1 doAnimate={inView} canAnimate={canAnimation} />
+          <SvgInfoGraphics1 doAnimate={inView} canAnimate={!canAnimation} />
         </div>
       </div>
       <div className="w-full h-[2vh] lg:h-[5vh] bg-[url('/images/svg/back.svg')] mt-5"></div>
