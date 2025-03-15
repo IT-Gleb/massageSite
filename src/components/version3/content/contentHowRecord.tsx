@@ -22,14 +22,14 @@ export const ContentHowRecord: FC = () => {
 
   const { userOS } = useUserOS();
 
-  if (!["Windows", "Android", "Linux"].includes(userOS)) {
-    return (
-      <ContainerContent backgroundClass="bg-sky-50/50">
-        <TextTitle title={userOS} />
-        <div className="w-full h-[2vh] lg:h-[5vh] bg-[url('/images/svg/back.svg')] mt-5"></div>
-      </ContainerContent>
-    );
-  }
+  // if (!["Windows", "Android", "Linux"].includes(userOS)) {
+  //   return (
+  //     <ContainerContent backgroundClass="bg-sky-50/50">
+  //       <TextTitle title={userOS} />
+  //       <div className="w-full h-[2vh] lg:h-[5vh] bg-[url('/images/svg/back.svg')] mt-5"></div>
+  //     </ContainerContent>
+  //   );
+  // }
 
   //console.log(preferReducedMotion);
   return (
