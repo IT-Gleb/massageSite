@@ -16,8 +16,8 @@ export const ContentHowRecord: FC = () => {
     preferReducedMotion !== null
       ? preferReducedMotion
         ? preferReducedMotion
-        : false
-      : true
+        : !preferReducedMotion
+      : false
   );
 
   const { userOS } = useUserOS();
