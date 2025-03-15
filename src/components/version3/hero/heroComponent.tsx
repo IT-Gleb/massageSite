@@ -9,30 +9,30 @@ import { SvgInfo } from "@/components/svg_components/svgInfo";
 import { SvgThumb } from "@/components/svg_components/svgThumb";
 import { SvgHandsLeafs } from "@/components/svg_components/svgHandsLeafs";
 
-const Acontainer = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      delay: 0.8,
-      duration: 0.5,
-      staggerChildren: 1.5,
-    },
-  },
-};
+// const Acontainer = {
+//   hidden: { opacity: 0 },
+//   show: {
+//     opacity: 1,
+//     transition: {
+//       delay: 0.8,
+//       duration: 0.5,
+//       staggerChildren: 1.5,
+//     },
+//   },
+// };
 
-const Aitem = {
-  initial: { opacity: 0, x: 500 },
-  animate: {
-    opacity: [0, 1],
-    x: 0,
-    transition: {
-      delay: 1.2,
-      // repeat: Infinity,
-      // repeatDelay: 2,
-    },
-  },
-};
+// const Aitem = {
+//   initial: { opacity: 0, x: 500 },
+//   animate: {
+//     opacity: [0, 1],
+//     x: 0,
+//     transition: {
+//       delay: 1.2,
+//       // repeat: Infinity,
+//       // repeatDelay: 2,
+//     },
+//   },
+// };
 
 const AText = {
   init: { opacity: 0, x: 50 },
@@ -40,7 +40,7 @@ const AText = {
     opacity: [0, 1],
     x: [50, 0],
     transition: {
-      delay: 2.5,
+      delay: 0.75,
       when: "beforeChildren",
       staggerChildren: 0.3,
     },
@@ -64,18 +64,18 @@ export const HeroComponent: FC = () => {
         bg-[url('/images/massage1/hands_1.png')] bg-no-repeat bg-cover bg-bottom [mask-image:linear-gradient(to_bottom,theme(colors.black),theme(colors.transparent)_70%)]"
       ></motion.div>
       <div className="relative z-[5] w-[90%] xs:w-[70%] lg:w-[65%] mx-auto min-h-[45vh] grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-y-8 lg:gap-y-0 gap-x-2 xl:gap-x-10">
-        <motion.div
-          variants={Acontainer}
-          initial="hidden"
-          animate="show"
+        <div
+          // variants={Acontainer}
+          // initial="hidden"
+          // animate="show"
           className="content-center lg:content-start"
         >
           <FoHowIcon />
-        </motion.div>
-        <motion.div
-          variants={Aitem}
-          initial="initial"
-          animate="animate"
+        </div>
+        <div
+          // variants={Aitem}
+          // initial="initial"
+          // animate="animate"
           className="w-fit mx-auto lg:mx-0 sm:content-center lg:content-end text-indigo-900 font-verdana mt-8 lg:mt-0"
         >
           <div className="w-fit ml-auto flex items-center gap-x-2">
@@ -125,7 +125,7 @@ export const HeroComponent: FC = () => {
               мирового стандарта.
             </p>
           </div>
-        </motion.div>
+        </div>
       </div>
       <div className="min-h-[55vh] bg-green-200">
         <div className="w-[92%] sm:w-[75%] lg:w-[65%] mx-auto my-8 xl:my-4 flex flex-col text-green-900 font-verdana font-bold uppercase text-[15vw]/[15.5vw] lg:text-[7vw]/[7.5vw]">

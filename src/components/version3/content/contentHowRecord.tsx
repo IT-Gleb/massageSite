@@ -42,7 +42,7 @@ export const ContentHowRecord: FC = () => {
             click={() => setCanAnimation(!canAnimation)}
           />
         </div>
-        <div ref={animoRef} className="w-full mt-[4rem] flex-auto">
+        <div ref={animoRef} className="w-full mt-[2rem] flex-auto">
           <SvgInfoGraphics1 doAnimate={inView} canAnimate={!canAnimation} />
         </div>
         <span className="text-[0.5rem]/[0.5rem]">{userOS}</span>
