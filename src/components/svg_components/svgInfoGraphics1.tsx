@@ -237,7 +237,7 @@ export const SvgInfoGraphics1: FC<TAnimateProp> = ({
     }
     //Проверить на reduce Motion
     if (!canAnimate) {
-      console.log("Reduce Motion detected");
+      //console.log("Reduce Motion detected");
       setAnimTime(25);
       MainAnimation.current.time = 25;
       MainAnimation.current.pause();
