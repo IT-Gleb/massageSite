@@ -2,12 +2,12 @@ import React, { FC } from "react";
 import { ContainerContent } from "./containerContent";
 import { YandexLocation } from "@/components/yandexMap/yandexMap";
 import { ancorsArray } from "@/utils/functions";
-import { UpdateButton } from "../ui/buttons/updateButton";
+import { TextTitle } from "../ui/buttons/heading/textTitle";
 
 export const ContentLocation: FC = () => {
   return (
     <ContainerContent backgroundClass="bg-indigo-50/50">
-      <h2 className=" underline underline-offset-8">Местонахождение</h2>
+      <TextTitle title="Местонахождение" />
       <div id={ancorsArray[2].idString} className="w-fit mx-auto mt-10">
         <YandexLocation width={800} height={600} />
       </div>

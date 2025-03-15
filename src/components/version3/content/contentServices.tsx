@@ -2,12 +2,13 @@ import React, { FC } from "react";
 import { ContainerContent } from "./containerContent";
 import { CardService } from "../ui/buttons/cards/cardService";
 import { ancorsArray } from "@/utils/functions";
+import { TextTitle } from "../ui/buttons/heading/textTitle";
 
 export const ContentServices: FC = () => {
   return (
     <ContainerContent backgroundClass=" bg-green-50/50">
       <div id={ancorsArray[0].idString} className="min-h-[40vh] flex flex-col">
-        <h2 className="underline underline-offset-8">Услуги</h2>
+        <TextTitle title="Услуги" />
         <div className="flex-auto mt-10">
           <ul className="w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 gap-x-2 gap-y-4">
             <li>

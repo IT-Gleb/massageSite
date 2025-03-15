@@ -1,12 +1,17 @@
-import React, { FC, useEffect, useState } from "react";
-import { motion, animate, MotionConfig } from "motion/react";
+import React, { FC, useEffect, useRef, useState } from "react";
+import {
+  motion,
+  animate,
+  MotionConfig,
+  AnimationPlaybackControls,
+} from "motion/react";
 
 type TAnimateProp = {
   doAnimate: boolean;
   canAnimate: boolean;
 };
 
-let MyAnimation: any = null;
+//let MyAnimation: any = null;
 
 const AnimationS: any = [
   //-----Анимация первого текста-----
@@ -224,28 +229,33 @@ export const SvgInfoGraphics1: FC<TAnimateProp> = ({
   canAnimate,
 }) => {
   const [animTime, setAnimTime] = useState<number>(0);
+  const MainAnimation = useRef<AnimationPlaybackControls>(null);
 
   useEffect(() => {
-    if (MyAnimation === null) {
-      MyAnimation = animate(AnimationS, { repeat: Infinity });
+    if (MainAnimation.current === null) {
+      MainAnimation.current = animate(AnimationS, { repeat: Infinity });
     }
     //Проверить на reduce Motion
     if (!canAnimate) {
       console.log("Reduce Motion detected");
       setAnimTime(25);
-      MyAnimation.time = 25;
-      MyAnimation.pause();
+      MainAnimation.current.time = 25;
+      MainAnimation.current.pause();
       return;
     }
 
     if (doAnimate) {
-      MyAnimation.time = animTime;
-      MyAnimation.play();
+      MainAnimation.current.time = animTime;
+      MainAnimation.current.play();
     }
     if (!doAnimate) {
-      setAnimTime(MyAnimation.time);
-      MyAnimation.pause();
+      setAnimTime(MainAnimation.current.time);
+      MainAnimation.current.pause();
     }
+
+    return () => {
+      MainAnimation.current = null;
+    };
   }, [doAnimate, canAnimate]);
 
   return (

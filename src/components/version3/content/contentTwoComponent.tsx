@@ -3,6 +3,7 @@ import React, { FC } from "react";
 import { ContentItemNumbered } from "./contentItemNumbered";
 import { ContainerContent } from "./containerContent";
 import { SvgWarning } from "@/components/svg_components/svgWarning";
+import { TextTitle } from "../ui/buttons/heading/textTitle";
 // import { motion, animate, stagger, useInView } from "motion/react";
 // import { useScrollDownUp } from "@/hooks/scrollUpDown";
 
@@ -78,9 +79,7 @@ export const ContentTwoComponent: FC = () => {
 
   return (
     <ContainerContent backgroundClass="bg-indigo-50/50">
-      <h2 className="underline underline-offset-4 w-fit ml-5">
-        противопоказания
-      </h2>
+      <TextTitle title="противопоказания" />
       <ul
         id="dedicatedList"
         className="grid grid-cols-2 xl:grid-cols-3 2xl:grid-cols-5 gap-2 text-[0.9vw]/[1.2vw] mt-10 mx-5 

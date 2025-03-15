@@ -1,3 +1,5 @@
+"use client";
+
 import React, { FC, Suspense } from "react";
 import { HeroComponent } from "../hero/heroComponent";
 import { ContentOneComponent } from "./contentOneComponent";
@@ -11,6 +13,15 @@ import { ContentVideo } from "./contentVideo";
 import { PhoneMenuButton } from "../ui/buttons/phoneMenuButton";
 // import { ContentHealing } from "./contentHealing";
 import { FooterLayout } from "../layout/footerLayout";
+import dynamic from "next/dynamic";
+
+const ContentHowRecordSSR = dynamic(
+  () =>
+    import("./contentHowRecord").then(
+      (component) => component.ContentHowRecord
+    ),
+  { ssr: false }
+);
 
 export const ContentMain: FC = () => {
   return (
@@ -26,9 +37,9 @@ export const ContentMain: FC = () => {
         <Suspense>
           <ContentServices />
         </Suspense>
-        {/* <Suspense>
-          <ContentHowRecord />
-        </Suspense> */}
+        <Suspense>
+          <ContentHowRecordSSR />
+        </Suspense>
         <Suspense>
           <ContentVideo />
         </Suspense>

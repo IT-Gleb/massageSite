@@ -5,6 +5,7 @@ import { ContainerContent } from "./containerContent";
 import { ancorsArray } from "@/utils/functions";
 import { useInView } from "motion/react";
 import { useScrollDownUp } from "@/hooks/scrollUpDown";
+import { TextTitle } from "../ui/buttons/heading/textTitle";
 
 export const ContentVideo: FC = () => {
   const targetRef = useRef<HTMLDivElement>(null);
@@ -43,12 +44,9 @@ export const ContentVideo: FC = () => {
 
   return (
     <ContainerContent backgroundClass="bg-indigo-50/50">
-      <h2
-        id={ancorsArray[1].idString}
-        className="underline underline-offset-[10px]"
-      >
-        Видео
-      </h2>
+      <span id={ancorsArray[1].idString}>
+        <TextTitle title="Видео" />
+      </span>
       <p className="my-10 text-[1.75em]/[1.9em] xl:text-[1em]/[1em]">
         Использую в работе.
       </p>
