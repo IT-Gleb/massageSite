@@ -24,7 +24,9 @@ export const useUserOS = () => {
           Navigator.userAgent.toLowerCase()
         )
       ) || undefined;
-    typeof keyOS !== "undefined" ? (userOS = osObj[keyOS]) : "unknown";
+    typeof keyOS !== "undefined"
+      ? (userOS = osObj[keyOS])
+      : (userOS = "unknown");
   }
 
   return { userOS };
