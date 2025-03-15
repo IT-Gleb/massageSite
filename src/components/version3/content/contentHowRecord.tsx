@@ -36,7 +36,7 @@ export const ContentHowRecord: FC = () => {
     <ContainerContent backgroundClass="bg-sky-50/50">
       <div className="flex flex-col min-h-[35vh] xl:h-screen">
         <div className="flex items-center gap-x-2 justify-between">
-          <TextTitle title={`Как помочь себе (${userOS})`} />
+          <TextTitle title={`Как помочь себе`} />
           <AnimoButton
             title={canAnimation ? "Остановить" : "Просмотреть"}
             click={() => setCanAnimation(!canAnimation)}
