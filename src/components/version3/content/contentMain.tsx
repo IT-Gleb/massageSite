@@ -39,31 +39,36 @@ const ContentServicesServer = dynamic(() =>
   import("./contentServices").then((component) => component.ContentServices)
 );
 
+const ComponentsScope: React.JSX.Element[] = [
+  <ContentServicesServer />,
+  <ContentHowRecordSSR />,
+  <ContentVideo />,
+  <ContentOneComponentSSR />,
+  <ContentTwoComponent />,
+  <ContentResponses />,
+  <ContentLocationSSR />,
+];
+
 export const ContentMain: FC = () => {
   const viewRef = useRef<HTMLDivElement>(null);
   const inView = useInView(viewRef, { amount: 0.3, once: false });
-  const [scopeView, setScopeView] = useState<boolean[]>([
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-  ]);
+  const [scopeView, setScopeView] = useState<boolean[]>(
+    ComponentsScope.map(() => false)
+  );
   const [indexView, setIndexView] = useState<number>(-1);
-
-  const handleInView = (param: number) => {
-    const tmp: boolean[] = scopeView;
-    tmp[param] = true;
-
-    setScopeView(tmp);
-  };
 
   useEffect(() => {
     if (indexView >= scopeView.length) {
       return;
     }
+
+    const handleInView = (param: number) => {
+      const indx: number = Math.min(param, scopeView.length - 1);
+      const tmp: boolean[] = scopeView;
+      tmp[indx] = true;
+
+      setScopeView(tmp);
+    };
 
     let tmpIndex: number = indexView + 1;
     setIndexView(tmpIndex);
@@ -80,43 +85,11 @@ export const ContentMain: FC = () => {
         <Suspense fallback={<div>идет загрузка...</div>}>
           <HeroComponent />
         </Suspense>
-        {scopeView[0] && (
-          <Suspense>
-            <ContentServicesServer />
-          </Suspense>
-        )}
-        {scopeView[1] && (
-          <Suspense>
-            <ContentHowRecordSSR />
-          </Suspense>
-        )}
-        {scopeView[2] && (
-          <Suspense>
-            <ContentVideo />
-          </Suspense>
-        )}
-        {scopeView[3] && (
-          <Suspense>
-            <ContentOneComponentSSR />
-          </Suspense>
-        )}
-
-        {scopeView[4] && (
-          <Suspense>
-            <ContentTwoComponent />
-          </Suspense>
-        )}
-
-        {scopeView[5] && (
-          <Suspense>
-            <ContentResponses />
-          </Suspense>
-        )}
-        {scopeView[6] && (
-          <Suspense>
-            <ContentLocationSSR />
-          </Suspense>
-        )}
+        {scopeView.map((item, index) => {
+          if (item) {
+            return <Suspense key={index}>{ComponentsScope[index]}</Suspense>;
+          }
+        })}
         <Suspense>
           <PhoneMenuButton />
         </Suspense>
