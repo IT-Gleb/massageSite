@@ -125,7 +125,7 @@ export const ContentMain: FC = () => {
             ref={viewRef}
             className="w-full h-[30px] bg-transparent text-black text-center"
           >
-            Вы достигли дна
+            Массаж FoHow в Сочи
           </div>
         )}
       </main>
