@@ -7,11 +7,12 @@ import { TopMenu } from "../menu/topMenu";
 import { ContentResponses } from "./contentResponses";
 import { ContentVideo } from "./contentVideo";
 import { PhoneMenuButton } from "../ui/buttons/phoneMenuButton";
-// import { ContentHealing } from "./contentHealing";
+import { ContentHealing } from "./contentHealing";
 import { FooterLayout } from "../layout/footerLayout";
 
 import dynamic from "next/dynamic";
 import { useInView } from "motion/react";
+import { Loader } from "../loader/Loader";
 
 const ContentHowRecordSSR = dynamic(
   () =>
@@ -42,6 +43,7 @@ const ContentServicesServer = dynamic(() =>
 const ComponentsScope: React.JSX.Element[] = [
   <ContentServicesServer />,
   <ContentHowRecordSSR />,
+  <ContentHealing />,
   <ContentVideo />,
   <ContentOneComponentSSR />,
   <ContentTwoComponent />,
@@ -87,7 +89,11 @@ export const ContentMain: FC = () => {
         </Suspense>
         {scopeView.map((item, index) => {
           if (item) {
-            return <Suspense key={index}>{ComponentsScope[index]}</Suspense>;
+            return (
+              <Suspense key={index} fallback={<Loader />}>
+                {ComponentsScope[index]}
+              </Suspense>
+            );
           }
         })}
         <Suspense>

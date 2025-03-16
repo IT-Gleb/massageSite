@@ -64,20 +64,10 @@ export const HeroComponent: FC = () => {
         bg-[url('/images/massage1/hands_1.webp')] bg-no-repeat bg-cover bg-bottom [mask-image:linear-gradient(to_bottom,theme(colors.black),theme(colors.transparent)_70%)]"
       ></motion.div>
       <div className="relative z-[5] w-[90%] xs:w-[70%] lg:w-[65%] mx-auto min-h-[45vh] grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-y-8 lg:gap-y-0 gap-x-2 xl:gap-x-10">
-        <div
-          // variants={Acontainer}
-          // initial="hidden"
-          // animate="show"
-          className="content-center lg:content-start"
-        >
+        <div className="content-center lg:content-start">
           <FoHowIcon />
         </div>
-        <div
-          // variants={Aitem}
-          // initial="initial"
-          // animate="animate"
-          className="w-fit mx-auto lg:mx-0 sm:content-center lg:content-end text-indigo-900 font-verdana mt-8 lg:mt-0"
-        >
+        <div className="w-fit mx-auto lg:mx-0 sm:content-center lg:content-end text-indigo-900 font-verdana mt-8 lg:mt-0">
           <div className="w-fit ml-auto flex items-center gap-x-2">
             <div className="w-[40px]">
               <SvgHandsLeafs />
@@ -116,11 +106,11 @@ export const HeroComponent: FC = () => {
               <span>Эффект 5 массажей</span>
             </li>
           </ul>
-          <div className="flex items-end justify-center gap-x-2 text-green-700">
+          <div className="flex items-center justify-center gap-x-2 text-green-700 mt-5 mb-1">
             <div className="w-[22px] h-[22px]">
               <SvgInfo />
             </div>
-            <p className="text-[2.7vw]/[3vw] sm:text-[2.2vw]/[2.5vw] lg:text-[clamp(0.7vw,2vw,0.85vw)]/[clamp(0.7vw,2vw,0.9vw)] font-oswald mt-5 mb-1">
+            <p className="text-[2.7vw]/[3vw] sm:text-[2.2vw]/[2.5vw] lg:text-[clamp(0.7vw,2vw,0.85vw)]/[clamp(0.7vw,2vw,0.9vw)] font-oswald">
               Прошел все испытания. 100% безопасен. Имеет все сертификаты
               мирового стандарта.
             </p>

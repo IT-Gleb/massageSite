@@ -31,7 +31,7 @@ export const Loader: FC = memo(() => {
   //console.log(Percent);
 
   return (
-    <div className="w-[120px] h-[120px] p-1">
+    <div className="w-[150px] h-[150px] p-1 mx-auto">
       <CircleLoader percent={Percent} colorBegin="#0089ba" colorEnd="#f9f871" />
     </div>
   );

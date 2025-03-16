@@ -107,7 +107,7 @@ export function throttle(func: any, ms: number) {
   return wrapper;
 }
 
-function zeroToNumber(param: number): string | number {
+export function zeroToNumber(param: number): string | number {
   let res: string | number = 0;
   param < 10 ? (res = `0${param}`) : (res = param);
   return res;
