@@ -52,7 +52,7 @@ export const TopMenu: FC = () => {
                   <SvgVideoCam />
                 </div>
               </a>
-              <a
+              {/* <a
                 href={ancorsArray[2].ancor}
                 className="flex items-center gap-x-2"
               >
@@ -60,7 +60,7 @@ export const TopMenu: FC = () => {
                 <div className="text-slate-200 w-[18px] h-[18px] lg:w-[28px] lg:h-[28px]">
                   <SvgLocation />
                 </div>
-              </a>
+              </a> */}
             </div>
           </li>
         </ul>

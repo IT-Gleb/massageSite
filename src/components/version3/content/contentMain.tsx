@@ -123,7 +123,7 @@ export const ContentMain: FC = () => {
         {indexView < scopeView.length - 1 && (
           <div
             ref={viewRef}
-            className="w-full h-[30px] bg-transparent text-black text-center"
+            className="w-full h-[30px] bg-transparent text-black text-center my-5"
           >
             Массаж FoHow в Сочи
           </div>

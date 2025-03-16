@@ -11,7 +11,7 @@ export const ContentLocation: FC = () => {
       <div id={ancorsArray[2].idString} className="w-fit mx-auto mt-10">
         <YandexLocation width={800} height={600} />
       </div>
-      <div className="w-full h-[2vh] lg:h-[5vh] bg-[url('/images/svg/back.svg')] mt-5"></div>
+      <div className="w-full h-[2vh] lg:h-[5vh] bg-[url('/images/svg/back.svg')] my-10"></div>
     </ContainerContent>
   );
 };
