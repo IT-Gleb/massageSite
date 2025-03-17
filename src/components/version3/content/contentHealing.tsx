@@ -90,11 +90,6 @@ export const ContentHealing: FC = () => {
           </div>
           <p>Простатит</p>
         </li>
-        <li>
-          <aside className="[mask-image:radial-gradient(theme(colors.black),theme(colors.transparent)_65%,theme(colors.transparent))]">
-            <img src="/images/massage1/massage5.webp" alt="" loading="lazy" />
-          </aside>
-        </li>
         <li className="place-content-center">
           <div>
             <RoundedDigits title={11} />
@@ -113,6 +108,11 @@ export const ContentHealing: FC = () => {
           </div>
           <p>Варикоз</p>
         </li>
+        <li>
+          <aside className="[mask-image:radial-gradient(theme(colors.black),theme(colors.transparent)_65%,theme(colors.transparent))]">
+            <img src="/images/massage1/massage5.webp" alt="" loading="lazy" />
+          </aside>
+        </li>
         <li className="place-content-center">
           <div>
             <RoundedDigits title={14} />
@@ -130,6 +130,19 @@ export const ContentHealing: FC = () => {
             <RoundedDigits title={16} />
           </div>
           <p>Выводит токсины</p>
+        </li>
+        <li>
+          <aside
+            className=" object-contain object-center w-[160px] h-[160px]
+          [mask-image:radial-gradient(theme(colors.black),theme(colors.transparent)_65%,theme(colors.transparent))]"
+          >
+            <img
+              src="/images/massage1/massage8.webp"
+              alt=""
+              loading="lazy"
+              className="block w-full h-full"
+            />
+          </aside>
         </li>
         <li className="place-content-center">
           <div>
