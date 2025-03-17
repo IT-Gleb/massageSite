@@ -9,12 +9,12 @@ export const ContentHealing: FC = () => {
   return (
     <ContainerContent backgroundClass="bg-green-50/50">
       <TextTitle title="Оздоровление" />
-      <p className="my-10">
+      <p className="my-10 text-[1.5em]/[1.5em] md:text-[1em]/[1em]">
         Древнейшие методики оздоровления с использованием новейших технологий.
         Массаж Fohow применяется:
       </p>
       <ul
-        className="w-fit mx-auto px-[5rem] xl:px-[2rem] my-5 flex gap-4 flex-wrap [&>li]:w-[175px] md:[&>li]:h-[195px] [&>li]:overflow-hidden [&>li]:pb-2 
+        className="w-fit mx-auto px-[5rem] xl:px-[2rem] my-5 flex gap-4 flex-wrap text-[1.5em]/[1.5em] md:text-[1em]/[1em] md:[&>li]:w-[175px] md:[&>li]:h-[195px] [&>li]:overflow-hidden [&>li]:pb-2 
             [&>li>div]:bg-green-200 [&>li>div]:w-full [&>li>div]:h-[30px] md:[&>li>div]:h-[40px] lg:[&>li>div]:h-[36px] 2xl:[&>li>div]:h-[38px]
       [&>li>div]:text-center [&>li>div]:border-b [&>li>div]:border-b-slate-200 [&>li>div]:py-1 [&>li>div]:px-1 [&>li>p]:indent-1 [&>li>p]:p-1 [&>li>p]:font-verdana 
       [&>li>p]:border [&>li>p]:border-t-0 [&>li>p]:border-green-300 [&>li>p]:shadow-md"
