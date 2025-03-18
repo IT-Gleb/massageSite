@@ -1,11 +1,12 @@
 "use client";
 
-import React, { FC, RefObject, useRef, useState } from "react";
+import React, { FC, RefObject, useEffect, useRef, useState } from "react";
 import { ContainerContent } from "./containerContent";
 import { TextTitle } from "../ui/buttons/heading/textTitle";
 import { CardHealing } from "../ui/buttons/cards/cardHealing";
-import { motion, useScroll, useTransform } from "motion/react";
-import useMyResizeObserver from "@/hooks/resizeObserver";
+import { motion, useScroll, useSpring, useTransform } from "motion/react";
+import { funnel } from "remeda";
+// import { flushSync } from "react-dom";
 
 const texts: string[] = [
   "Остеохондроз",
@@ -29,17 +30,62 @@ const texts: string[] = [
 ];
 
 export const ContentHealing: FC = () => {
-  const [beginRef, sizes1] = useMyResizeObserver();
-  //const [TopY, setTopY] = useState<number>(0);
-
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     container: containerRef,
     offset: ["start start", "end start"],
   });
-  const height1 = useTransform(scrollYProgress, [0, 1], ["70vh", "-70vh"]);
-  const height2 = useTransform(scrollYProgress, [0, 1], ["5vh", "90vh"]);
-  const TopY = useTransform(scrollYProgress, [0, 1], ["5%", "10%"]);
+  const height2 = useTransform(scrollYProgress, [0, 1], ["5vh", "80vh"]);
+
+  const smoothY = useSpring(scrollYProgress);
+  const Y1 = useTransform(smoothY, [0, 1], ["0%", "90%"]);
+
+  const checkerRef = useRef<HTMLDivElement>(null);
+
+  const itemsRef = texts.map(() => useRef<HTMLDivElement | null>(null));
+  const setCallBackRef =
+    (index: number) => (element: HTMLDivElement | null) => {
+      itemsRef[index].current = element;
+    };
+
+  const [isSelItems, setSelItems] = useState<boolean[]>(texts.map(() => false));
+  // const [prevIndex, setPrevIndex] = useState<number>(0);
+
+  useEffect(() => {
+    // Проверка на пересечение со стрелкой
+    const isIntersecting = funnel(
+      () => {
+        const rect = checkerRef.current?.getBoundingClientRect() as DOMRect;
+        let indx: number = 0;
+        let tmpSelected: boolean[] = texts.map(() => false);
+        for (let item of itemsRef) {
+          let r1 = item.current?.getBoundingClientRect() as DOMRect;
+          if (r1.y <= rect.y && r1.bottom >= rect.bottom) {
+            //console.log(`${indx}- true`);
+            // let tmpPrevIndex = Math.max(indx - 1, 0);
+            //console.log(tmpPrevIndex);
+            tmpSelected[indx] = true;
+            // flushSync(() => setPrevIndex(tmpPrevIndex));
+            break;
+          }
+          indx++;
+        }
+
+        //Установить индекс
+        setSelItems(tmpSelected);
+        // console.log(
+        //   `Arrow> y= ${rect?.y}, height= ${rect?.height} bottom= ${rect?.bottom}`
+        // );
+      },
+      { minGapMs: 80, triggerAt: "start" }
+    );
+
+    containerRef.current?.addEventListener("scroll", isIntersecting.call);
+
+    return () => {
+      containerRef.current?.removeEventListener("scroll", isIntersecting.call);
+    };
+  }, []);
 
   return (
     <ContainerContent backgroundClass="bg-green-50/50">
@@ -53,29 +99,23 @@ export const ContentHealing: FC = () => {
           ref={containerRef}
           className="relative h-[60vh] w-[96%] mx-auto p-2 overflow-y-auto"
           style={{
-            clipPath: "xywh(0 0 100% 50% round 0 0)",
+            clipPath: "xywh(0 0 100% 65% round 0 0)",
             scrollbarWidth: "none",
             scrollSnapType: "y mandatory",
           }}
         >
-          <motion.div className="sticky " style={{ top: TopY }}>
-            <div className="flex items-center gap-x-2">
+          <motion.div style={{ y: Y1 }} className="sticky top-10">
+            <div className="flex items-center justify-center gap-x-2">
               <div
-                className="bg-[url('/images/svg/mask_arrow.png')] bg-no-repeat bg-contain bg-left-top px-2 py-1 w-[75px] h-[50px] lg:w-[160px] lg:h-[110px] xl:w-[260px] xl:h-[210px] place-content-center
-      [mask-image:url('/images/svg/mask_arrow.png')] [mask-repeat:no-repeat] [mask-position:0px_0px] [mask-size:100%]"
+                className="bg-[url('/images/svg/mask_arrow.png')] bg-no-repeat bg-contain bg-left-top px-2 py-1 w-[75px] h-[50px] md:w-[160px] md:h-[110px] xl:w-[250px] xl:h-[200px] place-content-center
+      "
               ></div>
-              {/* <div
-              ref={selectRef}
-              className="w-[70%] ml-auto h-[2vh] border-2 border-black"
-            ></div> */}
+              <div
+                ref={checkerRef}
+                className="w-[70%] ml-auto h-[1vh] bg-transparent mb-2 xl:mb-[55px] "
+              ></div>
             </div>
           </motion.div>
-          <motion.div
-            ref={beginRef as RefObject<HTMLDivElement>}
-            className="w-full h-[60vh] bg-[url('/images/massage1/massage-pic2.jpg')] bg-no-repeat bg-cover bg-center 
-              [mask-image:linear-gradient(to_bottom,theme(colors.transparent),theme(colors.black/25%),theme(colors.transparent))]"
-            style={{ height: height1 }}
-          ></motion.div>
           <div className="w-[70%] left-[30%] ml-auto">
             {texts.sort().map((item, index) => {
               return (
@@ -83,13 +123,18 @@ export const ContentHealing: FC = () => {
                   key={index}
                   Num={index + 1}
                   title={item}
-                  isSelected={index % 2 == 0}
+                  isSelected={isSelItems[index]}
+                  thisRef={
+                    setCallBackRef(
+                      index
+                    ) as unknown as RefObject<HTMLDivElement | null>
+                  }
                 />
               );
             })}
           </div>
           <motion.div
-            className="w-full h-[55vh] bg-[url('/images/massage1/massage-pic2.jpg')] bg-no-repeat bg-cover bg-center
+            className="w-full h-[55vh] bg-[url('/images/massage1/massage-pic2.jpg')] bg-no-repeat bg-cover bg-right-top
           [mask-image:linear-gradient(to_top,theme(colors.black),theme(colors.transparent))]"
             style={{ height: height2 }}
           ></motion.div>
