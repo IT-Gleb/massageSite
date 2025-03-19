@@ -1,12 +1,15 @@
 "use client";
 
-import React, { FC, RefObject, useEffect, useRef, useState } from "react";
+import React, { FC, lazy, RefObject, useEffect, useRef, useState } from "react";
 import { ContainerContent } from "./containerContent";
-import { TextTitle } from "../ui/buttons/heading/textTitle";
-import { CardHealing } from "../ui/buttons/cards/cardHealing";
+//import { TextTitle } from "../ui/buttons/heading/textTitle";
+//import { CardHealing } from "../ui/buttons/cards/cardHealing";
 import { motion, useScroll, useSpring, useTransform } from "motion/react";
 import { funnel } from "remeda";
 // import { flushSync } from "react-dom";
+
+const TextHeading = lazy(() => import("../ui/buttons/heading/textTitle"));
+const CardItem = lazy(() => import("../ui/buttons/cards/cardHealing"));
 
 const texts: string[] = [
   "Остеохондроз",
@@ -89,7 +92,7 @@ export const ContentHealing: FC = () => {
 
   return (
     <ContainerContent backgroundClass="bg-green-50/50">
-      <TextTitle title="применение" />
+      <TextHeading title="применение" />
       <p className="my-10 text-[1.5em]/[1.5em] md:text-[1em]/[1em]">
         Древнейшие методики оздоровления с использованием новейших технологий.
         Массаж Fohow применяется:
@@ -119,7 +122,7 @@ export const ContentHealing: FC = () => {
           <div className="w-[70%] left-[30%] ml-auto">
             {texts.sort().map((item, index) => {
               return (
-                <CardHealing
+                <CardItem
                   key={index}
                   Num={index + 1}
                   title={item}

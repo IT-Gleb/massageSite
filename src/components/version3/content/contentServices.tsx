@@ -44,7 +44,7 @@ export const ContentServices: FC = () => {
               />
             </li>
           </ul>
-          <p className="indent-4 mt-10 text-[2em]/[2.1em] lg:text-[clamp(1.5vw,2vw,2vw)]/[clamp(1.5vw,2vw,2.1vw)]">
+          <p className="indent-4 mt-10 text-[2em]/[2.1em] lg:text-[clamp(1vw,2vw,1.2vw)]/[clamp(1vw,2vw,1.2vw)]">
             Насколько полезен будет массаж, во многом зависит от периодичности
             его проведения.
           </p>

@@ -10,9 +10,11 @@ export const TextTitle: FC<TTextTitle> = ({ title }) => {
       className="flex items-center gap-x-2 before:content-[''] before:w-[5%] before:h-[20px] before:bg-[url('/images/svg/back_dark.svg')]
     after:content-[''] after:w-[15%] after:h-[20px] after:bg-[url('/images/svg/back_dark.svg')]"
     >
-      <h2 className="underline underline-offset-8 whitespace-nowrap">
+      <h2 className="underline underline-offset-8 whitespace-nowrap text-indigo-950">
         {title}
       </h2>
     </div>
   );
 };
+
+export default TextTitle;
