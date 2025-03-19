@@ -93,7 +93,7 @@ export const ContentHealing: FC = () => {
   return (
     <ContainerContent backgroundClass="bg-green-50/50">
       <TextHeading title="применение" />
-      <p className="my-10 text-[1.5em]/[1.5em] md:text-[1em]/[1em]">
+      <p className="indent-4 my-10 text-[2em]/[2.1em] md:text-[clamp(1vw,2vw,1.2vw)]/[clamp(1vw,2vw,1.5vw)]">
         Древнейшие методики оздоровления с использованием новейших технологий.
         Массаж Fohow применяется:
       </p>
