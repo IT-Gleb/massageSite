@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React, { FC } from "react";
 
 export const FoHowIcon: FC = () => {
@@ -18,8 +17,10 @@ export const FoHowIcon: FC = () => {
           <img
             aria-hidden="true"
             src={"/images/massage1/chemodan.webp"}
-            alt="Биоэнергомассажёр"
+            alt="Биоэнергомассажёр-современный прибор для массажа fohow"
             loading="lazy"
+            decoding="async"
+            fetchPriority="high"
             className="block w-full h-full"
           />
         </div>

@@ -18,6 +18,7 @@ export const ImageRounded: FC<IimageProps> = ({
           src={imageSrc}
           alt={isAlt ? altText : ""}
           loading="lazy"
+          decoding="async"
           className="block w-full h-full"
         />
       ) : (
@@ -25,6 +26,7 @@ export const ImageRounded: FC<IimageProps> = ({
           aria-hidden="true"
           src={imageSrc}
           loading="lazy"
+          decoding="async"
           className="block w-full h-full"
         />
       )}

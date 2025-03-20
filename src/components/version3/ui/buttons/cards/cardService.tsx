@@ -19,7 +19,9 @@ export const CardService: FC<TCardItemProps> = ({
         <img
           src={imageSrc}
           alt={altText !== undefined ? altText : ""}
-          className="-scale-x-100"
+          loading="lazy"
+          decoding="auto"
+          className="block w-full h-full -scale-x-100"
         />
       </header>
       <div className="flex-auto flex items-start justify-end">

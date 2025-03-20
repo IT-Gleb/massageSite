@@ -2,11 +2,8 @@
 
 import React, { FC, lazy, RefObject, useEffect, useRef, useState } from "react";
 import { ContainerContent } from "./containerContent";
-//import { TextTitle } from "../ui/buttons/heading/textTitle";
-//import { CardHealing } from "../ui/buttons/cards/cardHealing";
 import { motion, useScroll, useSpring, useTransform } from "motion/react";
 import { funnel } from "remeda";
-// import { flushSync } from "react-dom";
 
 const TextHeading = lazy(() => import("../ui/buttons/heading/textTitle"));
 const CardItem = lazy(() => import("../ui/buttons/cards/cardHealing"));

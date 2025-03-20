@@ -17,7 +17,7 @@ export const CardHealing: FC<TCardHealingProps> = ({
   return (
     <div
       ref={thisRef}
-      className={`relative min-h-[8vh] pl-5 lg:pl-8 py-2 mt-1 place-content-center transition-all ${
+      className={`relative min-h-[8vh] pl-5 lg:pl-8 py-2 mt-1 place-content-center transition-all rounded-es-[30px] ${
         isSelected
           ? "bg-[linear-gradient(to_right,theme(colors.green.400),theme(colors.emerald.200),theme(colors.transparent))] text-indigo-950 font-semibold font-roboto"
           : "bg-[linear-gradient(to_right,theme(colors.green.200),theme(colors.transparent))] font-verdana"
