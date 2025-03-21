@@ -37,9 +37,9 @@ export const ContentHealing: FC = () => {
     container: containerRef,
     offset: ["start start", "end start"],
   });
-  const height2 = useTransform(scrollYProgress, [0, 1], ["5vh", "80vh"]);
 
   const smoothY = useSpring(scrollYProgress);
+  const height2 = useTransform(scrollYProgress, [0, 1], ["5vh", "80vh"]);
   const Y1 = useTransform(smoothY, [0, 1], ["0%", "90%"]);
 
   const checkerRef = useRef<HTMLDivElement>(null);
