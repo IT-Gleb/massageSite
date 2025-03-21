@@ -14,8 +14,8 @@ export const CardService: FC<TCardItemProps> = ({
   altText,
 }) => {
   return (
-    <article className="flex items-start gap-x-2 border border-green-700/50 shadow-sm bg-green-300/20">
-      <header className="w-[120px] h-[120px] overflow-hidden object-cover object-left-top [mask-image:linear-gradient(to_right,theme(colors.black)_60%,theme(colors.transparent))]">
+    <article className="flex items-start gap-x-2 border border-green-700/50 shadow-md bg-green-300/20">
+      <header className="w-[120px] h-[120px] overflow-hidden object-cover object-center rounded-e-full [mask-image:linear-gradient(to_right,theme(colors.black),theme(colors.transparent))]">
         <img
           src={imageSrc}
           alt={altText !== undefined ? altText : ""}
