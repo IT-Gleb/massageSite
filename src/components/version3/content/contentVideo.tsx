@@ -47,7 +47,7 @@ export const ContentVideo: FC = () => {
       <div id={ancorsArray[1].idString}>
         <TextTitle title="Видео" />
       </div>
-      <p className="indent-4 my-10 text-[2m]/[2.1em] xl:text-[clamp(1vw,2vw,1.2vw)]/[clamp(1vw,2vw,1.2vw)]">
+      <p className="indent-4 my-10 text-[2em]/[2.1em] xl:text-[clamp(1vw,2vw,1.2vw)]/[clamp(1vw,2vw,1.2vw)]">
         Использую в работе.
       </p>
       <div
