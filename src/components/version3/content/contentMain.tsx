@@ -84,7 +84,9 @@ export const ContentMain: FC = () => {
       </Suspense>
 
       <main className="flex flex-col min-h-[100vh] bg-white flex-auto">
-        <Suspense fallback={<div>идет загрузка...</div>}>
+        <Suspense
+          fallback={<div className="w-fit mx-auto mt-5">идет загрузка...</div>}
+        >
           <HeroComponent />
         </Suspense>
         {scopeView.map((item, index) => {
