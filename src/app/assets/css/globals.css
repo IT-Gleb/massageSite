@@ -42,7 +42,7 @@
   }
 
   .mylight {
-    @apply text-emerald-800 bg-emerald-50;
+    @apply text-emerald-800 bg-green-50/50;
   }
 
   .vertical-text {

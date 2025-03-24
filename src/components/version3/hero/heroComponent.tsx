@@ -54,7 +54,7 @@ const AtextItem = {
 
 export const HeroComponent: FC = () => {
   return (
-    <div className="flex flex-col bg-green-50 relative">
+    <div className="flex flex-col bg-green-50/50 relative">
       <HeroNavigation />
       <motion.div
         initial={{ y: -350 }}
@@ -63,7 +63,10 @@ export const HeroComponent: FC = () => {
         className="hidden lg:block absolute z-0 w-[450px] h-[450px] min-[2500px]:w-[650px] min-[2500px]:h-[650px] top-[-90px] min-[2500px]:top-[-120px] right-[11%] 
         bg-[url('/images/massage1/hands_1.webp')] bg-no-repeat bg-cover bg-bottom [mask-image:linear-gradient(to_bottom,theme(colors.black),theme(colors.transparent)_70%)]"
       ></motion.div>
-      <div className="relative z-[5] w-[90%] xs:w-[70%] lg:w-[65%] mx-auto min-h-[45vh] grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-y-8 lg:gap-y-0 gap-x-2 xl:gap-x-10">
+      <div
+        className="relative z-[5] w-[90%] xs:w-[70%] lg:w-[65%] mx-auto min-h-[45vh] grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-y-8 lg:gap-y-0 gap-x-2 xl:gap-x-10
+      "
+      >
         <div className="content-center lg:content-start">
           <FoHowIcon />
         </div>
@@ -117,61 +120,64 @@ export const HeroComponent: FC = () => {
           </div>
         </div>
       </div>
-      <div className="min-h-[55vh] bg-green-200">
-        <div className="w-[92%] sm:w-[75%] lg:w-[65%] mx-auto my-8 xl:my-4 flex flex-col text-green-900 font-verdana font-bold uppercase text-[15vw]/[15.5vw] lg:text-[7vw]/[7.5vw]">
-          <motion.div className="w-full place-self-start lg:place-self-stretch text-[10vw]/[10.5vw] lg:text-[5vw]/[5.2vw]">
-            <motion.p
-              variants={AText}
-              initial="init"
-              animate="aWork"
-              className="indent-2 text-[9vw]/[9.5vw] lg:text-[5vw]/[5.2vw] whitespace-nowrap"
+      <div className="min-h-[55vh]">
+        <div className="bg-green-200">
+          <div className="w-[92%] sm:w-[75%] lg:w-[65%] mx-auto flex flex-col text-green-900 font-verdana font-bold uppercase text-[15vw]/[15.5vw] lg:text-[7vw]/[7.5vw]">
+            <motion.div className="w-full place-self-start lg:place-self-stretch text-[10vw]/[10.5vw] lg:text-[5vw]/[5.2vw]">
+              <motion.p
+                variants={AText}
+                initial="init"
+                animate="aWork"
+                className="indent-2 text-[9vw]/[9.5vw] mt-5 lg:text-[5vw]/[5.2vw] whitespace-nowrap"
+              >
+                я{" "}
+                <motion.span
+                  variants={AtextItem}
+                  className="text-[6vw]/[7vw] lg:text-[3.5vw]/[3.7vw]"
+                >
+                  смогу
+                </motion.span>{" "}
+                <motion.span
+                  variants={AtextItem}
+                  className="text-[9vw]/[9.5vw] lg:text-[5.5vw]/[5.8vw] text-right xl:text-left xl:ml-5"
+                >
+                  помочь
+                </motion.span>
+              </motion.p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: [0, 1], x: [25, 0] }}
+              transition={{ delay: 1.5 }}
+              className="place-self-center flex items-center justify-between mb-5"
             >
-              я{" "}
-              <motion.span
-                variants={AtextItem}
-                className="text-[6vw]/[7vw] lg:text-[3.5vw]/[3.7vw]"
-              >
-                смогу
-              </motion.span>{" "}
-              <motion.span
-                variants={AtextItem}
-                className="text-[9vw]/[9.5vw] lg:text-[5.5vw]/[5.8vw] text-right xl:text-left xl:ml-5"
-              >
-                помочь
-              </motion.span>
-            </motion.p>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: [0, 1], x: [25, 0] }}
-            transition={{ delay: 1.5 }}
-            className="place-self-center my-10 flex items-center justify-between"
-          >
-            <div className="hidden lg:block">
-              <ImageRounded
-                imageSrc="/images/massage1/massage1.webp"
-                width={160}
-                height={160}
-                isAlt={true}
-                altText="массаж"
-              />
-            </div>
-            <span>...если...</span>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: [0, 1], x: [-50, 0] }}
-            transition={{ delay: 2 }}
-            className="place-self-center lg:place-self-end font-verdana text-[5.5vw]/[6vw] lg:text-[2vw]/[2.4vw]"
-          >
-            <p className="indent-2 text-right text-balance">
-              <span className="text-[6.5vw]/[7vw] lg:text-[3vw]/[3.2vw]">
-                вы
-              </span>{" "}
-              захотите помочь себе
-            </p>
-          </motion.div>
+              <div className="hidden lg:block">
+                <ImageRounded
+                  imageSrc="/images/massage1/massage1.webp"
+                  width={160}
+                  height={160}
+                  isAlt={true}
+                  altText="массаж"
+                />
+              </div>
+              <span>...если...</span>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: [0, 1], x: [-50, 0] }}
+              transition={{ delay: 2 }}
+              className="place-self-center lg:place-self-end font-verdana text-[5.5vw]/[6vw] lg:text-[2vw]/[2.4vw]"
+            >
+              <p className="indent-2 text-right text-balance">
+                <span className="text-[6.5vw]/[7vw] lg:text-[3vw]/[3.2vw]">
+                  вы
+                </span>{" "}
+                захотите помочь себе
+              </p>
+            </motion.div>
+          </div>
         </div>
+        <div className="h-[12dvh] min-[590px]:h-[27dvh] xl:h-[35dvh] 2xl:h-[40dvh] bg-green-200 w-full [mask-image:url('/images/svg/wave.svg')] [mask-repeat:no-repeat] [mask-position:left_top] [mask-size:100%]"></div>
       </div>
     </div>
   );
