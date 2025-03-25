@@ -130,7 +130,7 @@ export const HeroComponent: FC = () => {
                 animate="aWork"
                 className="indent-2 text-[9vw]/[9.5vw] mt-5 lg:text-[5vw]/[5.2vw] whitespace-nowrap"
               >
-                я{" "}
+                {"я "}
                 <motion.span
                   variants={AtextItem}
                   className="text-[6vw]/[7vw] lg:text-[3.5vw]/[3.7vw]"
@@ -149,7 +149,7 @@ export const HeroComponent: FC = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: [0, 1], x: [25, 0] }}
               transition={{ delay: 1.5 }}
-              className="place-self-center flex items-center justify-between mb-5"
+              className="place-self-center my-8 flex items-center justify-between "
             >
               <div className="hidden lg:block">
                 <ImageRounded
@@ -157,7 +157,7 @@ export const HeroComponent: FC = () => {
                   width={160}
                   height={160}
                   isAlt={true}
-                  altText="массаж"
+                  altText="массаж FoHow в Сочи"
                 />
               </div>
               <span>...если...</span>
