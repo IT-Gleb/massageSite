@@ -177,7 +177,7 @@ export const HeroComponent: FC = () => {
             </motion.div>
           </div>
         </div>
-        <div className="h-[12dvh] min-[590px]:h-[27dvh] xl:h-[35dvh] 2xl:h-[40dvh] bg-green-200 w-full [mask-image:url('/images/svg/wave.svg')] [mask-repeat:no-repeat] [mask-position:left_top] [mask-size:100%]"></div>
+        <div className="w-full h-[15vh] min-[720px]:h-[22vh] lg:h-[40vh] bg-green-200 [mask-image:url('/images/svg/wave.svg')] [mask-repeat:no-repeat] [mask-position:left_top] [mask-size:cover]"></div>
       </div>
     </div>
   );
