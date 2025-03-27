@@ -12,11 +12,11 @@ import { SvgVideoCam } from "@/components/svg_components/svgVideoCam";
 
 export const TopMenu: FC = () => {
   const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [10, 300], [-250, 0]);
+  const y = useTransform(scrollY, [10, 300], [-350, 0]);
 
   return (
     <motion.div
-      className="fixed w-full flex flex-col z-10 bg-green-700 text-green-50 py-1 shadow-md "
+      className="fixed w-full h-[80px] bg-green-50 z-10 text-indigo-800 [mask-image:linear-gradient(to_bottom,theme(colors.black)_45%,theme(colors.transparent))]"
       style={{ y }}
     >
       <nav className="w-[90%] md:w-[75%] xl:w-[65%] mx-auto place-content-center">
@@ -27,7 +27,7 @@ export const TopMenu: FC = () => {
               className="flex items-center gap-x-2"
             >
               <span>{InfoObj.phone_mask}</span>
-              <div className="text-slate-200 w-[18px] h-[18px] lg:w-[28px] lg:h-[28px]">
+              <div className=" w-[18px] h-[18px] lg:w-[28px] lg:h-[28px]">
                 <SvgPhone />
               </div>
             </Link>
@@ -39,7 +39,7 @@ export const TopMenu: FC = () => {
                 className="flex items-center gap-x-2"
               >
                 <span className="hidden md:inline-block">Услуги</span>
-                <div className="text-slate-200 w-[18px] h-[18px] lg:w-[28px] lg:h-[28px]">
+                <div className="w-[18px] h-[18px] lg:w-[28px] lg:h-[28px]">
                   <SvgMedicalKit />
                 </div>
               </a>
@@ -48,7 +48,7 @@ export const TopMenu: FC = () => {
                 className="flex items-center gap-x-2"
               >
                 <span className="hidden md:inline-block">Видео</span>
-                <div className="text-slate-200 w-[28px] h-[28px]">
+                <div className=" w-[28px] h-[28px]">
                   <SvgVideoCam />
                 </div>
               </a>
@@ -65,7 +65,6 @@ export const TopMenu: FC = () => {
           </li>
         </ul>
       </nav>
-      {/* <div className="h-[50px] w-full bg-[linear-gradient(to_bottom,theme(colors.white),theme(colors.white/75%),theme(colors.transparent))]"></div> */}
     </motion.div>
   );
 };
