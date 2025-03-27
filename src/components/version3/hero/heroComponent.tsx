@@ -122,7 +122,7 @@ export const HeroComponent: FC = () => {
       </div>
       <div className="min-h-[55vh]">
         <div className="bg-[linear-gradient(to_top,theme(colors.green.300),theme(colors.green.50/50%)_85%)]">
-          <div className="w-[92%] sm:w-[75%] lg:w-[65%] mx-auto flex flex-col text-green-900 font-verdana font-bold uppercase text-[15vw]/[15.5vw] lg:text-[7vw]/[7.5vw]">
+          <div className="w-[92%] sm:w-[75%] lg:w-[65%] mx-auto mt-8 flex flex-col text-green-900 font-verdana font-bold uppercase text-[15vw]/[15.5vw] lg:text-[7vw]/[7.5vw]">
             <motion.div className="w-full place-self-start lg:place-self-stretch text-[10vw]/[10.5vw] lg:text-[5vw]/[5.2vw]">
               <motion.p
                 variants={AText}
