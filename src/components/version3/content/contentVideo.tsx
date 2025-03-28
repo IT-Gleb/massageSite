@@ -52,7 +52,7 @@ export const ContentVideo: FC = () => {
       </p>
       <div
         ref={targetRef}
-        className="my-10 w-[96%] xl:w-[75%] mx-auto flex items-center justify-center xl:justify-between gap-5 xl:gap-10 flex-wrap"
+        className="my-10 w-[96%] lg:w-[90%] mx-auto flex items-center justify-center gap-20 flex-wrap"
       >
         <div className="h-[640px] object-cover object-left-top">
           <video

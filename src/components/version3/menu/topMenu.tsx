@@ -1,18 +1,18 @@
 "use client";
 
-import { useScroll, useTransform, motion } from "motion/react";
+import { useScroll, useTransform, motion, useSpring } from "motion/react";
 import React, { FC } from "react";
 import Link from "next/link";
 import { InfoObj } from "@/utils/info";
 import { ancorsArray } from "@/utils/functions";
 import { SvgPhone } from "@/components/svg_components/svgPhone";
-import { SvgLocation } from "@/components/svg_components/svgLocation";
 import { SvgMedicalKit } from "@/components/svg_components/svgMedicalKit";
 import { SvgVideoCam } from "@/components/svg_components/svgVideoCam";
 
 export const TopMenu: FC = () => {
   const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [10, 300], [-350, 0]);
+  const smoothY = useSpring(scrollY);
+  const y = useTransform(smoothY, [10, 350], [-350, 0]);
 
   return (
     <motion.div
