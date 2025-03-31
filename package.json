@@ -17,8 +17,7 @@
     "next": "^15.2.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "remeda": "^2.21.2",
-    "zustand": "^5.0.3"
+    "remeda": "^2.21.2"
   },
   "devDependencies": {
     "@types/node": "^20",
