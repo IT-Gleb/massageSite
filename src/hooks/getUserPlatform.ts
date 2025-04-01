@@ -7,7 +7,7 @@ export const useUserOS = () => {
     linux: "Linux",
     android: "Android",
     safari: "iOS",
-    "iphone|ipad|ipod|mac": "iOS",
+    "iphone|ipad|ipod": "iOS",
   };
 
   if (!isServer) {
