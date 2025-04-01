@@ -8,7 +8,6 @@ import { ContentResponses } from "./contentResponses";
 import { ContentVideo } from "./contentVideo";
 import { PhoneMenuButton } from "../ui/buttons/phoneMenuButton";
 import { ContentHealing } from "./contentHealing";
-// import { FooterLayout } from "../layout/footerLayout";
 
 import dynamic from "next/dynamic";
 import { useInView } from "motion/react";
