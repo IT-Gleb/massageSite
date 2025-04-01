@@ -14,9 +14,10 @@ export const TopMenu: FC = () => {
   const smoothY = useSpring(scrollY);
   const y = useTransform(smoothY, [10, 350], [-350, 0]);
 
+  // [mask-image:linear-gradient(to_bottom,theme(colors.black),theme(colors.transparent))]
   return (
     <motion.div
-      className="fixed w-full h-[80px] bg-green-50 z-10 text-indigo-800 [mask-image:linear-gradient(to_bottom,theme(colors.black)_45%,theme(colors.transparent))]"
+      className="fixed w-full h-[80px] pt-1 z-10 text-green-50 bg-[linear-gradient(to_bottom,theme(colors.green.700)_15%,theme(colors.transparent))]"
       style={{ y }}
     >
       <nav className="w-[90%] md:w-[75%] xl:w-[65%] mx-auto place-content-center">
