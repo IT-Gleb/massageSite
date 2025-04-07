@@ -9,7 +9,7 @@ import React, { FC } from "react";
 export const HeroNavigation: FC = () => {
   return (
     <nav
-      className="text-[clamp(1rem,1.5rem,1.8rem)]/[clamp(1rem,1.5rem,1.9rem)] font-oswald px-2 text-neutral-700 z-30
+      className="text-[clamp(1rem,1.5rem,1.8rem)]/[clamp(1rem,1.5rem,1.9rem)] font-oswald ml-2 lg:ml-4 px-2 text-neutral-700 z-30
          py-1 overflow-hidden flex items-start justify-between gap-x-2"
     >
       <a

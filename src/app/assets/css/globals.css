@@ -14,6 +14,10 @@
   --darkbackground: theme(colors.slate.700);
   --darkforeground: theme(colors.slate.200);
   /* --darkbg: #99154b; */
+  --txtSize: 14;
+  --headSize: calc(round(var(--txtSize) * 1.76));
+  --SizeTxt: calc(var(--txtSize) * 1px);
+  --SizeHead: calc(var(--headSize) * 1px);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -42,7 +46,7 @@
   }
 
   .mylight {
-    @apply text-emerald-800 bg-green-50/50;
+    @apply text-green-800 bg-green-50/50;
   }
 
   .vertical-text {
@@ -52,7 +56,7 @@
   }
 
   body {
-    @apply overflow-x-hidden flex flex-col dark:text-slate-200 dark:mydark mylight font-verdana font-normal text-[clamp(2.1vw,2.5vw,3.2vw)]/[clamp(2.1vw,2.5vw,3.4vw)] lg:text-[clamp(1vw,2vw,2.1em)]/[clamp(1.1vw,2.2vw,2.4vw)] min-h-[100vh];
+    @apply overflow-x-hidden flex flex-col dark:mydark mylight font-verdana font-normal text-[clamp(2.1vw,2.5vw,3.2vw)]/[clamp(2.1vw,2.5vw,3.4vw)] lg:text-[clamp(1vw,2vw,2.1em)]/[clamp(1.1vw,2.2vw,2.4vw)] min-h-[100vh];
   }
   h2 {
     @apply text-[6vw]/[6.5vw] md:text-[clamp(1.8vw,2vw,2.5vw)]/[2.6vw] font-oswald font-semibold uppercase;
