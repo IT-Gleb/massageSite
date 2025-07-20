@@ -33,12 +33,13 @@ export const CaruselItem: FC<TTextItems & TParamActiveIndex> = (param) => {
       <p className="indent-4 text-[clamp(0.7rem,4vw,1rem)]/[clamp(0.7rem,4vw,1rem)] mt-0 py-2 px-1 text-balance text-green-700 dark:text-slate-600">
         {param.text}
       </p>
-      <p
-        aria-hidden="true"
-        className="text-[0.8rem] text-green-500 dark:text-slate-500 p-1"
-      >
-        {stringFromDate(param.date)}
-      </p>
     </article>
   );
 };
+
+// <p
+//   aria-hidden="true"
+//   className="text-[0.8rem] text-green-500 dark:text-slate-500 p-1"
+// >
+//   {stringFromDate(param.date)}
+// </p>
