@@ -43,3 +43,6 @@ yarn-error.log*
 next-env.d.ts
 
 #info.json
+
+#bash dump
+.stackdump
