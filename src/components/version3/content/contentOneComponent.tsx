@@ -6,6 +6,7 @@ import {
   stagger,
   animate,
   MotionConfig,
+  type AnimationSequence
 } from "motion/react";
 import React, { FC, RefObject, useEffect, useRef, useState } from "react";
 import { ImageBlock } from "../images/imageBlock";
@@ -17,7 +18,7 @@ import { SvgInfo } from "@/components/svg_components/svgInfo";
 import useMyMediaQuery from "@/hooks/myMediaQuery";
 import { TextTitle } from "../ui/buttons/heading/textTitle";
 
-const asequence: any = [
+const asequence: AnimationSequence = [
   ["#uuul", { opacity: [0, 1], y: [500, 0] }, { delay: 0.5, duration: 0.7 }],
   [
     "#uuul li",
@@ -173,17 +174,17 @@ export const ContentOneComponent: FC = () => {
               <ContentItemNumbered numered={3}>
                 <p>
                   Массаж обеспечивает глубокое проникновение в мышцы,суставы,
-                  кости, причем при обычной процедуре ручного массажа этого
-                  достичь невозможно.
+                  кости, причем <strong> при обычной процедуре ручного массажа этого
+                  достичь невозможно</strong>.
                 </p>
               </ContentItemNumbered>
             </motion.li>
-            <motion.li className="place-content-end col-span-2 w-fit lg:col-span-1 text-[1.5vw]/[1.8vw] lg:text-[0.75vw]/[1.1vw] font-bold mx-1">
+            <motion.li className="place-content-end col-span-2 w-fit lg:col-span-1 text-[1.5vw]/[1.8vw] lg:text-[0.75vw]/[1.1vw] mx-1">
               <div className="p-1">
                 <div className="w-[16px] h-[16px] lg:w-[24px] lg:h-[24px] float-left mt-2 mr-2">
                   <SvgInfo />
                 </div>
-                <p>Имеются противопоказания. Консультируйтесь у специалиста.</p>
+                <p><strong>Имеются противопоказания</strong>. Консультируйтесь у специалиста.</p>
               </div>
             </motion.li>
           </motion.ul>

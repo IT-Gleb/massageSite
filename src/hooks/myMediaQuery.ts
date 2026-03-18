@@ -6,7 +6,7 @@ function useMyMediaQuery(query: string) {
     return true;
   };
 
-  const subscribe = (callback: any) => {
+  const subscribe = (callback:() => unknown) => {
     const mediaQueryList = window.matchMedia(query);
     mediaQueryList.addEventListener("change", callback);
 
